@@ -1,0 +1,14 @@
+{
+  "titulo" : "text",
+  "descripcion" : "lorem",
+  "referencia" : "texto",
+  "boton" : "texto",
+  "objeto" : {
+    "clasePosicion" :"text",
+    "referenciaObjeto" :"text",
+    "iconoObjeto" :"text",
+    "tituloObjeto" : "text",
+    "textoObjeto" :"lorem"
+
+   }
+}

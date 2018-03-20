@@ -1,0 +1,11 @@
+{
+  "titulo" : "text",
+  "subTitulo" : "lorem",
+  "objeto" : {
+    "clasePosicionObjeto" :"text",
+    "imagenObjeto" : "img",
+    "texto1Objeto" : "lorem",
+    "tituloObjeto" : "text",
+    "subTituloObjeto" : "text",
+  }
+}

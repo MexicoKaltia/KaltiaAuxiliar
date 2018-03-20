@@ -1,0 +1,62 @@
+----------------------------------------------- DESPLEGAR MESA AYUDA ACN EN NUEVO WSO2 APP SERVER 5.3.0 ----------------------------------------
+agregar la dependencia :
+
+<ExclusiveEnvironments>
+        <ExclusiveEnvironment>
+            <Name>SSO</Name>
+            <Classpath>${carbon.home}/lib/runtimes/sso/*.jar;${carbon.home}/lib/runtimes/sso/</Classpath>
+        </ExclusiveEnvironment>
+    </ExclusiveEnvironments>
+
+en el archivo :
+
+${carbon.home}/repository/conf/tomcat/webapp-classloading.xml
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+copiar los jars de
+
+${carbon.home}/lib/runtimes/sso
+
+-----------------------------------------------FIN * DESPLEGAR MESA AYUDA ACN EN NUEVO WSO2 APP SERVER 5.3.0 ------------------------------------
+
+*************************************************************************************************************************************************
+----------------------------------------------- VARIABLES DE ENTORNO WSO2------------------------------------------------------------------------
+variables de Entorno WSO2
+
+configurar los archivos:
+#URL QA PR
+#valor Prefijo en variable de entorno QA
+#clase 	gob.mx.vun.mesa_ayuda.service.ClientService
+#clase gob.mx.vun.mesa_ayuda.service.ServiceRENAPO
+
+nuevo Archivo :
+gob.mx.vun.mesa_ayuda.globals.Globales
+/main/java/resorses/URL.properties
+
+**Agregar las variables de entorno:
+WEB-INF/web.xml
+	 <resource-env-ref>
+       <resource-env-ref-name>AMB</resource-env-ref-name>
+       <resource-env-ref-type>java.lang.String</resource-env-ref-type>
+	</resource-env-ref>
+	
+META-INF/context.xml
+	<Context path="/MesaAyudaACN">
+		<ResourceLink name="AMB" global="AMB" type="java.lang.String"/>
+	</Context>
+
+
+(<PRODUCT_HOME>repository/conf/tomcat/catalina-server.xml in WSO2 products).
+	<GlobalNamingResources>
+        <Environment name="AMB" type="java.lang.String" value="PR"/>
+    </GlobalNamingResources>
+
+
+10.20.20.124    gobmxdesk7   WSO2 Carbon started - Servidor Admin/Nodo 1
+10.20.20.135    gobmxdesk8   HTTPS:9443, Domain: clusterGobMX-WSO2, Sub-domain:__$default, Active:true left cluster
+10.20.20.135    gobmxdesk8   
+
+
+

@@ -1,0 +1,10 @@
+{
+  "imagen" : "img",
+  "titulo" : "text",
+  "nombreEmpresa" : "text",
+  "calleNum" : "text",
+  "ciudad" : "text",
+  "codigoPostal" : "text",
+  "telefono" : "integer",
+  "email" : "email"
+}

@@ -1,0 +1,7 @@
+{
+  "objeto" : {
+    "clasePosicionObjeto" :"text",
+    "referenciaObjeto" : "text",
+    "imagenObjeto" : "img"
+  }
+}

@@ -1,0 +1,76 @@
+*******************************  TOKEN
+ tokenUno = "\\++";         --agrupa a cada Elemento
+ tokenDos = "\\&&";         --agrupa a cada SubElemento
+ tokenTres = "\\--";        --elementoSingular
+                                      ***********************************
+
+
+*******************************headerSeccionArray1 (Menu Principal)
+  Home.--Pages.--Dropdown.--Link Text1.--Link Text0.--Link Text2.++Pages.--pages1.--pages3.&&Dropdown.--dor.--dor2.--dor3.++pages1.--pages3.--pages4.&&dor.--dor2.--dor3.
+
+  Home.--Pages.--Dropdown.--Link Text1.--Link Text0.--Link Text2. (primer nivel)
+  ---------------------------------------------------------------------------------
+        pages1.  dor.
+        pages3.  dor2.                                            (segundo nivel)
+                 dor3.
+-----------------------------------------------------------------------------------
+        pages1   dor.                                             (tercer nivel)
+        --pages3. --dor2.
+        --pages4. --dor3.
+
+A.actionA--B.actionB--C.actionC
+  ++B--subB1.actionSubB1--subB2.actionSubB2
+    &&C--subC1.actionSubC1
+  ++subB1--subB1SubB1.actionSubB1SubB1--subB1subB2.actionSubB1subB2
+    &&subB2--subB2subB1.actionsubB2subB1--subB2subB2.actionsubB2subB2
+                                                    **************************************************************
+*******************************headerSeccionArray2 (Menu Principal)
+imagen.png&&Titulo&&Descripcion&&action&&layerBoton...
+imagen.png&&Titulo &&Descripcion++
+  classPosition&&classIcon&&Titulo&&Descripcion&&referencia&&layerBoton++
+headerSeccionArray2={Titulo&&Titulo&&Descripcion&&LayerBoton&&imagen.png}
+                                                    **************************************************************
+*******************************headerSeccionArray3 (Menu Principal)
+                                                    **************************************************************
+*******************************headerSeccionArray4 (Menu Principal)
+                                                    **************************************************************
+*******************************headerSeccionArray5 (Menu Principal)
+                                                    **************************************************************
+*******************************headerSeccion1   (Menu Secundario-sinLimite)
+ACERCA DE NOSOTROS.nosotros++CONTACTO.contacto++REGISTRO.registrar++INGRESA.ingresar
+headerSeccion1={A.actionA++B.actionB++C.actionC...}
+                                                    **************************************************************
+*******************************headerSeccion2   (Menu Secundario)
+tel 5523259000++Correo actionA@actionA.com++logoEmpresa.png
+headerSeccion2={12345678901234567890++email@email.com++imagen.jpg}
+                                                    **************************************************************
+*******************************headerSeccion3   (header html)
+title++icon.ico++varios
+headerSeccion3={title++icon.ico++varios}
+                                                    **************************************************************
+*******************************headerSeccion4   (arraySimple-sinLimite)
+02.png++03.png++04.png
+headeSeccion3.get0++headeSeccion3.get1++headeSeccion3.get2++headeSeccion3.get3++headeSeccion3.get4++headeSeccion3.get5
+headerSeccion4={A++B++C++D...}
+                                                  **************************************************************
+*******************************headerSeccion5   (arraySimple-sinLimite)
+Aun no definido
+                                                   **************************************************************
+*******************************headerAux1   (arraySimple-sinLimite)
+Aun no definido
+                                                   **************************************************************
+*******************************headerAux2   (arraySimple-sinLimite)
+Aun no definido
+                                                   **************************************************************
+*******************************headerAux3   (arraySimple-sinLimite)
+Aun no definido
+                                                   **************************************************************
+*******************************headerAux4   (arraySimple-sinLimite)
+Aun no definido
+                                                   **************************************************************
+*******************************headerAux5   (arraySimple-sinLimite)
+Aun no definido
+                                                   **************************************************************
+*******************************headerVarios   (arraySimple-sinLimite)
+Aun no definido
+                                                   **************************************************************

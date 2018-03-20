@@ -1,0 +1,97 @@
+
+
+En muchas organizaciones, esta responsabilidad de la migración de artefactos reside en el equipo de Devops, 
+que inevitablemente tiene acceso y control de los entornos de origen y destino. 
+Para respaldar este proceso, el producto debe permitir un mecanismo en el que sus artefactos se puedan agrupar y migrar con una intervención mínima.
+Idealmente, el ingeniero Devops no necesita estar familiarizado con las interfaces de usuario o las operaciones del producto, 
+pero debería poder hacer la migración a través de una interfaz de línea de comandos que puede ser programada o ejecutada manualmente.
+
+Del mismo modo, los artefactos no deben contener ningún valor específico del entorno que haga que el artefacto sea obsoleto cuando se mueva a través de entornos. 
+La práctica ideal de Devops no permitiría ninguna modificación a los artefactos y debería funcionar tal como es cuando se migra al nuevo entorno. 
+Una forma común de evitar esto es definiendo estos valores específicos del entorno como variables de entorno a las que el producto 
+puede hacer referencia cuando sea necesario. De esta manera, los artefactos serían portátiles y se pueden transferir a cualquier entorno sin la necesidad de cambios posteriores a la migración.
+
+La mayoría de los productos WSO2 proporcionan un mecanismo de agrupamiento de artefactos basado en Carbon Archive (.car),
+que cuando se usa con el Registro de gobernabilidad WSO2, 
+puede proporcionar una forma estandarizada de migrar artefactos entre entornos autónomos. 
+El mecanismo de agrupamiento de artefactos basado en Carbon Archive solo funciona para artefactos que residen en el sistema de archivos, por lo tanto,
+este mecanismo no funciona para los artefactos de WSO2 API Manager ya que la información de la API se almacena tanto en el sistema de archivos como en la base de datos.
+Para facilitar la agrupación de API en WSO2 API Manager, se ha introducido una capacidad API Import / Export API en el API Manager de WSO2.
+Esta función de importación / exportación de API no se incluye con la distribución del producto, 
+pero debe implementarse como una aplicación web independiente para el administrador de la API de WSO2.
+
+La aplicación web API Import / Export permite que las API se exporten e importen a través de una API RESTful. 
+Esto permitiría a un usuario que no requiere ningún conocimiento del administrador de la API exportar e importar las API según sea necesario. 
+La capacidad API Import / Export está asegurada a través de la autenticación básica y requeriría admin o credenciales equivalentes para importar / exportar las API.
+
+Para que las API sean totalmente portátiles, debería poder almacenar valores específicos del entorno en la API como variables a las que se puede hacer referencia 
+desde el entorno en el que se implementa. El punto final del servicio de respaldo es el valor específico del entorno más común que se usa en una API. 
+Este valor es un parámetro crítico para una API y debería referirse a diferentes servicios de backend basados ​​en el entorno en el que se implementa. 
+Como se muestra en la figura 1 a continuación, una API implementada en el entorno de control de calidad debe apuntar a los servicios en el control de calidad, 
+mientras que la misma API cuando se implementa en el entorno de producción debe apuntar a los servicios de producción.
+
+WSO2 API Manager permite la capacidad de incluir variables en la definición de la API que Map Manager puede asignar a las propiedades del sistema en el tiempo de ejecución del servicio. 
+Estas propiedades se pueden dar en línea como argumentos de línea de comando en el inicio del servidor o se pueden agregar al script de inicio del servidor.
+
+En este ejemplo, supongamos que tenemos dos entornos Dev / QA y Production. Todos los artefactos que se implementan en el entorno de producción deben probarse en Dev / QA. 
+Ningún desarrollador o ingeniero de control de calidad puede hacer ningún cambio en los artefactos en el entorno de producción 
+y solo los ingenieros de devops pueden acceder al entorno de producción.
+
+El proceso comienza cuando el creador de la API creará las API requeridas en el entorno Dev / QA. 
+Al crear API, el creador de API usaría variables para representar valores específicos del entorno, 
+como el nombre de host del punto final. 
+Como se muestra en la figura 3 a continuación, el administrador de la API resolverá el nombre de host en función del entorno en el que se despliegue.
+
+Una vez que las API se prueban y se verifican, el ingeniero Devops exportaría las API utilizando la capacidad de exportación API del administrador de la API. 
+Las API exportadas ahora se pueden importar al entorno de producción. Esto lo haría el ingeniero Devops a través de la API REST disponible. 
+Después de importar las API al entorno de producción, un administrador de producción iniciaría sesión en el panel de control de API Publisher y 
+publicaría estas API en la API Gateway del entorno de producción. Las API migradas ahora estarían disponibles para el tráfico en el entorno de producción.
+
+A continuación se detallan los pasos necesarios para configurar los entornos para admitir la migración de artefactos de múltiples entornos.
+
+	Empecemos implementando la aplicación web API Import / Export en los dos entornos. 
+	Esta aplicación web debe implementarse en los componentes de editor del administrador de la API. 
+	El componente de editor, en la mayoría de los casos, se implementa en la LAN, 
+	lo que garantiza que solo los usuarios internos puedan usar la función Importar / Exportar API. 
+	Puede descargar la aplicación web desde la siguiente URL1. Las instrucciones de implementación también están disponibles en la URL anterior.
+	
+    Ahora establezcamos las variables del sistema para cada entorno. En este caso, suponemos que cada entorno tiene su propio nombre de host. 
+	Puede proporcionar el nombre de host como un argumento de línea de comando en el inicio del servidor. 
+	Esto se puede hacer al darle un comando en línea al iniciar el servidor o puede modificar el archivo wso2server.sh/.bat para agregar estos argumentos. 
+	Dado que esta configuración se realiza en Windows, modificaremos el archivo wso2server.bat en el entorno Dev / QA 
+	agregando el siguiente argumento -Denvironment.host = qa.wso2.com a la lista de CMD_LINE_ARGS. 
+	De la misma manera, agregaremos -Denvironment.host = prod.wso2.com al script de inicio de API Manager en el entorno de producción.
+    
+	Debe haber un mecanismo para que la definición de la API elija estas variables del sistema. 
+	Esto se puede hacer a través de un mediador de clase. 
+	Agreguemos el archivo env-resolver-1.0.0.jar (adjunto en el artículo) a la siguiente ubicación <API-M_HOME> / repository / components / lib. 
+	El código fuente del archivo jar anterior se puede encontrar aquí3. 
+	El archivo Jar anterior puede elegir tanto el nombre de host como el puerto de las propiedades del sistema; 
+	Sin embargo, solo usaremos el nombre de host como variable del sistema.
+    
+	Una vez agregado el archivo jar anterior, creamos una secuencia que haga referencia a este archivo jar. 
+	Agregue la siguiente secuencia como global en secuencia. 
+	Las instrucciones para agregar una secuencia global se pueden encontrar en el siguiente enlace4.
+	
+	<secuencia xmlns = "https://ws.apache.org/ns/synapse" name = "WSO2AM - Ext - In">
+	<class name = "org.wso2.carbon.env.EnvironmentResolver" />
+	</ sequence>
+
+	Vamos a crear API en el entorno Dev / QA. Al crear API, asegúrese de poner el nombre de host del servicio de backend como una variable 
+	(por ejemplo, https: // {uri.var.host} / sample / student).
+
+	Una vez que se hayan creado todas las API, exportemos las API desde el administrador de API en el entorno Dev / QA. 
+	La información sobre cómo exportar API se puede encontrar en la siguiente URL1. La función de exportación de API solo permite exportar una única API a la vez. 
+	La siguiente herramienta5 le permite realizar exportaciones masivas de API desde un entorno determinado. 
+	Esta herramienta es útil si tiene cientos de API que deben migrarse entre entornos. 
+	El código fuente y cómo usar esta herramienta se pueden encontrar en la siguiente ubicación de Github5.
+
+	Ahora tendría archivos comprimidos zip de todas las API que se exportan. 
+	Ahora importemos las API a su entorno de producción.
+	La importación de API se puede realizar ejecutando el servicio REST de importación API. 
+	A continuación se muestra el comando curl correspondiente que puede invocar el servicio de importación API.
+
+	curl -H "Autorización: Básica <Base 64 nombre de usuario codificado: contraseña>" -F file = @ "<FilePath> \ <Su API> .zip" -k -X POST "https: // <Host: Port> / api -import-export- <Version> / import-api "
+
+	Al igual que en la exportación de la API masiva, hay una herramienta disponible para la importación masiva de API en la que es posible importar más de una API a la vez a WSO2 API Manager. 
+	El código fuente y cómo usar esta herramienta se pueden encontrar en la siguiente ubicación de Github6.

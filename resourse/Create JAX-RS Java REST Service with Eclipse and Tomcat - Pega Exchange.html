@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html id="ie7" lang="en-US" prefix="og: http://ogp.me/ns#">
+<![endif]-->
+<!--[if !IE 7]><!-->
+<html prefix="og: http://ogp.me/ns#" lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="yandex-verification" content="c72251b33c31e7c3">
+
+<title>Create JAX-RS Java REST Service with Eclipse and Tomcat - Pega Exchange</title>
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.pegaxchange.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="https://www.pegaxchange.com/wp-content/themes/duster/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+<link rel="stylesheet" href="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/prettify_002.css" type="text/css" media="all">
+
+<meta name="description" content="In this step-by-step example, the Eclipse Neon Java IDE and Apache Tomcat 9 web server are used to create, deploy and test a Java REST service using the Jersey JAX-RS API and Jackson Parser API. The Java REST service handles HTTP GET requests and returns JSON data.">
+<link rel="canonical" href="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/a_020.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Create JAX-RS Java REST Service with Eclipse and Tomcat - Pega Exchange">
+<meta property="og:description" content="In this step-by-step example, the Eclipse Neon Java IDE and Apache Tomcat 9 web server are used to create, deploy and test a Java REST service using the Jersey JAX-RS API and Jackson Parser API. The Java REST service handles HTTP GET requests and returns JSON data.">
+<meta property="og:url" content="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/">
+<meta property="og:site_name" content="Pega Exchange">
+<meta property="article:section" content="Java Development">
+<meta property="article:published_time" content="2016-08-11T04:52:37+00:00">
+<meta property="article:modified_time" content="2018-02-12T23:10:17+00:00">
+<meta property="og:updated_time" content="2018-02-12T23:10:17+00:00">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-0-Jersey-Bundle-Download.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-0-Jersey-Bundle-Download.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1-Jersey-2-Root-Folder-Structure.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1-Jersey-2-Root-Folder-Structure.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-2-Eclipse-Preferences-User-Libraries_1.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-2-Eclipse-Preferences-User-Libraries_1.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_Preferences_UserLibraries_2.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_Preferences_UserLibraries_2.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_Preferences_UserLibraries_3.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_Preferences_UserLibraries_3.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_Preferences_UserLibraries_4_api.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_Preferences_UserLibraries_4_api.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_Preferences_UserLibraries_4_lib.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_Preferences_UserLibraries_4_lib.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_Preferences_UserLibraries_4_ext.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_Preferences_UserLibraries_4_ext.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_Preferences_UserLibraries_5_AddedJARs.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_Preferences_UserLibraries_5_AddedJARs.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_ProjectPreferences_Project_Facets.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-1_Eclipse_ProjectPreferences_Project_Facets.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-2_Eclipse_ProjectPreferences_Project_Facets_JAX-RS_Config.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-2_Eclipse_ProjectPreferences_Project_Facets_JAX-RS_Config.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-3_Eclipse_ProjectPreferences_Project_Facets_JAX-RS_LibraryProjectExplorer.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-3_Eclipse_ProjectPreferences_Project_Facets_JAX-RS_LibraryProjectExplorer.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-4_Eclipse_ProjectBuildPath_Jackson-Parser-API.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-4_Eclipse_ProjectBuildPath_Jackson-Parser-API.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-4_Eclipse_ProjectSettings_DeploymentAssembly_1.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-4_Eclipse_ProjectSettings_DeploymentAssembly_1.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-4_Eclipse_ProjectSettings_DeploymentAssembly_2.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-4_Eclipse_ProjectSettings_DeploymentAssembly_2.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-4_Eclipse_ProjectSettings_DeploymentAssembly_3.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-4_Eclipse_ProjectSettings_DeploymentAssembly_3.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-4_Eclipse_ProjectSettings_DeploymentAssembly_4.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-4_Eclipse_ProjectSettings_DeploymentAssembly_4.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-5_Eclipse_Export_as_WAR.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-5_Eclipse_Export_as_WAR.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-5_Eclipse_Export_WAR_File.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-5_Eclipse_Export_WAR_File.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-5_Tomcat_Manager_App.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-5_Tomcat_Manager_App.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-6_Postman_GetElectronics.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-6_Postman_GetElectronics.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-6_Postman_GetHammer_QueryParam.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-6_Postman_GetHammer_QueryParam.png">
+<meta property="og:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-6_Postman_Insert_Drill.png">
+<meta property="og:image:secure_url" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-6_Postman_Insert_Drill.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="In this step-by-step example, the Eclipse Neon Java IDE and Apache Tomcat 9 web server are used to create, deploy and test a Java REST service using the Jersey JAX-RS API and Jackson Parser API. The Java REST service handles HTTP GET requests and returns JSON data.">
+<meta name="twitter:title" content="Create JAX-RS Java REST Service with Eclipse and Tomcat - Pega Exchange">
+<meta name="twitter:image" content="https://www.pegaxchange.com/wp-content/uploads/2018/02/2278-0-Jersey-Bundle-Download.png">
+<script src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/ca-pub-6129474222386936.js"></script><script async="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/analytics.js"></script><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.pegaxchange.com\/","name":"Pega Exchange","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.pegaxchange.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Person","url":"https:\/\/www.pegaxchange.com\/2016\/08\/11\/jax-rs-java-rest-service-eclipse-tomcat\/","sameAs":[],"@id":"#person","name":"Bruno"}</script>
+
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com/">
+<link rel="dns-prefetch" href="https://ws.sharethis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Pega Exchange » Feed" href="https://www.pegaxchange.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Pega Exchange » Comments Feed" href="https://www.pegaxchange.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Pega Exchange » Create JAX-RS Java REST Service with Eclipse and Tomcat Comments Feed" href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/feed/">
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.pegaxchange.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="duster-css" href="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/style.css" type="text/css" media="all">
+<script type="text/javascript" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/adsbygoogle.js"></script><link rel="preload" href="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/integrator.js"><script type="text/javascript" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/integrator.js"></script><link rel="preload" href="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/integrator_002.js"><script type="text/javascript" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/integrator_002.js"></script>
+<link rel="stylesheet" type="text/css" href="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/prettify.css">
+<script type="text/javascript" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/lang-sql.js"></script>
+<script id="st_insights_js" type="text/javascript" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/st_insights.js"></script>
+<link rel="https://api.w.org/" href="https://www.pegaxchange.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.pegaxchange.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.pegaxchange.com/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 4.9.3">
+<link rel="shortlink" href="https://www.pegaxchange.com/?p=2278">
+<link rel="alternate" type="application/json+oembed" href="https://www.pegaxchange.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.pegaxchange.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;format=xml">
+<style type="text/css"></style>
+<style type="text/css">
+.synved-social-resolution-single {
+display: inline-block;
+}
+.synved-social-resolution-normal {
+display: inline-block;
+}
+.synved-social-resolution-hidef {
+display: none;
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 2dppx),
+only screen and (min-resolution: 192dpi) {
+	.synved-social-resolution-normal {
+	display: none;
+	}
+	.synved-social-resolution-hidef {
+	display: inline-block;
+	}
+}
+</style>
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #aeb6bf; }
+</style>
+<link rel="icon" href="https://www.pegaxchange.com/wp-content/uploads/2017/07/cropped-pgx-icon-512x512-32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.pegaxchange.com/wp-content/uploads/2017/07/cropped-pgx-icon-512x512-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://www.pegaxchange.com/wp-content/uploads/2017/07/cropped-pgx-icon-512x512-180x180.png">
+<meta name="msapplication-TileImage" content="https://www.pegaxchange.com/wp-content/uploads/2017/07/cropped-pgx-icon-512x512-270x270.png">
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-74638106-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+<body>
+<div id="page" class="hfeed">
+<header id="branding" role="banner">
+<div id="billboardArea">
+<div class="billboard">
+<ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px;background-color:white;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="4695721279" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:970px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:970px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:970px;height:250px;" width="970" height="250" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div> <nav id="access" role="navigation">
+<h1 class="section-heading">Main menu</h1>
+<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+<div class="menu"><ul>
+<li><a href="https://www.pegaxchange.com/">Home</a></li><li class="page_item page-item-3264"><a href="https://www.pegaxchange.com/references/">References</a></li>
+</ul></div>
+</nav>
+</header>
+<div id="main">
+<div id="primary">
+<div id="content" role="main">
+<article id="post-2278" class="post-2278 post type-post status-publish format-standard hentry category-java-development">
+<header class="entry-header">
+<h1 class="entry-title">Create JAX-RS Java REST Service with Eclipse and Tomcat</h1>
+<div class="entry-meta">
+<span class="sep">Posted on </span><a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/" rel="bookmark"><time class="entry-date" datetime="2016-08-11T04:52:37+00:00" pubdate="">August 11, 2016</time></a> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="https://www.pegaxchange.com/author/brunob1979/" title="View all posts by Bruno">Bruno</a></span> </div>
+</header>
+<div class="entry-content">
+<div class="synved-social-container synved-social-container-share" style="text-align: center"><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-normal synved-social-provider-facebook nolightbox" data-provider="facebook" target="_blank" rel="nofollow" title="Share on Facebook" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;t=Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat&amp;s=100&amp;p[url]=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;p[images][0]=https%3A%2F%2Fwww.pegaxchange.com%2Fwp-content%2Fuploads%2F2018%2F02%2F2278-0-Jersey-Bundle-Download.png&amp;p[title]=Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="Facebook" title="Share on Facebook" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/facebook.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-normal synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="Share on Twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;text=Hey%20check%20this%20out" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="twitter" title="Share on Twitter" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/twitter.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-normal synved-social-provider-google_plus nolightbox" data-provider="google_plus" target="_blank" rel="nofollow" title="Share on Google+" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="google_plus" title="Share on Google+" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/google_plus.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-normal synved-social-provider-reddit nolightbox" data-provider="reddit" target="_blank" rel="nofollow" title="Share on Reddit" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;title=Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="reddit" title="Share on Reddit" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/reddit.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-normal synved-social-provider-pinterest nolightbox" data-provider="pinterest" target="_blank" rel="nofollow" title="Pin it with Pinterest" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;media=https%3A%2F%2Fwww.pegaxchange.com%2Fwp-content%2Fuploads%2F2018%2F02%2F2278-0-Jersey-Bundle-Download.png&amp;description=Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="pinterest" title="Pin it with Pinterest" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/pinterest_002.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-normal synved-social-provider-linkedin nolightbox" data-provider="linkedin" target="_blank" rel="nofollow" title="Share on Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;title=Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="linkedin" title="Share on Linkedin" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/linkedin.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-normal synved-social-provider-mail nolightbox" data-provider="mail" rel="nofollow" title="Share by email" href="mailto:?subject=Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat&amp;body=Hey%20check%20this%20out:%20https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;"><img alt="mail" title="Share by email" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/mail_002.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-hidef synved-social-provider-facebook nolightbox" data-provider="facebook" target="_blank" rel="nofollow" title="Share on Facebook" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;t=Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat&amp;s=100&amp;p[url]=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;p[images][0]=https%3A%2F%2Fwww.pegaxchange.com%2Fwp-content%2Fuploads%2F2018%2F02%2F2278-0-Jersey-Bundle-Download.png&amp;p[title]=Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="Facebook" title="Share on Facebook" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/facebook_002.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-hidef synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="Share on Twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;text=Hey%20check%20this%20out" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="twitter" title="Share on Twitter" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/twitter_002.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-hidef synved-social-provider-google_plus nolightbox" data-provider="google_plus" target="_blank" rel="nofollow" title="Share on Google+" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="google_plus" title="Share on Google+" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/google_plus_002.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-hidef synved-social-provider-reddit nolightbox" data-provider="reddit" target="_blank" rel="nofollow" title="Share on Reddit" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;title=Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="reddit" title="Share on Reddit" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/reddit_002.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-hidef synved-social-provider-pinterest nolightbox" data-provider="pinterest" target="_blank" rel="nofollow" title="Pin it with Pinterest" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;media=https%3A%2F%2Fwww.pegaxchange.com%2Fwp-content%2Fuploads%2F2018%2F02%2F2278-0-Jersey-Bundle-Download.png&amp;description=Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="pinterest" title="Pin it with Pinterest" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/pinterest.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-hidef synved-social-provider-linkedin nolightbox" data-provider="linkedin" target="_blank" rel="nofollow" title="Share on Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F&amp;title=Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="linkedin" title="Share on Linkedin" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/linkedin_002.png" width="32" height="32"></a><a class="synved-social-button synved-social-button-share synved-social-size-32 synved-social-resolution-hidef synved-social-provider-mail nolightbox" data-provider="mail" rel="nofollow" title="Share by email" href="mailto:?subject=Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat&amp;body=Hey%20check%20this%20out:%20https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F" style="font-size: 0px; width:32px;height:32px;margin:0;margin-bottom:5px;"><img alt="mail" title="Share by email" class="synved-share-image synved-social-image synved-social-image-share" style="display: inline; width:32px;height:32px; margin: 0; padding: 0; border: none; box-shadow: none;" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/mail.png" width="32" height="32"></a><a class="synved-social-credit" target="_blank" rel="nofollow" title="WordPress Social Media Feather" href="http://synved.com/wordpress-social-media-feather/" style="color:#444; text-decoration:none; font-size:8px; margin-left:5px;vertical-align:10px;white-space:nowrap;"><span>by </span><img style="display: inline;margin:0;padding:0;width:16px;height:16px;" alt="feather" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/icon.png" width="16" height="16"></a></div><div style="height: 15px;"></div><p class="block">In this example, the <strong>Eclipse Neon Java EE IDE</strong> and the <strong>Apache Tomcat 9</strong> web server are used to create, deploy and test a Java REST service using the <a href="https://jersey.java.net/" target="_blank">Jersey JAX-RS API</a> and <strong>Jackson Parser API</strong>.</p>
+
+<div class="sectionHeaderJEE"><h2>Related Posts</h2></div>
+<ul>
+<li><a href="https://www.pegaxchange.com/2016/09/02/java-eclipse-tomcat/" target="_blank">Setup Java IDE with Eclipse Neon and Tomcat</a></li>
+<li><a href="https://www.pegaxchange.com/2018/02/12/spring-web-mvc-project-maven-archetype/" target="_blank">Create Spring Web MVC Project from Maven Archetype in Eclipse Neon</a></li>
+<li><a href="https://www.pegaxchange.com/2016/05/01/java-soap-service-eclipse-tomcat/" target="_blank">Creating a Java SOAP Service with Eclipse and Tomcat</a></li>
+<li><a href="https://www.pegaxchange.com/2016/10/16/pega-7-connect-rest/" target="_blank">Call REST Service in Pega 7 with Connect REST Rule</a></li>
+</ul>
+
+<div class="sectionHeaderJEE"><h2>Summary</h2></div>
+<ol class="postSummary">
+<li>Setup of Jersey JAX-RS API User Library in Eclipse</li>
+<li>Configuration of Dynamic Web Project for Java REST Service Development</li>
+<li>Creating a Java REST Service in Eclipse with JAX-RS Annotations</li>
+<li>Deploying and Running the Java REST Service on Tomcat 9</li>
+<li>Testing the Java REST Service with Postman</li>
+</ol>
+
+<div class="sectionHeaderJEE"><h2>Software Downloads</h2></div>
+<ul>
+<li>The open-source software used in this example can be downloaded from these sources:</li>
+</ul>
+<div class="myList myWideList">
+<div class="myItem myHeaderItem" style="padding-top: 0px;">Java JDK, Java IDE and Servlet Container</div>
+<div class="myItem myItemSmallerFont">Eclipse Neon Java EE IDE from <a href="https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon1a" target="_blank">from the Eclipse Download Page</a></div>
+<div class="myItem myItemSmallerFont">Java JDK version 1.8.0_111 <a href="https://www.java.com/en/download/" target="_blank">from Oracle</a></div>
+<div class="myItem myItemSmallerFont">Tomcat 9 <a href="https://tomcat.apache.org/" target="_blank">from the Apache Tomcat web site</a></div>
+<div class="myItem myHeaderItem">Jersey JAX-RS API</div>
+<div class="myItem myItemSmallerFont">Jersey JAX-RS reference implementation <a href="https://repo1.maven.org/maven2/org/glassfish/jersey/bundles/jaxrs-ri/2.24/jaxrs-ri-2.24.zip" target="_blank">jaxrs-ri-2.24.zip</a> from the Jersey homepage</div>
+<div class="myItem myItemSmallerFont">Jersey Media JSON Jackson <a href="https://central.maven.org/maven2/org/glassfish/jersey/media/jersey-media-json-jackson/2.24/jersey-media-json-jackson-2.24.jar" target="_blank">jersey-media-json-jackson-2.24.jar</a> from the Maven Repository</div>
+<div class="myItem myItemSmallerFont">Jackson JAX-RS Base 2.8.4: <a href="https://central.maven.org/maven2/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.8.4/jackson-jaxrs-base-2.8.4.jar" target="_blank">jackson-jaxrs-base-2.8.4.jar</a></div>
+<div class="myItem myItemSmallerFont">Jackson JAX-RS JSON Provider 2.8.4: <a href="https://central.maven.org/maven2/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.8.4/jackson-jaxrs-json-provider-2.8.4.jar" target="_blank">jackson-jaxrs-json-provider-2.8.4.jar</a></div>
+<div class="myItem myItemSmallerFont">Jackson Annotations 2.8.4: <a href="https://central.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.4/jackson-annotations-2.8.4.jar" target="_blank">jackson-annotations-2.8.4.jar</a></div>
+<div class="myItem myItemSmallerFont">Jackson Module: JAX-B Annotations 2.8.4: <a href="https://central.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.8.4/jackson-module-jaxb-annotations-2.8.4.jar" target="_blank">jackson-module-jaxb-annotations-2.8.4.jar</a></div>
+<div class="myItem myItemSmallerFont">Jackson Core 2.8.4: <a href="https://central.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.4/jackson-core-2.8.4.jar" target="_blank">jackson-core-2.8.4.jar</a></div>
+<div class="myItem myItemSmallerFont">Jackson Databind 2.8.4: <a href="https://central.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.4/jackson-databind-2.8.4.jar" target="_blank">jackson-databind-2.8.4.jar</a></div>
+<div class="myItem myHeaderItem">REST Service Testing</div>
+<div class="myItem myItemSmallerFont">Postman Google Chrome App <a href="https://www.getpostman.com/" target="_blank">from the Chrome store</a></div>
+</div>
+<ul>
+<li>In order to setup a REST service as described in this post, the 
+Eclipse IDE should be installed and configured properly. For detailed 
+step-by-step instructions refer to <a href="https://www.pegaxchange.com/2016/09/02/setup-of-java-ee-development-environment-with-eclipse-neon-and-tomcat-9/" target="_blank">Setup of Java EE Development Environment with Eclipse Neon and Tomcat 9</a></li>
+</ul>
+
+<div class="sectionHeaderJEE"><h2>1&nbsp;&nbsp;Setup of Jersey JAX-RS API User Library in Eclipse</h2></div>
+<p class="block">A <span class="iBold">Dynamic Web Project</span> in Eclipse is a project facet for developing Java web applications as defined in the <a href="http://download.oracle.com/otn-pub/jcp/servlet-3_1-fr-eval-spec/servlet-3_1-final.pdf" target="_blank">Servlet Specification</a>. It provides means to export the project to a web archive (<em>WAR</em>) file for deployment to a Servlet container such as Tomcat.</p>
+<ul>
+<li>For developing REST services in Java, an implementation of the <a href="https://jax-rs-spec.java.net/" target="_blank"><strong>JAX-RS </strong>specification</a> should be used.</li>
+<li><strong>Download</strong> the <a href="https://jersey.java.net/download.html" target="_blank">Jersey JAX-RS 2.0 RI bundle</a> from the Jersey website (<em>version 2.24</em>).</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@7d188256" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-0-Jersey-Bundle-Download.png" alt="Jersey RESTful Web Services in Java - Download">
+<ul>
+<li>Save the ZIP file and unzip it to some folder on the hard disk. Going forward, this folder is called <strong><em>Jersey API root</em></strong>. It contains the files shown below:</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@420fc717" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-1-Jersey-2-Root-Folder-Structure.png" alt="Jersey RESTful Web Services in Java - Installation folder">
+<ul>
+<li>In Eclipse, navigate to <span class="iBold">Window</span> &gt; <span class="iBold">Preferences</span> in the main menu and open <span class="iBold">Java</span> &gt; <span class="iBold">Build Path</span> &gt; <span class="iBold">User Libraries</span> in the Preferences tree menu as shown below.</li>
+<li>Click on the <span class="iBold">New</span> button to setup a new user library for the Jersey REST API.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@302bbba3" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-2-Eclipse-Preferences-User-Libraries_1.png" alt="Eclipse - Java Build Path - Preferences - User Libraries">
+<ul>
+<li>Enter a descriptive name for the user library and click on <span class="iBold">OK</span>.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@25a1f721" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-1_Eclipse_Preferences_UserLibraries_2.png" alt="Eclipse - New User Library - Enter library name">
+<ul>
+<li>The Jersey REST API is now listed under <span class="iBold">User Libraries</span>. Highlight the library and click on <span class="iBold">Add External JARs</span>.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@1c12dbf1" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-1_Eclipse_Preferences_UserLibraries_3.png" alt="Eclipse - Java Build Path - User Library JAX-RS-Jersey-API">
+<ul>
+<li>Navigate to the <span class="iBold">Jersey API root</span> folder and add the JAR file from the <span class="iBold">api</span> folder.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@2019901b" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-1_Eclipse_Preferences_UserLibraries_4_api.png" alt="Jersey RESTful Web Services in Java - javax.ws.rs-api-2.0.1.jar API file">
+<ul>
+<li>Repeat the step and add all JAR files from the <span class="iBold">lib</span> folder.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@4d82c118" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-1_Eclipse_Preferences_UserLibraries_4_lib.png" alt="Jersey RESTful Web Services in Java - lib JAR files">
+<ul>
+<li>Repeat the step again and add all JAR files from the <span class="iBold">ext</span> folder.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@67302f76" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-1_Eclipse_Preferences_UserLibraries_4_ext.png" alt="Jersey RESTful Web Services in Java - ext JAR files">
+<ul>
+<li>The imported JAR files will now be listed underneath the <code class="greenBold">JAX-RS-Jersey-API</code> library.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@6d77ad32" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-1_Eclipse_Preferences_UserLibraries_5_AddedJARs.png" alt="Jersey RESTful Web Services in Java - Eclipse user library">
+<ul>
+<li>Click on <span class="iBold">OK</span> to complete the new user library setup for Jersey JAX-RS development.</li>
+</ul>
+
+<div class="sectionHeaderJEE"><h2>2&nbsp;&nbsp;Configuration of Dynamic Web Project for Java REST Service Development</h2></div>
+<ul>
+<li>An existing dynamic web project in Eclipse needs to be configured 
+properly in order to add support for the development of Java REST 
+services.</li>
+<li>If you don’t have a dynamic web project setup, please refer to the below post for step-by-step instructions:</li>
+</ul>
+<div class="simpleBanner"><a href="https://www.pegaxchange.com/2016/09/02/java-eclipse-tomcat/" target="_blank">Setup Java IDE with Eclipse Neon and Tomcat</a></div>
+<ul>
+<li>Open the project in the <span class="iBold">Eclipse Project Explorer</span> and right click on its name and select <span class="iBold">Properties</span>.</li>
+<li>In the Project Properties dialog, navigate to <span class="iBold">Project Facets</span> in the tree menu and make sure that the Dynamic Web Module version is set to 3.0 or higher.</li>
+<li>Check the <span class="iBold">JAX-RS (REST Web Services)</span> project facet checkbox and set the version to 2.0.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@3cfe2545" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-1_Eclipse_ProjectPreferences_Project_Facets.png" alt="Eclipse - Project Facets - JAX-RS (REST Web Services)">
+<ul>
+<li>Click on the link <span class="iBold">Further configuration available…</span></li>
+<li>In the JAX-RS Capabilities dialog, select <span class="iBold">User Library</span> from the <span class="iBold">JAX-RS Implementation Library</span> dropdown and check the checkbox of the user library that contains the Jersey JAR files.</li>
+<li>Check the checkbox for <span class="iBold">Include this library with this application</span>.</li>
+<li>Do <strong><span style="text-decoration: underline;">not</span> </strong>check the checkbox for <span class="iBold">Update Deployment Descriptor</span>. This would cause Eclipse to generate a default <code class="greenBold">web.xml</code> file. In this example, only annotations are used.</li>
+<li>Click on <span class="iBold">OK</span> to close the dialog and then click <span class="iBold">OK</span> again to close the project properties dialog.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@6c3011d5" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-2_Eclipse_ProjectPreferences_Project_Facets_JAX-RS_Conf.png" alt="Eclipse - Project Facets - JAX-RS Capabilities - Select JAX-RS Implementation Library">
+<ul>
+<li>The <code class="greenBold">JAX-RS-Jersey-API</code> library will now be listed under the <span class="iBold">Libraries</span> node in the <span class="iBold">Project Explorer</span>.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@7e2e9995" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-3_Eclipse_ProjectPreferences_Project_Facets_JAX-RS_Libr.png" alt="Eclipse - Project Explorer - JAX-RS User Library in Java Resources">
+<ul>
+<li>When expanding the <code class="greenBold">JAX-RS-Jersey-API</code> node, all JAR files in the library can be viewed.</li>
+</ul>
+
+<div class="sectionHeaderJEE"><h2>3&nbsp;&nbsp;Creating a Java REST Service in Eclipse with JAX-RS Annotations</h2></div>
+<p class="block">Any new or existing plain old Java object <span class="inParenthesis">(POJO)</span>
+ can be converted into a REST resource by using annotations form the 
+Jersey JAX-RS API. By default, Jersey does not include a JSON parser and
+ support for JSON marshaling/unmarshaling annotations <span class="inParenthesis">(…conversion between Java beans and JSON and vice versa)</span>. A JSON parser API needs to be added as another user library to the dynamic web project.</p>
+<ul>
+<li>Here, the <strong>Jackson API</strong> is used for JSON/XML processing. 7 JAR files need to be added to the project:
+<ul>
+<li><a href="https://central.maven.org/maven2/org/glassfish/jersey/media/jersey-media-json-jackson/2.24/jersey-media-json-jackson-2.24.jar" target="_blank">jersey-media-json-jackson-2.24.jar</a></li>
+<li><a href="https://central.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.4/jackson-core-2.8.4.jar" target="_blank">jackson-core-2.8.4.jar</a></li>
+<li><a href="https://central.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.4/jackson-annotations-2.8.4.jar" target="_blank">jackson-annotations-2.8.4.jar</a></li>
+<li><a href="https://central.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.8.4/jackson-module-jaxb-annotations-2.8.4.jar" target="_blank">jackson-module-jaxb-annotations-2.8.4.jar</a></li>
+<li><a href="https://central.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.4/jackson-databind-2.8.4.jar" target="_blank">jackson-databind-2.8.4.jar</a></li>
+<li><a href="https://central.maven.org/maven2/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.8.4/jackson-jaxrs-base-2.8.4.jar" target="_blank"> jackson-jaxrs-base-2.8.4.jar</a></li>
+<li><a href="https://central.maven.org/maven2/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.8.4/jackson-jaxrs-json-provider-2.8.4.jar" target="_blank">jackson-jaxrs-json-provider-2.8.4.jar</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Create another user library</strong> <span class="inParenthesis">(e.g.: <code class="greenBold">Jackson-Parser-API</code>)</span> as per section 2 and add the 7 JAR files.</li>
+<li>Add the <code class="greenBold">Jackson-Parser-API</code> user library to the <span class="iBold">Java Build Path</span> of the project as shown below.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@3bef58fc" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-4_Eclipse_ProjectBuildPath_Jackson-Parser-API.png" alt="Eclipse - Java Build Path - Jackson Parser API user library"><p>For <strong>initializing Jersey</strong> and for providing package names that contain REST resources, a separate Java class needs to be created.</p>
+<ul>
+<li>This class is annotated with the <code class="greenBold">@ApplicationPath</code> annotation which specifies the base URI <span class="inParenthesis">(uniform resource identifier)</span> for REST resources within a web application.</li>
+<li>In this example, the base URI for REST resources within the <span class="iBold">SampleWebProject</span> is:</li>
+</ul>
+<pre class="prettyprint ppcenter lang-html prettyprinted" style=""><span class="pln">    </span><code><span class="pln">https://localhost:8080/SampleWebProject/</span><span class="nocode ppred">restservices/</span></code>
+</pre>
+<p class="block">The below Java code of the class <code class="greenBold">MyRESTServices</code> shows an example where the Jersey <code class="greenBold">ResourceConfig</code> class is used to create a new Java REST service application as described in the <a href="https://jersey.java.net/documentation/latest/user-guide.html" target="_blank">Jersey user guide</a>.</p>
+<ul>
+<li>Jersey will use the JSON parser in <code class="greenBold">com.fasterxml.jackson.jaxrs.json</code> <span class="inParenthesis">(Jackson-Parser-API library)</span></li>
+<li>Jersey will look for JAX-RS annotated classes in the package <code class="greenBold">com.pegaxchange.java.web.rest</code>.</li>
+<li>For more information on the annotations etc., please refer to the <a href="https://jersey.java.net/documentation/latest/user-guide.html" target="_blank">Jersey documentation</a>.</li>
+</ul>
+<pre class="prettyprint lang-java linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">package</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">pegaxchange</span><span class="pun">.</span><span class="pln">java</span><span class="pun">.</span><span class="pln">web</span><span class="pun">.</span><span class="pln">rest</span><span class="pun">;</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">rs</span><span class="pun">.</span><span class="typ">ApplicationPath</span><span class="pun">;</span></code></li><li class="L3"><code><span class="kwd">import</span><span class="pln"> org</span><span class="pun">.</span><span class="pln">glassfish</span><span class="pun">.</span><span class="pln">jersey</span><span class="pun">.</span><span class="pln">server</span><span class="pun">.</span><span class="typ">ResourceConfig</span><span class="pun">;</span></code></li><li class="L4"><code></code></li><li class="L5"><code><span class="lit">@ApplicationPath</span><span class="pun">(</span><span class="str">"restservices"</span><span class="pun">)</span></code></li><li class="L6"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">MyRESTServices</span><span class="pln"> </span><span class="kwd">extends</span><span class="pln"> </span><span class="typ">ResourceConfig</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L7"><code></code></li><li class="L8"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">MyRESTServices</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L9"><code><span class="pln">        packages</span><span class="pun">(</span><span class="str">"com.fasterxml.jackson.jaxrs.json"</span><span class="pun">);</span></code></li><li class="L0"><code><span class="pln">        packages</span><span class="pun">(</span><span class="str">"com.pegaxchange.java.web.rest"</span><span class="pun">);</span></code></li><li class="L1"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L2"><code><span class="pun">}</span></code></li></ol></pre>
+<ul>
+<li>A Java class can be annotated with the <code class="greenBold">@Path</code> annotation to expose it as a REST resource.</li>
+<li>Public methods can be annotated with <code class="greenBold">@GET</code> and <code class="greenBold">@POST</code> to handle HTTP GET and POST requests.</li>
+<li>The <code class="greenBold">@Consumes</code> and <code class="greenBold">@Produces</code> annotations can be used to specify request and response formats such as XML and JSON.</li>
+</ul>
+<p class="block">The below <code class="blueBold">ProductCatalogResource</code> Java class represents a product catalog that can be accessed through a REST interface. It exposes 3 methods:</p>
+<ul>
+<li>The method <code class="blueBold">searchByCategory</code> handles HTTP GET calls to search the catalog by product category.</li>
+<li>The category name is passed as a URI path parameter using the annotations:</li>
+</ul>
+<p style="text-align: center"><code class="greenBold">@Path(search/category/{category})</code> and <code class="greenBold">@PathParam("category")</code></p>
+<ul>
+<li>The method <code class="blueBold">searchByName</code> searches the catalog by product name, which is passed as a query parameter using the <code class="greenBold">@QueryParam("name")</code> annotation.</li>
+<li>The method <code class="blueBold">insert</code> adds a product to 
+the catalog. It receives a JSON encoded product from the HTTP POST 
+request, inserts the product and returns a JSON string with a status 
+message.</li>
+</ul>
+<pre class="prettyprint lang-java linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">package</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">pegaxchange</span><span class="pun">.</span><span class="pln">java</span><span class="pun">.</span><span class="pln">web</span><span class="pun">.</span><span class="pln">rest</span><span class="pun">;</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">util</span><span class="pun">.*;</span></code></li><li class="L3"><code></code></li><li class="L4"><code><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">rs</span><span class="pun">.</span><span class="typ">Consumes</span><span class="pun">;</span></code></li><li class="L5"><code><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">rs</span><span class="pun">.</span><span class="pln">GET</span><span class="pun">;</span></code></li><li class="L6"><code><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">rs</span><span class="pun">.</span><span class="pln">POST</span><span class="pun">;</span></code></li><li class="L7"><code><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">rs</span><span class="pun">.</span><span class="typ">Path</span><span class="pun">;</span></code></li><li class="L8"><code><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">rs</span><span class="pun">.</span><span class="typ">PathParam</span><span class="pun">;</span></code></li><li class="L9"><code><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">rs</span><span class="pun">.</span><span class="typ">Produces</span><span class="pun">;</span></code></li><li class="L0"><code><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">rs</span><span class="pun">.</span><span class="typ">QueryParam</span><span class="pun">;</span></code></li><li class="L1"><code><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">ws</span><span class="pun">.</span><span class="pln">rs</span><span class="pun">.</span><span class="pln">core</span><span class="pun">.</span><span class="typ">MediaType</span><span class="pun">;</span></code></li><li class="L2"><code></code></li><li class="L3"><code><span class="kwd">import</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">pegaxchange</span><span class="pun">.</span><span class="pln">java</span><span class="pun">.</span><span class="pln">bean</span><span class="pun">.</span><span class="typ">Product</span><span class="pun">;</span></code></li><li class="L4"><code><span class="kwd">import</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">pegaxchange</span><span class="pun">.</span><span class="pln">java</span><span class="pun">.</span><span class="pln">bean</span><span class="pun">.</span><span class="typ">Status</span><span class="pun">;</span></code></li><li class="L5"><code></code></li><li class="L6"><code><span class="lit">@Path</span><span class="pun">(</span><span class="str">"productcatalog"</span><span class="pun">)</span></code></li><li class="L7"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">ProductCatalogResource</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L8"><code></code></li><li class="L9"><code><span class="pln">    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="typ">List</span><span class="pln"> productCatalog</span><span class="pun">;</span></code></li><li class="L0"><code></code></li><li class="L1"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">ProductCatalogResource</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L2"><code><span class="pln">        initializeProductCatalog</span><span class="pun">();</span></code></li><li class="L3"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L4"><code></code></li><li class="L5"><code><span class="pln">    </span><span class="lit">@GET</span></code></li><li class="L6"><code><span class="pln">    </span><span class="lit">@Path</span><span class="pun">(</span><span class="str">"search/category/{category}"</span><span class="pun">)</span></code></li><li class="L7"><code><span class="pln">    </span><span class="lit">@Produces</span><span class="pun">(</span><span class="typ">MediaType</span><span class="pun">.</span><span class="pln">APPLICATION_JSON</span><span class="pun">)</span></code></li><li class="L8"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">[]</span><span class="pln"> searchByCategory</span><span class="pun">(</span><span class="lit">@PathParam</span><span class="pun">(</span><span class="str">"category"</span><span class="pun">)</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> category</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L9"><code></code></li><li class="L0"><code><span class="pln">        </span><span class="typ">List</span><span class="pln"> products </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ArrayList</span><span class="pun">();</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="pln">        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Product</span><span class="pln"> p </span><span class="pun">:</span><span class="pln"> productCatalog</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L3"><code><span class="pln">            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">category </span><span class="pun">!=</span><span class="pln"> </span><span class="kwd">null</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> category</span><span class="pun">.</span><span class="pln">equalsIgnoreCase</span><span class="pun">(</span><span class="pln">p</span><span class="pun">.</span><span class="pln">getCategory</span><span class="pun">()))</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L4"><code><span class="pln">                products</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">p</span><span class="pun">);</span></code></li><li class="L5"><code><span class="pln">            </span><span class="pun">}</span></code></li><li class="L6"><code><span class="pln">        </span><span class="pun">}</span></code></li><li class="L7"><code></code></li><li class="L8"><code><span class="pln">        </span><span class="kwd">return</span><span class="pln"> products</span><span class="pun">.</span><span class="pln">toArray</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">[</span><span class="pln">products</span><span class="pun">.</span><span class="pln">size</span><span class="pun">()]);</span></code></li><li class="L9"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L0"><code><span class="pln">    </span></code></li><li class="L1"><code><span class="pln">    </span><span class="lit">@GET</span></code></li><li class="L2"><code><span class="pln">    </span><span class="lit">@Path</span><span class="pun">(</span><span class="str">"search"</span><span class="pun">)</span></code></li><li class="L3"><code><span class="pln">    </span><span class="lit">@Produces</span><span class="pun">(</span><span class="typ">MediaType</span><span class="pun">.</span><span class="pln">APPLICATION_JSON</span><span class="pun">)</span></code></li><li class="L4"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">[]</span><span class="pln"> searchByName</span><span class="pun">(</span><span class="lit">@QueryParam</span><span class="pun">(</span><span class="str">"name"</span><span class="pun">)</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> name</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L5"><code></code></li><li class="L6"><code><span class="pln">        </span><span class="typ">List</span><span class="pln"> products </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ArrayList</span><span class="pun">();</span></code></li><li class="L7"><code></code></li><li class="L8"><code><span class="pln">        </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">Product</span><span class="pln"> p </span><span class="pun">:</span><span class="pln"> productCatalog</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L9"><code><span class="pln">            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">name </span><span class="pun">!=</span><span class="pln"> </span><span class="kwd">null</span><span class="pln"> </span><span class="pun">&amp;&amp;</span><span class="pln"> name</span><span class="pun">.</span><span class="pln">toLowerCase</span><span class="pun">().</span><span class="pln">startsWith</span><span class="pun">(</span><span class="pln">p</span><span class="pun">.</span><span class="pln">getName</span><span class="pun">().</span><span class="pln">toLowerCase</span><span class="pun">()))</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L0"><code><span class="pln">                products</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">p</span><span class="pun">);</span></code></li><li class="L1"><code><span class="pln">            </span><span class="pun">}</span></code></li><li class="L2"><code><span class="pln">        </span><span class="pun">}</span></code></li><li class="L3"><code></code></li><li class="L4"><code><span class="pln">        </span><span class="kwd">return</span><span class="pln"> products</span><span class="pun">.</span><span class="pln">toArray</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">[</span><span class="pln">products</span><span class="pun">.</span><span class="pln">size</span><span class="pun">()]);</span></code></li><li class="L5"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L6"><code><span class="pln">    </span></code></li><li class="L7"><code><span class="pln">    </span><span class="lit">@POST</span></code></li><li class="L8"><code><span class="pln">    </span><span class="lit">@Path</span><span class="pun">(</span><span class="str">"insert"</span><span class="pun">)</span></code></li><li class="L9"><code><span class="pln">    </span><span class="lit">@Consumes</span><span class="pun">(</span><span class="typ">MediaType</span><span class="pun">.</span><span class="pln">APPLICATION_JSON</span><span class="pun">)</span></code></li><li class="L0"><code><span class="pln">    </span><span class="lit">@Produces</span><span class="pun">(</span><span class="typ">MediaType</span><span class="pun">.</span><span class="pln">APPLICATION_JSON</span><span class="pun">)</span></code></li><li class="L1"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Status</span><span class="pln"> insert</span><span class="pun">(</span><span class="typ">Product</span><span class="pln"> product</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L2"><code><span class="pln">        productCatalog</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="pln">product</span><span class="pun">);</span></code></li><li class="L3"><code><span class="pln">        </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Status</span><span class="pun">(</span><span class="str">"SUCCESS"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Inserted "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> product</span><span class="pun">.</span><span class="pln">getName</span><span class="pun">());</span></code></li><li class="L4"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L5"><code></code></li><li class="L6"><code><span class="pln">    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> initializeProductCatalog</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L7"><code><span class="pln">        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">productCatalog </span><span class="pun">==</span><span class="pln"> </span><span class="kwd">null</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L8"><code><span class="pln">            productCatalog </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ArrayList</span><span class="pun">();</span></code></li><li class="L9"><code><span class="pln">            productCatalog</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Keyboard"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Electronics"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">29.99D</span><span class="pun">));</span></code></li><li class="L0"><code><span class="pln">            productCatalog</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">(</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Mouse"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Electronics"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">9.95D</span><span class="pun">));</span></code></li><li class="L1"><code><span class="pln">            productCatalog</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">(</span><span class="lit">3</span><span class="pun">,</span><span class="pln"> </span><span class="str">"17\" Monitor"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Electronics"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">159.49D</span><span class="pun">));</span></code></li><li class="L2"><code><span class="pln">            productCatalog</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">(</span><span class="lit">4</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Hammer"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Hardware"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">9.95D</span><span class="pun">));</span></code></li><li class="L3"><code><span class="pln">            productCatalog</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">(</span><span class="lit">5</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Screwdriver"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Hardware"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">7.95D</span><span class="pun">));</span></code></li><li class="L4"><code><span class="pln">            productCatalog</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">(</span><span class="lit">6</span><span class="pun">,</span><span class="pln"> </span><span class="str">"English Dictionary"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Books"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">11.39D</span><span class="pun">));</span></code></li><li class="L5"><code><span class="pln">            productCatalog</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">(</span><span class="lit">7</span><span class="pun">,</span><span class="pln"> </span><span class="str">"A House in Bali"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Books"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">15.99D</span><span class="pun">));</span></code></li><li class="L6"><code><span class="pln">            productCatalog</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">(</span><span class="lit">8</span><span class="pun">,</span><span class="pln"> </span><span class="str">"An Alaskan Odyssey"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Books"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">799.99D</span><span class="pun">));</span></code></li><li class="L7"><code><span class="pln">            productCatalog</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">(</span><span class="lit">9</span><span class="pun">,</span><span class="pln"> </span><span class="str">"LCD Projector"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Electronics"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1199.19D</span><span class="pun">));</span></code></li><li class="L8"><code><span class="pln">            productCatalog</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">(</span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Smart Thermostat"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Electronics"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1199.19D</span><span class="pun">));</span></code></li><li class="L9"><code><span class="pln">        </span><span class="pun">}</span></code></li><li class="L0"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L1"><code><span class="pun">}</span></code></li></ol></pre>
+<ul>
+<li>The <code class="blueBold">Product</code> Java bean class shown below is annotated with <code class="greenBold">@XmlRootElement</code> to support XML binding and to allow Jackson to generate JSON and XML representations of Java objects.</li>
+</ul>
+<pre class="prettyprint lang-java linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">package</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">pegaxchange</span><span class="pun">.</span><span class="pln">java</span><span class="pun">.</span><span class="pln">bean</span><span class="pun">;</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">io</span><span class="pun">.</span><span class="typ">Serializable</span><span class="pun">;</span></code></li><li class="L3"><code><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">xml</span><span class="pun">.</span><span class="pln">bind</span><span class="pun">.</span><span class="pln">annotation</span><span class="pun">.</span><span class="typ">XmlRootElement</span><span class="pun">;</span></code></li><li class="L4"><code></code></li><li class="L5"><code><span class="lit">@XmlRootElement</span></code></li><li class="L6"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Product</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">Serializable</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L7"><code></code></li><li class="L8"><code><span class="pln">    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">final</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> serialVersionUID </span><span class="pun">=</span><span class="pln"> </span><span class="lit">6826191735682596960L</span><span class="pun">;</span></code></li><li class="L9"><code></code></li><li class="L0"><code><span class="pln">    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> id</span><span class="pun">;</span></code></li><li class="L1"><code><span class="pln">    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> name</span><span class="pun">;</span></code></li><li class="L2"><code><span class="pln">    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> category</span><span class="pun">;</span></code></li><li class="L3"><code><span class="pln">    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">double</span><span class="pln"> unitPrice</span><span class="pun">;</span></code></li><li class="L4"><code><span class="pln">    </span></code></li><li class="L5"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{}</span><span class="pln"> </span><span class="com">// needed for JAXB</span></code></li><li class="L6"><code></code></li><li class="L7"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Product</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> id</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> name</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> category</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">double</span><span class="pln"> unitPrice</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L8"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">id </span><span class="pun">=</span><span class="pln"> id</span><span class="pun">;</span></code></li><li class="L9"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> name</span><span class="pun">;</span></code></li><li class="L0"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">category </span><span class="pun">=</span><span class="pln"> category</span><span class="pun">;</span></code></li><li class="L1"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">unitPrice </span><span class="pun">=</span><span class="pln"> unitPrice</span><span class="pun">;</span></code></li><li class="L2"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L3"><code></code></li><li class="L4"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> getId</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L5"><code><span class="pln">        </span><span class="kwd">return</span><span class="pln"> id</span><span class="pun">;</span></code></li><li class="L6"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L7"><code></code></li><li class="L8"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> setId</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> id</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L9"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">id </span><span class="pun">=</span><span class="pln"> id</span><span class="pun">;</span></code></li><li class="L0"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> getName</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L3"><code><span class="pln">        </span><span class="kwd">return</span><span class="pln"> name</span><span class="pun">;</span></code></li><li class="L4"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L5"><code></code></li><li class="L6"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> setName</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> name</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L7"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> name</span><span class="pun">;</span></code></li><li class="L8"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L9"><code></code></li><li class="L0"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> getCategory</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L1"><code><span class="pln">        </span><span class="kwd">return</span><span class="pln"> category</span><span class="pun">;</span></code></li><li class="L2"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L3"><code></code></li><li class="L4"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> setCategory</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> category</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L5"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">category </span><span class="pun">=</span><span class="pln"> category</span><span class="pun">;</span></code></li><li class="L6"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L7"><code></code></li><li class="L8"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">double</span><span class="pln"> getUnitPrice</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L9"><code><span class="pln">        </span><span class="kwd">return</span><span class="pln"> unitPrice</span><span class="pun">;</span></code></li><li class="L0"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> setUnitPrice</span><span class="pun">(</span><span class="kwd">double</span><span class="pln"> unitPrice</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L3"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">unitPrice </span><span class="pun">=</span><span class="pln"> unitPrice</span><span class="pun">;</span></code></li><li class="L4"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L5"><code><span class="pun">}</span></code></li></ol></pre>
+<ul>
+<li>The <code class="blueBold">Status</code> Java bean class is used for returning a message when a new product was inserted using the <code class="blueBold">insert</code> method.</li>
+</ul>
+<pre class="prettyprint lang-java linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code><span class="kwd">package</span><span class="pln"> com</span><span class="pun">.</span><span class="pln">pegaxchange</span><span class="pun">.</span><span class="pln">java</span><span class="pun">.</span><span class="pln">bean</span><span class="pun">;</span></code></li><li class="L1"><code></code></li><li class="L2"><code><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">io</span><span class="pun">.</span><span class="typ">Serializable</span><span class="pun">;</span></code></li><li class="L3"><code><span class="kwd">import</span><span class="pln"> javax</span><span class="pun">.</span><span class="pln">xml</span><span class="pun">.</span><span class="pln">bind</span><span class="pun">.</span><span class="pln">annotation</span><span class="pun">.</span><span class="typ">XmlRootElement</span><span class="pun">;</span></code></li><li class="L4"><code></code></li><li class="L5"><code><span class="lit">@XmlRootElement</span></code></li><li class="L6"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Status</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">Serializable</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L7"><code></code></li><li class="L8"><code><span class="pln">    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">final</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> serialVersionUID </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">9130603850117689481L</span><span class="pun">;</span></code></li><li class="L9"><code></code></li><li class="L0"><code><span class="pln">    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> status</span><span class="pun">;</span></code></li><li class="L1"><code><span class="pln">    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> message</span><span class="pun">;</span></code></li><li class="L2"><code><span class="pln">    </span></code></li><li class="L3"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Status</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{}</span><span class="pln"> </span><span class="com">// needed for JAXB</span></code></li><li class="L4"><code><span class="pln">    </span></code></li><li class="L5"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">Status</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> status</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> message</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L6"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">status </span><span class="pun">=</span><span class="pln"> status</span><span class="pun">;</span></code></li><li class="L7"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">message </span><span class="pun">=</span><span class="pln"> message</span><span class="pun">;</span></code></li><li class="L8"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L9"><code><span class="pln">    </span></code></li><li class="L0"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> getStatus</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L1"><code><span class="pln">        </span><span class="kwd">return</span><span class="pln"> status</span><span class="pun">;</span></code></li><li class="L2"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L3"><code></code></li><li class="L4"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> setStatus</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> status</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L5"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">status </span><span class="pun">=</span><span class="pln"> status</span><span class="pun">;</span></code></li><li class="L6"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L7"><code><span class="pln">    </span></code></li><li class="L8"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> getMessage</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L9"><code><span class="pln">        </span><span class="kwd">return</span><span class="pln"> message</span><span class="pun">;</span></code></li><li class="L0"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L1"><code><span class="pln">    </span></code></li><li class="L2"><code><span class="pln">    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> setMessage</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> message</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L3"><code><span class="pln">        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">message </span><span class="pun">=</span><span class="pln"> message</span><span class="pun">;</span></code></li><li class="L4"><code><span class="pln">    </span><span class="pun">}</span></code></li><li class="L5"><code><span class="pun">}</span></code></li></ol></pre>
+
+<div class="sectionHeaderJEE"><h2>4&nbsp;&nbsp;Deploying and Running the Java REST Service on Tomcat 9</h2></div>
+<ul>
+<li>Before deploying the project as a WAR file to an external Tomcat 9 
+server from within Eclipse, it is necessary to configure the project’s <span class="iBold">Deployment Assembly</span>.</li>
+<li>The <code class="greenBold">JAX-RS-Jersey-API</code> user library should already be listed due to the earlier JAX-RS facet setup.</li>
+<li>The <code class="greenBold">Jackson-Parser-API</code> user library needs to be added manually. Click on the <span class="iBold">Add…</span> button.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@767696c9" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-4_Eclipse_ProjectSettings_DeploymentAssembly_1.png" alt="Eclipse - Web Deployment Assembly">
+<ul>
+<li>Select <span class="iBold">Java Build Path Entries</span> as the directive type and click on <span class="iBold">Next &gt;</span> to continue.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@1a248f6b" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-4_Eclipse_ProjectSettings_DeploymentAssembly_2.png" alt="Eclipse - Web Deployment Assembly - Add new assembly directive from Java build path entries">
+<ul>
+<li>Select the <code class="greenBold">Jackson-Parser-API</code> user library that was configured earlier and click on <span class="iBold">Finish</span>.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@51a5ddc6" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-4_Eclipse_ProjectSettings_DeploymentAssembly_3.png" alt="Eclipse - Web Deployment Assembly - Add new assembly directive from user library">
+<ul>
+<li>The <code class="greenBold">Jackson-Parser-API</code> will now be listed as a source for deployment assembly and its JAR files will be added to the web application’s <code class="blackBold">WAR</code> file in the <code class="blackBold">WEB-INF/lib</code> folder.</li>
+<li>Click on <span class="iBold">OK</span> to complete the deployment assembly setup.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@5f04f119" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-4_Eclipse_ProjectSettings_DeploymentAssembly_4.png" alt="Eclipse - Web Deployment Assembly - Define packaging structure for this Java EE Web Application project">
+<ul>
+<li>To deploy the project, right click on the project name in the <span class="iBold">Eclipse Project Explorer</span> and select <span class="iBold">Export</span> &gt; <span class="iBold">WAR file</span> from the context menu.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@20304cd2" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-5_Eclipse_Export_as_WAR.png" alt="Eclipse - Project Explorer - Export dynamic web project as WAR file">
+<ul>
+<li>In the below example, the WAR file is directly saved into the Tomcat server’s <code class="blackBold">webapps</code> folder. Tomcat will automatically deploy the web application and start it.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@d75d1d0" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-5_Eclipse_Export_WAR_File.png" alt="Eclipse - WAR Export - Tomcat webapps destination folder">
+<ul>
+<li>Alternatively, the <span class="iBold">Tomcat manager app</span> can be used to deploy the WAR file and to stop and restart the REST service application.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@123534e8" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-5_Tomcat_Manager_App.png" alt="Apache Tomcat 9 - Manager application">
+<ul>
+<li>A browser can be used to test the exposed methods that use HTTP GET and a REST service testing tool such as <a href="https://www.getpostman.com/" target="_blank">Postman </a>can be used to test the methods that require HTTP POST requests.</li>
+</ul>
+
+<div class="sectionHeaderJEE"><h2>5&nbsp;&nbsp;Testing the Java REST Service with Postman</h2></div>
+<p class="block">Postman is a free Google Chrome based application for testing REST web services and APIs. It can be downloaded from <a href="https://www.getpostman.com/" target="_blank">here</a>.</p>
+<ul>
+<li>Open Postman and enter the URL for the REST service, in this case, the URL for searching the product catalog based on a <span class="iBold">URI path parameter</span> for the category name is:</li>
+</ul>
+<pre class="prettyprint ppcenter lang-html prettyprinted" style=""><span class="pln">    </span><code><span class="pln">https://localhost:8080/SampleWebProject/restservices/productcatalog</span><span class="nocode ppred">/search/category/electronics</span></code>
+</pre>
+<ul>
+<li>The Java REST service returns a JSON array of products in the given 
+category as shown in the below screen shot where the category name is <code class="redBold">electronics</code>.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@6a41938e" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-6_Postman_GetElectronics.png" alt="Postman - HTTP GET request for searching product catalog by category">
+<ul>
+<li>The <code class="blueBold">search</code> method allows to search for a product by name. In this case, the name is included in the URL as a <span class="iBold">query string parameter:</span></li>
+</ul>
+<pre class="prettyprint ppcenter lang-html prettyprinted" style=""><span class="pln">    </span><code><span class="pln">https://localhost:8080/SampleWebProject/restservices/productcatalog/search</span><span class="nocode ppred">?name=Hammer</span></code>
+</pre>
+<ul>
+<li>And the service returns a JSON array of products where the name is <code class="redBold">Hammer</code>.</li>
+</ul>
+<img id="com.pegaxchange.java.bean.Image@483514c8" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-6_Postman_GetHammer_QueryParam.png" alt="Postman - HTTP GET request for searching product catalog by name">
+<ul>
+<li>The <code class="blueBold">insert</code> method of the REST service 
+allows to add a product to the catalog. This method is invoked via HTTP 
+POST and the product to be added is passed as a JSON encoded string in 
+the request body. The URL in this case is:</li>
+</ul>
+<pre class="prettyprint ppcenter lang-html prettyprinted" style=""><span class="pln">    </span><code><span class="pln">https://localhost:8080/SampleWebProject/restservices/productcatalog</span><span class="nocode ppred">/insert</span></code>
+</pre>
+<img id="com.pegaxchange.java.bean.Image@6bedb74f" class="aligncenter size-full shadow mb20" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/2278-6_Postman_Insert_Drill.png" alt="Postman - HTTP POST request for inserting a new product into the catalog">
+<ul>
+<li>This method returns a JSON encoded status message -using the <code class="greenBold">@Produces</code> annotation and the <code class="blueBold">Status</code> Java bean as the return type- indicating that the insert was successful and reflecting the name of the inserted product.</li>
+</ul>
+<div class="sectionHeaderJEE"><h2>Links to Relevant Documentations</h2></div>
+<ol>
+<li><a href="https://jersey.java.net/documentation/latest/user-guide.html" target="_blank">Jersey 2.24 User Guide</a></li>
+<li><a href="https://jsonp.java.net/index.html" target="_blank">Java API For JSON Processing</a></li>
+<li><a href="https://jax-rs-spec.java.net/nonav/2.0-rev-a/apidocs/index.html" target="_blank">Java Doc of JAX-RS 2.0 API Specification</a></li>
+<li><a href="https://docs.oracle.com/cd/E19798-01/821-1841/6nmq2cp1v/index.html" target="_blank">Oracle Example on Building RESTful Web Services with JAX-RS</a></li>
+</ol> </div>
+<footer class="entry-meta">
+</footer>
+</article>
+<div id="comments">
+<h2 id="comments-title">
+15 thoughts on “<span>Create JAX-RS Java REST Service with Eclipse and Tomcat</span>” </h2>
+<ol class="commentlist">
+<li class="comment byuser comment-author-hokapoka even thread-even depth-1" id="li-comment-119">
+<article id="comment-119" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/7c74ae9c39bb78eaadf5e3f75ef6e547.jpeg" srcset="https://secure.gravatar.com/avatar/7c74ae9c39bb78eaadf5e3f75ef6e547?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo" width="68" height="68"><cite class="fn">hokapoka</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-119"><time pubdate="" datetime="2017-01-27T19:20:27+00:00">January 27, 2017 at 7:20 pm</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>This is a very well-written article. 
+Being new to Pega, I particularly appreciate the author’s step by step 
+detailed description along with screenshots. Makes it very easy to 
+follow. Bruno is also very helpful with questions and overall 
+communication.</p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+</li>
+<li class="comment byuser comment-author-samjava odd alt thread-odd thread-alt depth-1" id="li-comment-167">
+<article id="comment-167" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/7bebd3f700225c9ad980b8419f74f2d8.jpeg" srcset="https://secure.gravatar.com/avatar/7bebd3f700225c9ad980b8419f74f2d8?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo" width="68" height="68"><cite class="fn">samjava</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-167"><time pubdate="" datetime="2017-08-22T17:12:25+00:00">August 22, 2017 at 5:12 pm</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>Well done Bruno,</p>
+<p>Can you please provide a tutorial how to insert, retrieve and delete this data via HTML form?</p>
+<p>Thank you</p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+<ul class="children">
+<li class="comment byuser comment-author-brunob1979 bypostauthor even depth-2" id="li-comment-206">
+<article id="comment-206" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/31b5caa9948b90ebfcafabda4c29524c.jpeg" srcset="https://secure.gravatar.com/avatar/31b5caa9948b90ebfcafabda4c29524c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo" width="39" height="39"><cite class="fn">Bruno</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-206"><time pubdate="" datetime="2018-02-03T01:42:57+00:00">February 3, 2018 at 1:42 am</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>Hi samjava,</p>
+<p>that should be fairly straightforward. See <a href="https://www.w3schools.com/html/html_forms.asp" rel="nofollow">https://www.w3schools.com/html/html_forms.asp</a>. Something like this:</p>
+<p><code><br>
+&lt;form action="https://localhost:8080/SampleWebProject/<br>
+&nbsp;&nbsp;restservices/productcatalog/search" method="post"&gt;<br>
+&nbsp;&nbsp;&lt;input type="hidden" name="name" value="Hammer"/&gt;<br>
+&lt;/form&gt;<br>
+</code></p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+</li>
+</ul>
+</li>
+<li class="comment byuser comment-author-sanjeev odd alt thread-even depth-1" id="li-comment-171">
+<article id="comment-171" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/6c32d13f294e13f69106838b4e4a68d4.jpeg" srcset="https://secure.gravatar.com/avatar/6c32d13f294e13f69106838b4e4a68d4?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo" width="68" height="68"><cite class="fn">Sanjeev</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-171"><time pubdate="" datetime="2017-08-30T08:24:14+00:00">August 30, 2017 at 8:24 am</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>One of the best step-by-step tutorial.<br>
+Thank you.</p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+</li>
+<li class="comment byuser comment-author-rwthomas even thread-odd thread-alt depth-1" id="li-comment-205">
+<article id="comment-205" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/9e92188acb3891cb3ed438e50a8ba896.jpeg" srcset="https://secure.gravatar.com/avatar/9e92188acb3891cb3ed438e50a8ba896?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo" width="68" height="68"><cite class="fn">rwthomas</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-205"><time pubdate="" datetime="2018-02-01T02:08:07+00:00">February 1, 2018 at 2:08 am</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>This is a great tutorial on getting the 
+IDE set up and a few code examples. It would be nice to have a small 
+program that you can actually run when you are done. There are some code
+ things that are not included in the tutorial such as package 
+com.pegaxchange.java.bean; I looked to see if these were somewhere else,
+ but couldn’t find them, and can’t run this example without them.</p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+<ul class="children">
+<li class="comment byuser comment-author-brunob1979 bypostauthor odd alt depth-2" id="li-comment-207">
+<article id="comment-207" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/31b5caa9948b90ebfcafabda4c29524c.jpeg" srcset="https://secure.gravatar.com/avatar/31b5caa9948b90ebfcafabda4c29524c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo" width="39" height="39"><cite class="fn">Bruno</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-207"><time pubdate="" datetime="2018-02-03T02:08:53+00:00">February 3, 2018 at 2:08 am</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>Hi,</p>
+<p>you should be able to run the web application as shown. You can 
+either create the packages used in the article or create your own. In 
+Eclipse, when you right-click on your web project in the project 
+explorer and select <strong>New</strong> &gt; <strong>Class</strong>, the <strong>New Java Class</strong> dialog allows you to specify a package. If it does not exist, Eclipse will create it. </p>
+<p>Let me know if you face other issues running this example, I am happy to help.</p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+</li>
+</ul>
+</li>
+<li class="comment byuser comment-author-bellaama even thread-even depth-1" id="li-comment-208">
+<article id="comment-208" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/ae94ea197d5e83fc57637f46fa834dfd.jpeg" srcset="https://secure.gravatar.com/avatar/ae94ea197d5e83fc57637f46fa834dfd?s=136&amp;d=mm&amp;r=g 2x" class="avatar avatar-68 photo" width="68" height="68"><cite class="fn">BellaAma</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-208"><time pubdate="" datetime="2018-02-17T22:50:45+00:00">February 17, 2018 at 10:50 pm</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>HI!<br>
+This tutorial is the most helpful for building a restful API in Java. Thank you very much!<br>
+I need you help please to get a XML encoded status message after calling
+ the insert method and after adding a product as a XML encoded string in
+ the request body.</p>
+<p>M best regards,</p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+<ul class="children">
+<li class="comment byuser comment-author-brunob1979 bypostauthor odd alt depth-2" id="li-comment-209">
+<article id="comment-209" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/31b5caa9948b90ebfcafabda4c29524c.jpeg" srcset="https://secure.gravatar.com/avatar/31b5caa9948b90ebfcafabda4c29524c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo" width="39" height="39"><cite class="fn">Bruno</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-209"><time pubdate="" datetime="2018-02-17T23:32:13+00:00">February 17, 2018 at 11:32 pm</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>Hello! Great! </p>
+<p>Thanks for the feedback, am glad I posted something useful. This 
+approach is a bit cumbersome though. I recommend using Spring for 
+building a REST service, see this tutorial: <a href="https://spring.io/guides/tutorials/bookmarks/" target="_blank" rel="noopener nofollow">https://spring.io/guides/tutorials/bookmarks/</a></p>
+<p>I did post 2 articles on setting up Spring framework support in Eclipse Neon. One relies on Maven, the other does not.</p>
+<p>1. <a href="https://www.pegaxchange.com/2018/02/12/spring-web-mvc-project-maven-archetype/" rel="noopener" target="_blank">Create Spring Web MVC Project from Maven Archetype in Eclipse Neon</a><br>
+2. <a href="https://www.pegaxchange.com/2018/01/24/java-web-project-with-spring-framework/" rel="noopener" target="_blank">Eclipse Neon – Create Java Web Project with Spring – Without Maven</a></p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+<ul class="children">
+<li class="comment byuser comment-author-bellaama even depth-3" id="li-comment-213">
+<article id="comment-213" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/ae94ea197d5e83fc57637f46fa834dfd_002.jpeg" srcset="https://secure.gravatar.com/avatar/ae94ea197d5e83fc57637f46fa834dfd?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo" width="39" height="39"><cite class="fn">BellaAma</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-213"><time pubdate="" datetime="2018-02-19T10:53:07+00:00">February 19, 2018 at 10:53 am</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>HI!<br>
+thank you for these recommandations.<br>
+i will try too</p>
+<p>Regards!</p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+</li>
+</ul>
+</li>
+<li class="comment byuser comment-author-brunob1979 bypostauthor odd alt depth-2" id="li-comment-210">
+<article id="comment-210" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/31b5caa9948b90ebfcafabda4c29524c.jpeg" srcset="https://secure.gravatar.com/avatar/31b5caa9948b90ebfcafabda4c29524c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo" width="39" height="39"><cite class="fn">Bruno</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-210"><time pubdate="" datetime="2018-02-17T23:42:48+00:00">February 17, 2018 at 11:42 pm</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>Have a look at the annotations that decorate the <code>insert</code> method in <code>ProductCatalogResource</code> (line 62). You can change e.g. <code>@Produces(MediaType.APPLICATION_JSON)</code> to <code>@Produces(MediaType.APPLICATION_XML)</code> so that XML is returned instead of JSON. See documentation here: <a href="https://docs.oracle.com/javaee/6/api/javax/ws/rs/core/MediaType.html" target="_blank" rel="noopener nofollow">https://docs.oracle.com/javaee/6/api/javax/ws/rs/core/MediaType.html</a></p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+<ul class="children">
+<li class="comment byuser comment-author-bellaama even depth-3" id="li-comment-211">
+<article id="comment-211" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/ae94ea197d5e83fc57637f46fa834dfd_002.jpeg" srcset="https://secure.gravatar.com/avatar/ae94ea197d5e83fc57637f46fa834dfd?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo" width="39" height="39"><cite class="fn">BellaAma</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-211"><time pubdate="" datetime="2018-02-19T10:51:08+00:00">February 19, 2018 at 10:51 am</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>Hi!<br>
+thank you for the feedback.<br>
+i dit those changes. It gives me an error that i don’t know how to find out solution. Please see the error from Postman:<br>
+HTTP Status 400 – Bad Request<br>
+<b>Message</b> Bad Request<b>Description</b> The server cannot or will 
+not process the request due to something that is perceived to be a 
+client error (e.g., malformed request syntax, invalid request message 
+framing, or deceptive request routing).</p>
+<p>if possible to do something to not get error, please help me!</p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+<ul class="children">
+<li class="comment byuser comment-author-brunob1979 bypostauthor odd alt depth-4" id="li-comment-215">
+<article id="comment-215" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/31b5caa9948b90ebfcafabda4c29524c.jpeg" srcset="https://secure.gravatar.com/avatar/31b5caa9948b90ebfcafabda4c29524c?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo" width="39" height="39"><cite class="fn">Bruno</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-215"><time pubdate="" datetime="2018-02-19T18:32:13+00:00">February 19, 2018 at 6:32 pm</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>Did you also change the <code>@Consumes</code> annotation to accept XML instead of JSON?</p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+<ul class="children">
+<li class="comment byuser comment-author-bellaama even depth-5" id="li-comment-217">
+<article id="comment-217" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/ae94ea197d5e83fc57637f46fa834dfd_002.jpeg" srcset="https://secure.gravatar.com/avatar/ae94ea197d5e83fc57637f46fa834dfd?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo" width="39" height="39"><cite class="fn">BellaAma</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-217"><time pubdate="" datetime="2018-02-20T11:36:26+00:00">February 20, 2018 at 11:36 am</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>Yes, please see the code bellow:<br>
+@POST<br>
+@Path(“insert”)<br>
+@Consumes(MediaType.APPLICATION_XML)<br>
+@Produces(MediaType.APPLICATION_XML)<br>
+public Status insert(Product product) {<br>
+productCatalog.add(product);<br>
+return new Status(“SUCCESS”, “Inserted ” + product.getName());<br>
+}</p>
+<p>I tried addind too jackson-jaxrs-xml-provider-2.8.4.jar but still the same error.<br>
+So i modified the code of MyRESTServices class like this:<br>
+public MyRESTServices(){<br>
+packages(“com.fasterxml.jackson.jaxrs.json”);<br>
+packages(“com.fasterxml.jackson.jaxrs.xml”);<br>
+packages(“com.api.java.web.rest”);<br>
+}</p>
+<p>Then I got other error:<br>
+HTTP Status 500 – Internal Server Error<br>
+<b>Exception</b>javax.servlet.ServletException: Servlet.init() for servlet [com.api.java.web.rest.MyRESTServices] threw exception…</p>
+<p>So i deleted the line (packages(“com.fasterxml.jackson.jaxrs.xml”); ) and went back to the first error.</p>
+<p>Where am I wrong? need your help please.</p>
+</div>
+<div class="reply">
+</div>
+</article>
+</li>
+<li class="comment byuser comment-author-bellaama odd alt depth-5" id="li-comment-218">
+<article id="comment-218" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/ae94ea197d5e83fc57637f46fa834dfd_002.jpeg" srcset="https://secure.gravatar.com/avatar/ae94ea197d5e83fc57637f46fa834dfd?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo" width="39" height="39"><cite class="fn">BellaAma</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-218"><time pubdate="" datetime="2018-02-20T17:43:10+00:00">February 20, 2018 at 5:43 pm</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>Please see my XML data that I want to insert:</p>
+<p> 11<br>
+ISA<br>
+Electronics<br>
+29.99</p>
+<p>The error, could it be because bad data format? If so, how can I do exactly?</p>
+</div>
+<div class="reply">
+</div>
+</article>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="comment byuser comment-author-bellaama even depth-3" id="li-comment-212">
+<article id="comment-212" class="comment">
+<footer class="comment-meta">
+<div class="comment-author vcard">
+<img alt="" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/ae94ea197d5e83fc57637f46fa834dfd_002.jpeg" srcset="https://secure.gravatar.com/avatar/ae94ea197d5e83fc57637f46fa834dfd?s=78&amp;d=mm&amp;r=g 2x" class="avatar avatar-39 photo" width="39" height="39"><cite class="fn">BellaAma</cite> on <a href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#comment-212"><time pubdate="" datetime="2018-02-19T10:51:08+00:00">February 19, 2018 at 10:51 am</time></a> <span class="says">said:</span>
+</div>
+</footer>
+<div class="comment-content"><p>Hi!<br>
+thank you for the feedback.<br>
+i dit those changes. It gives me an error that i don’t know how to find out solution. Please see the error from Postman:<br>
+HTTP Status 400 – Bad Request<br>
+<b>Message</b> Bad Request<b>Description</b> The server cannot or will 
+not process the request due to something that is perceived to be a 
+client error (e.g., malformed request syntax, invalid request message 
+framing, or deceptive request routing).</p>
+<p>if possible to do something to not get error, please help me!</p>
+</div>
+<div class="reply">
+<a rel="nofollow" class="comment-reply-login" href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">Log in to Reply</a> </div>
+</article>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.pegaxchange.com/2016/08/11/jax-rs-java-rest-service-eclipse-tomcat/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="https://www.pegaxchange.com/wp-login.php?redirect_to=https%3A%2F%2Fwww.pegaxchange.com%2F2016%2F08%2F11%2Fjax-rs-java-rest-service-eclipse-tomcat%2F">logged in</a> to post a comment.</p> </div>
+</div> </div>
+</div>
+<div id="secondary" class="widget-area" role="complementary">
+<form method="get" id="searchform" action="https://www.pegaxchange.com/">
+<input class="field" name="s" id="s" placeholder="Search" type="text">
+<input class="submit" name="submit" id="searchsubmit" value="Search" type="submit">
+</form>
+<aside id="categories-2" class="widget widget_categories"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px;background-color:white;margin:15px auto 15px 10px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="3000146608" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script data-cfasync="false" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/email-decode.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><h1 class="widget-title">Categories</h1> <ul>
+<li class="cat-item cat-item-336"><a href="https://www.pegaxchange.com/category/java-development/">Java Development</a> (12)
+</li>
+<li class="cat-item cat-item-476"><a href="https://www.pegaxchange.com/category/mac-os/">Mac OS</a> (3)
+</li>
+<li class="cat-item cat-item-58"><a href="https://www.pegaxchange.com/category/pega-7-activities/">Pega 7 Activities</a> (4)
+</li>
+<li class="cat-item cat-item-77"><a href="https://www.pegaxchange.com/category/pega-7-administration/">Pega 7 Administration</a> (8)
+</li>
+<li class="cat-item cat-item-34"><a href="https://www.pegaxchange.com/category/pega-7-circumstancing/">Pega 7 Circumstancing</a> (1)
+</li>
+<li class="cat-item cat-item-57"><a href="https://www.pegaxchange.com/category/pega-7-data-transforms/">Pega 7 Data Transforms</a> (2)
+</li>
+<li class="cat-item cat-item-600"><a href="https://www.pegaxchange.com/category/pega-7-debugging/">Pega 7 Debugging</a> (1)
+</li>
+<li class="cat-item cat-item-82"><a href="https://www.pegaxchange.com/category/pega-7-file-processing/">Pega 7 File Processing</a> (1)
+</li>
+<li class="cat-item cat-item-87"><a href="https://www.pegaxchange.com/category/pega-7-installation/">Pega 7 Installation</a> (3)
+</li>
+<li class="cat-item cat-item-75"><a href="https://www.pegaxchange.com/category/pega-7-integration/">Pega 7 Integration</a> (7)
+</li>
+<li class="cat-item cat-item-70"><a href="https://www.pegaxchange.com/category/pega-7-reporting/">Pega 7 Reporting</a> (2)
+</li>
+<li class="cat-item cat-item-3"><a href="https://www.pegaxchange.com/category/pega-7-ui-controls/">Pega 7 UI Controls</a> (4)
+</li>
+</ul>
+</aside> <aside id="recent-posts-2" class="widget widget_recent_entries"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px;background-color:white;margin:15px auto 15px 10px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="3000146608" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script> <h1 class="widget-title">Recent Posts</h1> <ul>
+<li>
+<a href="https://www.pegaxchange.com/2018/02/18/read-pega-7-storage-stream-blob/">How to Read Pega 7 Storage Stream BLOB (pzpvstream)</a>
+<span class="post-date">February 18, 2018</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2018/02/12/spring-web-mvc-project-maven-archetype/">Create Spring Web MVC Project from Maven Archetype in Eclipse Neon</a>
+<span class="post-date">February 12, 2018</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2018/01/28/websocket-server-java/">Example of Creating a WebSocket Server in Java</a>
+<span class="post-date">January 28, 2018</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2018/01/24/java-web-project-with-spring-framework/">Eclipse Neon – Create Java Web Project with Spring – Without Maven</a>
+<span class="post-date">January 24, 2018</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2018/01/23/simple-udp-server-and-client-socket-java/">Creating a Simple Java UDP Server and Client Socket</a>
+<span class="post-date">January 23, 2018</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2018/01/18/eclipse-export-dynamic-web-project-to-war/">Eclipse Neon – Export Dynamic Web Project to WAR File</a>
+<span class="post-date">January 18, 2018</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2018/01/11/create-java-project-in-eclipse-neon/">Create Java Project in Eclipse Neon and Setup User Library</a>
+<span class="post-date">January 11, 2018</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2018/01/11/export-a-java-project-in-eclipse-neon/">Export a Java Project in Eclipse Neon to Executable JAR with Manifest</a>
+<span class="post-date">January 11, 2018</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2017/12/07/simple-tcp-ip-server-client-java/">Creating a Simple Java TCP/IP Server and Client Socket</a>
+<span class="post-date">December 7, 2017</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2017/11/21/pega-7-activity-public-html-page/">Configure Pega 7 Activity to Show Public HTML Page</a>
+<span class="post-date">November 21, 2017</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2017/11/14/pega-7-activity-html-page/">Configuring Pega 7 Activity to Show HTML Page</a>
+<span class="post-date">November 14, 2017</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2017/10/19/setup-maven-java-project-macos/">Setting up Maven on Mac OS and Creating Java Project</a>
+<span class="post-date">October 19, 2017</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2017/10/09/create-pega-7-rest-service/">Create Pega 7 REST Service with Service REST Rule</a>
+<span class="post-date">October 9, 2017</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2017/09/21/pega-7-http-proxy/">Configure Pega 7 HTTP Proxy for REST Service Calls</a>
+<span class="post-date">September 21, 2017</span>
+</li>
+<li>
+<a href="https://www.pegaxchange.com/2017/09/16/install-pega-7-tomcat-9-postgresql/">Install Pega 7 on Tomcat and PostgreSQL</a>
+<span class="post-date">September 16, 2017</span>
+</li>
+ </ul>
+</aside><aside id="archives-2" class="widget widget_archive"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px;background-color:white;margin:15px auto 15px 10px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="3000146608" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_3_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><h1 class="widget-title">Archives</h1> <ul>
+<li><a href="https://www.pegaxchange.com/2018/02/">February 2018</a>&nbsp;(2)</li>
+<li><a href="https://www.pegaxchange.com/2018/01/">January 2018</a>&nbsp;(6)</li>
+<li><a href="https://www.pegaxchange.com/2017/12/">December 2017</a>&nbsp;(1)</li>
+<li><a href="https://www.pegaxchange.com/2017/11/">November 2017</a>&nbsp;(2)</li>
+<li><a href="https://www.pegaxchange.com/2017/10/">October 2017</a>&nbsp;(2)</li>
+<li><a href="https://www.pegaxchange.com/2017/09/">September 2017</a>&nbsp;(2)</li>
+<li><a href="https://www.pegaxchange.com/2017/06/">June 2017</a>&nbsp;(2)</li>
+<li><a href="https://www.pegaxchange.com/2017/05/">May 2017</a>&nbsp;(3)</li>
+<li><a href="https://www.pegaxchange.com/2017/04/">April 2017</a>&nbsp;(2)</li>
+<li><a href="https://www.pegaxchange.com/2017/02/">February 2017</a>&nbsp;(1)</li>
+<li><a href="https://www.pegaxchange.com/2017/01/">January 2017</a>&nbsp;(1)</li>
+<li><a href="https://www.pegaxchange.com/2016/10/">October 2016</a>&nbsp;(1)</li>
+<li><a href="https://www.pegaxchange.com/2016/09/">September 2016</a>&nbsp;(1)</li>
+<li><a href="https://www.pegaxchange.com/2016/08/">August 2016</a>&nbsp;(1)</li>
+<li><a href="https://www.pegaxchange.com/2016/07/">July 2016</a>&nbsp;(1)</li>
+<li><a href="https://www.pegaxchange.com/2016/06/">June 2016</a>&nbsp;(1)</li>
+<li><a href="https://www.pegaxchange.com/2016/05/">May 2016</a>&nbsp;(3)</li>
+<li><a href="https://www.pegaxchange.com/2016/04/">April 2016</a>&nbsp;(1)</li>
+<li><a href="https://www.pegaxchange.com/2016/02/">February 2016</a>&nbsp;(2)</li>
+<li><a href="https://www.pegaxchange.com/2016/01/">January 2016</a>&nbsp;(5)</li>
+<li><a href="https://www.pegaxchange.com/2015/12/">December 2015</a>&nbsp;(2)</li>
+</ul>
+</aside><ins id="LS-2731419808" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="2731419808" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_4_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-8638352601" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="8638352601" data-adsbygoogle-status="done"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_5_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-1115085809" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="1115085809" data-adsbygoogle-status="done"><ins id="aswift_6_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_6_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_6" name="aswift_6" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-4068552201" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="4068552201" data-adsbygoogle-status="done"><ins id="aswift_7_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_7_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_7" name="aswift_7" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-7653069802" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="7653069802" data-adsbygoogle-status="done"><ins id="aswift_8_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_8_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_8" name="aswift_8" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-3083269400" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="3083269400" data-adsbygoogle-status="done"><ins id="aswift_9_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_9_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_9" name="aswift_9" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-4560002600" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="4560002600" data-adsbygoogle-status="done"><ins id="aswift_10_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_10_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_10" name="aswift_10" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-6036735803" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="6036735803" data-adsbygoogle-status="done"><ins id="aswift_11_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_11_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_11" name="aswift_11" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-5355612209" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="5355612209" data-adsbygoogle-status="done"><ins id="aswift_12_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_12_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_12" name="aswift_12" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-8309078604" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="8309078604" data-adsbygoogle-status="done"><ins id="aswift_13_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_13_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_13" name="aswift_13" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-3739278206" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="3739278206" data-adsbygoogle-status="done"><ins id="aswift_14_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_14_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_14" name="aswift_14" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-5216011403" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="5216011403" data-adsbygoogle-status="done"><ins id="aswift_15_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_15_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_15" name="aswift_15" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-9646211007" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="9646211007" data-adsbygoogle-status="done"><ins id="aswift_16_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_16_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_16" name="aswift_16" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-2122944208" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="2122944208" data-adsbygoogle-status="done"><ins id="aswift_17_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_17_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_17" name="aswift_17" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-3599677400" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="3599677400" data-adsbygoogle-status="done"><ins id="aswift_18_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_18_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_18" name="aswift_18" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><ins id="LS-5076410602" class="adsbygoogle" style="margin:20px auto 0px 10px;background-color:white;display:inline-block;width:300px;height:600px;" data-ad-client="ca-pub-6129474222386936" data-ad-slot="5076410602" data-adsbygoogle-status="done"><ins id="aswift_19_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_19_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_19" name="aswift_19" style="left:0;position:absolute;top:0;width:300px;height:600px;" width="300" height="600" frameborder="0"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+</div>
+<footer id="colophon" role="contentinfo">
+<div id="site-generator">
+<a href="https://wordpress.org/" title="A Semantic Personal Publishing Platform" rel="generator">Proudly powered by WordPress</a>
+<span class="sep"> | </span>
+Theme: Duster by <a href="https://automattic.com/" rel="designer">Automattic</a>. </div>
+</footer>
+</div>
+<script type="text/javascript" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/comment-reply.js"></script>
+<script type="text/javascript" src="Create%20JAX-RS%20Java%20REST%20Service%20with%20Eclipse%20and%20Tomcat%20-%20Pega%20Exchange_files/wp-embed.js"></script>
+
+</body></html>

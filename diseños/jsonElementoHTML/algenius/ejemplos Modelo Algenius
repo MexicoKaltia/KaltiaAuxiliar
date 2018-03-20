@@ -1,0 +1,40 @@
+//**   headerSeccion1
+  A.actionA++B.actionB++C.actionC...
+//**  headerSeccion2
+12345678901234567890++email
+//** headerSeccion3
+titulo++icono.ico++variosHeaderSeccion3++logo.jpg++fondoHeader.jpg **//
+
+//**  headerSeccion4Algenius
+titulo++descripcion++referencia++boton  **//
+
+
+
+
+**********************************************************************************
+// ** bodySeccion1Algenius
+imagen.jpg++titulo++subTitulo++lorem++lorem++referencia++boton++subTitulo2++referencia++video++pieVideo
+//**  bodySeccionArray1Algenius
+clasePosicion&&iconoObjeto&&tituloObjeto&&textoObjeto&&referenciaObjeto&&boton++clasePosicion&&iconoObjeto&&tituloObjeto&&textoObjeto&&referenciaObjeto&&boton++clasePosicion&&iconoObjeto&&tituloObjeto&&textoObjeto&&referenciaObjeto&&boton
+//**  bodySeccionArray2Algenius
+titulo&&subTitulo++one_half first&&imagen.jpg&&lorem&&tituloObjeto&&subTituloObjeto++one_half&&imagen.jpg&&lorem&&tituloObjeto&&subTituloObjeto
+//**  bodySeccionArray2Algenius
+imagen.jpg&&titulo++one_quarter firts&&referenciaObjeto&&imagenObjeto&&tituloObjeto&&lorem++one_quarter&&referenciaObjeto&&imagenObjeto&&tituloObjeto&&lorem++one_quarter&&referenciaObjeto&&imagenObjeto&&tituloObjeto&&lorem++one_quarter&&referenciaObjeto&&imagenObjeto&&tituloObjeto&&lorem
+//**  bodySeccionArray4Algenius
+one_quarter first&&referenciaObjeto&&imagen.jpg++one_quarter&&referenciaObjeto&&imagen.jpg++one_quarter&&referenciaObjeto&&imagen.jpg++one_quarter&&referenciaObjeto&&imagen.jpg
+
+
+
+**********************************************************************************
+//**  footerSeccion1Algenius
+titulo++lorem1++lorem2
+//**  footerSeccion2Algenius
+titulo++direccionCompleta++telefono1++telefono2++telefono3++email
+//**  footerSeccion3Algenius
+titulo++arrayTextObjeto
+//**  footerSeccionArray1Algenius
+titulo++referenciaObjeto&&tituloObjeto&&fechaObjeto&&texto++referenciaObjeto&&tituloObjeto&&fechaObjeto&&texto
+
+
+//**  footerSeccion4Algenius
+Copyright++by Kaltia

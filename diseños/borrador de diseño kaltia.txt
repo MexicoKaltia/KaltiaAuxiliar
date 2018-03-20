@@ -1,0 +1,103 @@
+Diseño Funcional  VUP 
+Ventana Unica de Procesos.
+	Front 
+		Diseño Estandarizado en base a Tiles Struts, configurados en Base de datos:
+		Responde bajo perfilacion + empresa + giro
+		Perfiles:
+			Nivel 0 = Cliente
+			Nivel A = Caja
+			Nivel B = Supervisor
+			Nivel C = Gerente
+			Nivel D = Administrador
+			
+		Giros:
+			Cada uno de los giros de mediana empresa 
+			Extras
+			
+		El Acceso al Sistema WEB por medio de una URL Publica donde se configura desde la siguiente :
+		
+		Nivel 0
+		http://dominio/empresa/
+		En este nivel solo aparecen los campos de login para uso exclusivo al personal de empresa.
+		Mas aun, es un set de punto de venta por internet, catalogos, pedidos, contacto .
+		*******************************************
+		*		    header login.jsp
+		*		________________________
+		*			   body menu
+		*promociones, catalogos, pedidos, contacto
+		*___________________________________________
+		*left null		              rigth contacto
+		*
+		*
+		*___________________________________________
+		*	  foot lista de derechos reservados
+		********************************************
+		
+		
+		
+		Nivel A
+		http://dominio/empresa/perfilacion.Action
+		Nivel con acceso a los modulos de punto de venta, inventario, catalogo, promociones
+		
+		*******************************************
+		*	header encabezado banner imagen html
+		*	________bienvenido user______________
+		*			   body menu
+		*venta, promociones, catalogos, pedidos pendientes, 
+		*___________________________________________
+		*left null		              rigth contacto
+		*
+		*			transacciones form
+		*			reportes form
+		*___________________________________________
+		*	  foot lista de derechos reservados
+		********************************************
+		
+		
+		Nivel B
+		http://dominio/empresa/perfilacion.Action
+		Nivel con acceso a los modulos de supervicion, corte de  caja, autorizaciones, promociones
+		
+		*******************************************
+		*	header encabezado banner imagen html
+		*	________bienvenido user______________
+		*			   body menu
+		*supervicion, corte de  caja, autorizaciones, promociones 
+		*___________________________________________
+		*left cajeros		              rigth contabilidad
+		*	  activos							reportes
+		*			transacciones form			notificaciones de empresa
+		*			reportes form
+		*___________________________________________
+		*	  foot lista de derechos reservados
+		********************************************
+		
+		
+		Nivel C
+		http://dominio/empresa/perfilacion.Action
+		Nivel con acceso a los modulos de Gestion de pagina, usuarios, 
+		
+		*******************************************
+		*	header encabezado banner imagen html
+		*	________bienvenido user______________
+		*			   body menu
+		*supervicion, corte de  caja, autorizaciones, promociones 
+		*___________________________________________
+		*left cajeros		              rigth contacto
+		*	  activos
+		*			transacciones form
+		*			reportes form
+		*___________________________________________
+		*	  foot lista de derechos reservados
+		********************************************
+		
+		
+		
+	Diseño de plantillas
+		header
+		body
+		left  rigth
+		foot
+		
+	Diseño de elementos
+	Diseño de funcionalidad

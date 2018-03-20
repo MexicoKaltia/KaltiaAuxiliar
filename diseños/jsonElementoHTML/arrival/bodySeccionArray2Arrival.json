@@ -1,0 +1,8 @@
+{
+  "imagen" : "texto",
+  "objeto" : {
+    "porcentaje" :"integer",
+    "textoObjeto" :"texto"
+
+   }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <link href="layout/styles/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+  <link href="layout/styles/complemento.css" rel="stylesheet" type="text/css" media="all">
+
+</head>
+
+<body background-color: "black">
+  <div class="headerSeccion1">
+    <button type="button" class="btn btn-link headerSeccion1_invoke" data-toggle="modal" data-target="#exampleModalCenter">
+  <!--<div class="contenedor1">-->
+    <ul>
+      <hiden class="nuevaLista"></hiden>
+      <li>al</li>
+      <li>be</li>
+      <li>ca</li>
+      <li>de</li>
+      <li>ef</li>
+      <li>fe</li>
+      <li>ge</li>
+    </ul>
+  <!--</div>-->
+</button>
+  </div>
+
+
+  <!-- modal -->
+  <!-- headerSeccion1 -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">headerSeccion1</h5><br><h7>check para borrar</h7>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="headerSeccion1_btnClose">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <!--**********************************************************************************-->
+        <div class="modal-body">
+          <div class="soloLectura">
+            <hiden class="soloLectura_in"></hiden>
+          </div>
+          <!--**********************************************************************************-->
+          <div class="soloEscritura">
+            <div class="input-group input-group-sm">
+              <input class="form-control" id="headerSeccion1_ingresarStr" aria-label="Small" aria-describedby="inputGroup-sizing-sm" type="text">
+              <div class="input-group-prepend" id="agregarStr">
+                <span class="input-group-text btn btn-link complemento1" id="inputGroup-sizing-sm">Agregar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--**********************************************************************************-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="headerSeccion1_btnClose">Cerrar</button>
+          <button type="submit" class="btn btn-primary" id="headerSeccion1_btnSave">Guardar Cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- fin headerSeccion1 -->
+  <script src="layout/scripts/jquery2.min.js"></script>
+  <script src="layout/scripts/jquery.backtotop.js"></script>
+  <script src="layout/scripts/jquery.mobilemenu.js"></script>
+  <script src="layout/scripts/popper.min.js"></script>
+  <script src="layout/scripts/bootstrap.min.js"></script>
+  <script src="layout/scripts/complemento.js"></script>
+
+</body>
+
+</html>

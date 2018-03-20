@@ -1,0 +1,9 @@
+{
+  "titulo" : "text",
+  "direccionCiudad" : "texto",
+  "direccionCalleCP" : "texto",
+  "telefono1" : "integer",
+  "telefono2" : "integer",
+  "telefono3" : "integer",
+  "email":"email"
+}

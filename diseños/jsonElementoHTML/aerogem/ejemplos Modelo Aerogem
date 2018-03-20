@@ -1,0 +1,39 @@
+//**   headerSeccion1
+  A.actionA++B.actionB++C.actionC...
+//**  headerSeccion2
+12345678901234567890++email
+//** headerSeccion3
+titulo++icono.ico++variosHeaderSeccion3++logo.jpg++fondoHeader.jpg **//
+
+//**  headerSeccion4Aerogem
+titulo++descripcion++referencia++boton  **//
+
+
+
+
+**********************************************************************************
+// ** bodySeccion1Aerogem
+imagen.jpg++miniTitulo++titulo++lorem++lorem++lorem++referencia++boton
+//**  bodySeccion2Aerogem
+imagen.jpg++titulo++texto1++referencia++boton
+//**  bodySeccionArray1Aerogem
+titulo&&subTitulo++clasePosicion&&iconoObjeto&&tituloObjeto&&textoObjeto&&referenciaObjeto&&boton++clasePosicion&&iconoObjeto&&tituloObjeto&&textoObjeto&&referenciaObjeto&&boton++clasePosicion&&iconoObjeto&&tituloObjeto&&textoObjeto&&referenciaObjeto&&boton
+//**  bodySeccionArray2Aerogem
+titulo&&subTitulo++clasePosicion&&fechaObjeto&&referencia0Objeto&&texto0Objeto&&subTituloObjeto&&texto1Objeto&referencia1Objeto&&botonObjeto++clasePosicion&&fechaObjeto&&referencia0Objeto&&texto0Objeto&&subTituloObjeto&&texto1Objeto&referencia1Objeto&&botonObjeto++clasePosicion&&fechaObjeto&&referencia0Objeto&&texto0Objeto&&subTituloObjeto&&texto1Objeto&referencia1Objeto&&botonObjeto
+
+
+
+
+**********************************************************************************
+//**  footerSeccion1Aerogem
+titulo++lorem1++lorem2
+//**  footerSeccion2Aerogem
+titulo++direccionCompleta++telefono1++telefono2++telefono3++email
+//**  footerSeccion3Aerogem
+titulo++arrayTextObjeto
+//**  footerSeccionArray1Aerogem
+titulo++referenciaObjeto&&tituloObjeto&&fechaObjeto&&texto++referenciaObjeto&&tituloObjeto&&fechaObjeto&&texto
+
+
+//**  footerSeccion4Aerogem
+Copyright++by Kaltia

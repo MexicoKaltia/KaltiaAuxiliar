@@ -1,0 +1,10 @@
+{
+  "objeto" :{
+    "clasePosicion" :"text",
+    "referenciaObjeto" :"text",
+    "botonObjeto"  :"text",
+    "tituloObjeto"  :"text",
+    "descripcionObjeto" :"lorem",
+    "imagenObjeto" :"img"
+  }
+}

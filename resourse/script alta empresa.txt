@@ -1,0 +1,29 @@
+Script ALTA EMPRESA
+
+	-Definir Empresa en TC_EMPRESA
+		-Atributos : Estilo / Recursos Tiles
+	-Definir Action en TC_ACTION
+	-Definir action en struts.xml
+	-Definir tiles en tiles.xml
+	
+	ACERCA DE NOSOTROS.nosotros++CONTACTO.contacto++REGISTRO.registrar++INGRESA.ingresar
+	
+	
+	javascript:indiceLastOf('<s:property value="#menu2Value"/>');
+	#menu2Value.lastIndexOf("."), #menu2Value.lenght()
+	
+	
+						<a href ="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>">
+							<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))'/>
+						</a>
+						
+						<a href ="<s:property value='identidadVO.idAction'/>/<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>">
+							<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))'/>
+						</a>
+						
+						<a href="<s:url action="<s:property value='#menu2Value'/>"/>">
+								<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))'/>
+							</a>
+							
+						<s:action name='<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>'/>
+						

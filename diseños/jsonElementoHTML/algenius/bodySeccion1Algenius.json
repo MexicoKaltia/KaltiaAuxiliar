@@ -1,0 +1,13 @@
+{
+  "imagen" : "img",
+  "titulo" : "text",
+  "subTitulo" :"text",
+  "texto1" : "lorem",
+  "texto2" : "lorem",
+  "referencia" : "text",
+  "boton" : "text",
+  "texto4" : "text",
+  "subTitulo2" :"text",
+  "video" :"url",
+  "pieVideo" :"text"
+  }

@@ -1,0 +1,53 @@
+idHeader, 
+idEmpresa, 
+headerSeccionArray1,		MenuPrincipal			Home.--Pages.--Dropdown.--Link Text1.--Link Text0.--Link Text2.++Pages.--pages1.--pages3.&&Dropdown.--dor.--dor2.--dor3.++pages1.--pages3.--pages4.&&dor.--dor2.--dor3. 
+headerSeccionArray2, 		SlidePrincipal			imagen1.png&&Title&&Descripcion,...&&accion&&Leer mas...++imagen1.png&&Title&&Descripcion,...&&accion&&Leer mas...imagen1.png&&Title&&Descripcion,...&&accion&&Leer mas...
+headerSeccionArray3,		 
+headerSeccionArray4, 
+headerSeccionArray5, 
+headerSeccion1, 			MenuSecundario			ACERCA DE NOSOTROS.nosotros++CONTACTO.contacto++REGISTRO.registrar++INGRESA.ingresar
+headerSeccion2,				Datos de Contacto		tel 5523259000++Correo actionA@actionA.com++logoEmpresa.png
+headerSeccion3, 			Title&Icon&Varios		title++icon.ico++varios
+headerSeccion4, 			Array					text1++text2++text3++text4++text5++text6++2.jpg++text8++text9 ....
+headerSeccion5, 									headeSeccion4.get0++headeSeccion4.get1++headeSeccion4.get2++headeSeccion4.get3++headeSeccion4.get4++headeSeccion4.get5
+headerAux1, 
+headerAux2, 
+headerAux3, 
+headerAux4, 
+headerAux5, 
+headerVarios
+
+idBody, 
+idEmpresa, 
+bodyFondo, 
+bodyTexto1, 				Array					text1++text2++text3++text4++text5++text6++2.jpg++text8++text9 ....
+bodyTexto2, 
+bodyTexto3, 
+bodyTexto4, 
+bodyTexto5, 
+bodyTexto6, 
+bodyTexto7, 
+bodyTexto8, 
+bodyTexto9, 
+bodyTexto10, 
+bodySeccionArray1, 			Array<object>			03.png&&Titulo++03.png&&text2&&text3&&Text4&&one_half first&&text6++03.png&&text2&&text3&&ext4&&one_half&&text6
+bodySeccionArray2, 									Titulo++one_quarter first&&referencia&&imagen320x320.png&&nombre&&descripcion++one_quarter&&referencia&&imagen320x320.png&&nombre&&descripcion++one_quarter&&referencia&&imagen320x320.png&&nombre&&descripcion
+bodySeccionArray3,									one_quarter first&&referencia&&imagen222x50.png++one_quarter&&referencia&&imagen222x50.png++one_quarter&&referencia&&imagen222x50.png++one_quarter&&referencia&&imagen222x50.png
+bodySeccionArray4, 
+bodySeccionArray5, 
+bodySeccionArray6, 
+bodySeccionArray7
+
+idFooter, 
+idEmpresa, 
+footerLista1, 				Array					Generales++Calle y numero++Pueblo++codigo postal++horario++telefono++correo
+footerLista2, 
+footerLista3, 
+footerLista4, 
+footerLista5, 
+footerSeccionArray1, 		Array<Object>			Title++1.png&&referencia&&Texto1&&texto2++Imagen1.png&&referencia&&Texto1&&texto2
+footerSeccionArray2, 								one_third first&&referencia&&1png++one_third&&referencia&&1png++one_third&&referencia&&1png++one_third first&&referencia&&1png++one_third&&referencia&&1png
+footerAux1, 
+footerAux2, 
+footerVarios
+

@@ -1,0 +1,13 @@
+{
+  "idAction": "varchar",
+  "idEmpresa": "varchar",
+  "actionEstilo": "varchar",
+  "headerRequerido": "tinyint",
+  "bodyRequerido": "tinyint",
+  "footerRequerido": "tinyint",
+  "leftRequerido": "tinyint",
+  "rigthRequerido": "tinyint",
+  "actionPrincipal": "tinyint",
+  "actionSeccion1": "text",
+  "actionSeccion2": "text"
+}

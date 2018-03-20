@@ -1,0 +1,35 @@
+errores en eclipse-tomcat
+https://stackoverflow.com/questions/12340128/failed-to-start-component-standardenginecatalina-standardhostlocalhost-stan
+
+test ssl
+https://www.ssllabs.com/ssltest/analyze.html?d=kaltia.xyz
+
+How To Secure Apache with Let's Encrypt on Ubuntu 14.04 
+https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04
+
+WebMail : SquirrelMail
+https://www.server-world.info/en/note?os=Ubuntu_14.04&p=httpd&f=18
+
+revisar los puertos de mysql
+sudo netstat -plutn | grep -i sql
+
+reset servicios apache / mysql ubuntu
+https://www.cyberciti.biz/faq/star-stop-restart-apache2-webserver/
+https://www.cyberciti.biz/faq/ubuntu-linux-start-restart-stop-apache-web-server/
+http://mixeduperic.com/ubuntu/how-to-start-stop-and-restart-apache-and-mysql-on-ubuntu.html
+
+conectar remotamente Mysql
+https://stackoverflow.com/questions/14779104/how-to-allow-remote-connection-to-mysql
+https://stackoverflow.com/questions/1559955/host-xxx-xx-xxx-xxx-is-not-allowed-to-connect-to-this-mysql-server
+
+deshabilitar apache2-webserver/
+https://askubuntu.com/questions/170640/how-to-disable-apache2-server-from-auto-starting-on-boot
+
+agregar pérmisos de sudo
+gpasswd -a USER sudo
+
+private key
+/etc/ssh/sshd_config
+sudo systemctl reload sshd
+
+ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlIciRqTX5LUc83X/KENRMSyE0v0aKZP8L7nftBK6xoF32B6euRk+uHLkPATXQS2dlgNiy8k9SaCV45hcydrfT5Z0i1kbi3kptfqUHTG6uFBwllhZ4GI/5lQ5KpZV4u/KQZcIcF1TplnxmLQlqCBvXOboxxc0CNOPdpeZLujqbyh3VvlSHta/4WJu7ZiaU/0jkprR7+DobKiS2O72I1n83G8u1NJZOz62IwddgdrOm4KkQ/JYQlO2qm508WqMdivTvfUjJA0LT6omnFjiaMYZA9rh0WbwmXQIJCeEWZGS9e1cOh/6z8iqXFzL32NzxbWhPgk1O7HtOHPsNOi8kOrgRQ== rsa-key-20171218

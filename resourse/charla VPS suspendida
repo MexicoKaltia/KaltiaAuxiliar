@@ -1,0 +1,145 @@
+You need to add this domain first your VPS control panel: https://31.220.60.92:10000/
+Create a Virtual Host in VirtualMin admin panel
+14:30
+Then when the Virtual Host is created for this domain, go a head to your Domain management page in hostinger and set ChildNameservers to point to your VPS IP: https://prnt.sc/hjk6kt
+And the last step, in the domain management page, change the nameservers to be your Childnameservers.
+
+
+
+
+
+hello, at the morning the VPS showme this message :  " VPS is not active and can't be managed"
+whats up ??
+16:47
+Hello there! How are you today? :)
+16:47
+hello Benas, im fine,tnx
+but i have this problem with my VPS
+16:48
+There seems to be a suspension because of this: Hacked and infected with a virus / trojan ( SPAM, DOS attacks are comming from the server )
+[root@vps ~]# lsof -p 16493 COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME .sshd 16493 root cwd DIR 182,200977 4096 790122 /opt/apache-tomcat-8.5.24/conf .sshd 16493 root rtd DIR 182,200977 4096 2 / .sshd 16493 root txt REG 182,200977 1223123 1052887 /usr/bin/.sshd .sshd 16493 root 0u CHR 1,3 0t0 456218232 /dev/null .sshd 16493 root 1u CHR 1,3 0t0 456218232 /dev/null .sshd 16493 root 2u CHR 1,3 0t0 456218232 /dev/null .sshd 16493 root 3uW REG 182,200977 5 793956 /tmp/moni.lod
+I'll unsuspend it make sure to scan your VPS from viruses
+16:50
+but,... i cant see wich viruses
+y configurate my tomcat server to deploy my app
+16:51
+and this VPS cant do use a mail or maleficius http
+16:52
+please i need restore my VPS to analitic my server
+16:53
+In linux VPS, you need to install mail services and SSL.
+You can check this guide how to install mail: https://www.server-world.info/en/note?os=Ubuntu_14.04&p=httpd&f=18
+And this guide for SSL https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04
+16:54
+because this tomcat server are in bones, arent any application to deploy yet
+ok, i take like reference to configurate my VPS
+16:54
+Yes, all the VPS are with nothing in them, you need to install everything
+16:55
+ok, but how i can restore my VPS ?
+16:55
+Everything that was on the VPS should be there, it is now unsuspended and you're able to login to it
+16:56
+ok let me login
+give a second
+16:57
+Sure thing :)
+16:57
+Benas, i confirm my acces success at VPS kaltia.mx
+16:58
+thanks
+but , ill be can to future, that VPS can be suspended again ?
+16:58
+If an abuse report comes, then yes, it might be suspended
+Please make sure to run a virus scan on your VPS
+16:59
+ok, il'lbe verificated
+17:00
+and follow your advice, SSL and viruses
+17:00
+Awesome! Is there anything else I can assist you with? :)
+17:01
+please have a nice day, thank you !!
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12:52
+hello, i need help
+about :  "VPS is not active and can't be managed."
+12:53
+why is the reason ?
+13:22
+Hello.
+13:22
+hi Mantas
+the VPS is kaltia.mx
+13:25
+Yes, I can see that the VPS was suspended due to abuse report.
+This is what I can see from the report:
+Hacked and infected with a virus / trojan ( SPAM, DOS attacks are comming from the server )  
+[root@vps ~]# lsof -p 11312 COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME Lixsyn 11312 root cwd DIR 182,619969 4096 791978 /opt/apache-tomcat-8.5.24/bin Lixsyn 11312 root rtd DIR 182,619969 4096 2 / Lixsyn 11312 root txt REG 182,619969 1223123 789485 /tmp/Lixsyn Lixsyn 11312 root 0u CHR 1,3 0t0 1617182332 /dev/null Lixsyn 11312 root 1u CHR 1,3 0t0 1617182332 /dev/null Lixsyn 11312 root 2u CHR 1,3 0t0 1617182332 /dev/null Lixsyn 11312 root 3uW REG 182,619969 5 789618 /tmp/gates.lod Lixsyn 11312 root 4u IPv4 2025936974 0t0 TCP kaltia.mx:38172->103.193.128.199:9966 (ES TABLISHED) Lixsyn 11312 root 6u raw 0t0 2015489711 00000000:0011->00000000:0000 st=07
+13:26
+why abuse ? , i mean, the apache tomcat is mode off, and any resourse isn´t active
+13:27
+how can i control about this issue ?. Do you have a script to fix this issue
+13:28
+You'd need to reinstall the VPS template in this case and use some precautions to prevent getting hacked in the future.
+I can unsuspend it for you now.
+But please, re-install the OS.
+13:29
+okas,  but i need reconfigurate all my members (tomcat server and Mey sql server and  ssl  cryptos server )
+13:30
+Yes, you will need to reconfigure them.
+13:30
+its only solution for this issue ?
+13:30
+You can try locating and removing the virus from your existing template if you know how to do that.
+13:31
+but i incist, the tomcat app server is mode off, i cant understand why report abuse from /opt/apache-tomcat-8.5.24/bin
+13:32
+It appears that your VPS was hacked and it has a virus on it.
+13:32
+:(
+how can protected my VPS for any risk ?
+13:33
+buy a SSL , maybe ?
+13:33
+You can use additional packages which secures the server, for example:
+https://help.ubuntu.com/community/UFW
+https://www.fail2ban.org/wiki/index.php/Main_Page
+13:34
+ok, i check out it
+so to resolve this issue i need reinstal my SO...
+13:35
+ i'll follow your instructions
+13:35
+The simplest way would be starting from scratch.
+13:36
+i agree
+13:37
+i have my restore, isn't problem
+13:38
+so, this moment can i acces for my VPS ?  for reinstall SO
+13:39
+You can access it now. :)
+13:39
+ok iwas able acces
+13:40
+Finally, how can I avoid hacking, with the links that you sent me, is that enough?
+13:41
+That should be enough, but if you want to take on more precautions - this article should help: https://www.digitalocean.com/community/tutorials/an-introduction-to-securing-your-linux-vps
+13:42
+ok great
+I thank you for your recommendations, I will follow the links
+13:43
+Maybe there is anything more I could help you with today, Hugo? :)
+13:44
+i going to do for restore and good practices to future
+13:45
+thank you Mantas !!
+have a nice day
+13:45
+Okay! Good luck and have a nice day! :)
+closed the chat
+
+
+

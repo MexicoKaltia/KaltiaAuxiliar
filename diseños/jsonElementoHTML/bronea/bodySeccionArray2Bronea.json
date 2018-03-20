@@ -1,0 +1,9 @@
+{
+  "objeto":{
+    "posicionObjeto" :"text",
+    "iconoObjeto" :"text",
+    "referenciaObjeto" :"text",
+    "tituloObjeto" :"text",
+    "descripcionObjeto" :"lorem"
+  }
+}

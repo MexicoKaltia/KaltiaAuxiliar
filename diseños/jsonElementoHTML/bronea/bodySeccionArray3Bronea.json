@@ -1,0 +1,11 @@
+{
+  "titulo" :"text",
+  "descripcion" : "lorem",
+  "objeto" : {
+      "posicionObjeto" :"text",
+      "imagenObjeto" : "img",
+      "referenciaObjeto" : "text",
+      "tituloObjeto" :"text",
+      "descripcionObjeto" :"text"
+  }
+}

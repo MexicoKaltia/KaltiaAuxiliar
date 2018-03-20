@@ -1,0 +1,14 @@
+{
+  "titulo":"text",
+  "subTitulo":"text",
+  "descripcion1":"lorem",
+  "descripcion2":"lorem",
+  "imagen" : "img",
+  "objeto" :{
+      "posicionObjeto" :"text",
+      "referenciaObjeto" : "text",
+      "iconoObjeto" : "text",
+      "tituloObjeto" :"text",
+      "descripcionObjeto" :"lorem"
+  }
+}

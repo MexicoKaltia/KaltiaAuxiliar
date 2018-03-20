@@ -1,0 +1,50 @@
+diseño de base de datos
+	tablas generales TC
+		tc_action
+			idAction	idEmpresa	descAction	
+		tc_general
+			idGeneral	passGeneral	idPerfil idEmpresa	nombreGeneral accesoGeneral horarioGeneral	idCalendario
+		tc_empresa
+			idEmpresa	giroEmpresa	estiloEmpresa	licenciaEmpresa rfcEmpresa	direccionEmpresa
+		tc_perfil
+			idPerfil	idEmpresa	idNombre	consecutivoPerfil
+		tc_cliente
+			idCliente	idEmpresa	nombreCliente	rfcCliente	direccionCliente
+		tc_proovedor
+			idProovedor	idEmpresa	nombreProovedor	rfcProovedor	direccionProovedor
+		tc_articulo
+			idArticulo	idEmpresa	idProovedor	nombreArticulo	caractArticulo	codigoArticulo	costoArticulo	ventaArticulo	promocionArticulo imagenArticulo
+		tc_paquete
+			idPaquete	idArticulo	idEmpresa	promocionPaquete	imagenPaquete
+		tc_total
+			idGeneral	idEmpresa	idPerfil	idCalendario	minimoTotal	maximoTotal	accesoGeneral
+		tc_calendario
+			idCalendario	InhabilCalendario	excepcionCalendario
+		
+	tablas de trabajo TW
+		tw_header
+			idHeader, headerIcono, headerMenu, headerVarios, idEmpresa, idPagina, headerEstilo, headerContacto, headerLogo, headerCorreo, headerJs, headerSlogan, headerFondo, headerTitulo
+		tw_footer
+			idFooter	idEmpresa	idPagina	
+		tw_body
+			idBody, idEmpresa, bodyVarios, idPagina, bodyEstilo, bodyJs, bodyFondo, bodyTexto1, bodyTexto2, bodyTexto3, bodyTexto4, bodyTexto5, bodyTexto6, bodyTexto7, bodyTexto8, bodyTexto9, bodyTexto10, bodyCuadricula, bodyPropiedadesCuadricula, 
+		tw_left
+			idleft	idEmpresa	idPagina	
+		tw_rigth
+			idrigth	idEmpresa	idPagina		
+		tw_estilo
+			idEstilo	cssEstilo	fileEstilo
+		tw_js
+			idJs	jsJs	fileJs
+		tw_pagina
+			idPagina	idEstilo	idJs	idEmpresa	descPagina	camposPagina	idApi menuPagina 
+		tw_api
+			idApi	descApi	fileApi	
+		tw_menu
+			idMenu	idEmpresa	idPerfil	encabezadoMenu	subMenu	subSubMenu	subSubSubMenu	subSubSubSubMenu	subSubSubSubSubMenu
+		
+	tablas de estadistica
+		te_login
+			idGeneral	inicioLogin	finalLogin
+		te_diario
+			idGeneral idTransaccion

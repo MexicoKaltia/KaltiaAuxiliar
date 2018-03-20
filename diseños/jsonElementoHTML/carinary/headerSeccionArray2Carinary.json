@@ -1,0 +1,9 @@
+{
+  "objeto" : {
+    "imagenObjeto" : "img",
+    "tituloObjeto" : "text",
+    "descripcionObjeto" :"lorem",
+    "referenciaObjeto" :"text",
+    "boton" :"text"
+  }
+}
