@@ -43,7 +43,7 @@ CREATE TABLE `tc_userkaltiacontrol` (
 
 LOCK TABLES `tc_userkaltiacontrol` WRITE;
 /*!40000 ALTER TABLE `tc_userkaltiacontrol` DISABLE KEYS */;
-INSERT INTO `tc_userkaltiacontrol` VALUES ('idUserPrimarioUser','user@gmail.com','pass','userPrueba','perfilE','pruebaNombre','bronea',NULL,NULL,NULL),('root','user','pass','userPrimario','perfilAdmin1','userPrimarioNombre',NULL,NULL,NULL,NULL);
+INSERT INTO `tc_userkaltiacontrol` VALUES ('pruebaAdmon','admon@gmail.com','pass','userPruebaA','perfilA','pruebaNombreA','','kaltia','','activo'),('pruebaBronea','user@gmail.com','pass','userPruebaE','perfilE','pruebaNombreE','','bronea','','activo'),('root','user','pass','userPrimario','perfilAdmin1','userPrimarioNombre',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tc_userkaltiacontrol` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-20 23:08:09
+-- Dump completed on 2018-03-31 14:07:06

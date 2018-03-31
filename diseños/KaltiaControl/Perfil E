@@ -1,0 +1,31 @@
+Formato PerfilE
+	Secciones
+	*General
+	*Edicion
+	*Estadistica
+	
+*General
+plantilla para mantenimiento de datos Generales de empresa
+
+	campos:						Edicion		Heigth
+________________________________________________________________________________________________________
+	Nombre de Empresa Completo 	No			varchar45
+	Nombre Corto				No			varchar45
+	IdAction					No			varchar45
+	RFC							No					
+	Direccion					No
+	email						No
+	contacto					No
+	representante				No
+______________________________________________________________________
+	Usuarios				 	No			varchar45
+	User1						Update		varchar45
+	Fecha de acceso				No
+________________________________________________________________________________________________________
+	Status					 	No			varchar45
+	Modo de Pago				No			varchar45
+	Fecha de Corte				No	
+________________________________________________________________________________________________________
+	Factura					 	No			Link de descarga Repositorio
+	
+	

@@ -1,0 +1,47 @@
+Diseño control de elementos
+  Se refiere a los elementos HTML embebidos en cada plantillaModelo.
+
+El standar de cada plantillaModelo esta relacionado con la estuctura html que define el tipo de seccion:
+  -headerSeccion
+  -headerSeccionArray
+  -bodySeccion
+  -bodySeccionArray
+  -footerSeccion
+  -footerSeccionArray
+cada uno de estos elementos estan condicionados por modelo y control en Base de Datos:
+Ee.
+  bronea
+        headerSeccion1     --> tw_header where idEmpresa join idAction
+        headerSeccion2
+        headerSeccionArray1
+
+********************************************************************************************
+Core acceso a control de elementos
+url  http://www.kaltiamx.xyz
+WAR  KaltiaControl
+Spring --4.2
+Tomcat -- version 8.5
+
+Diseño Funcional
+  Acceso usuario - perfiles
+    Perfil AAA --- root General
+    modulos:
+    Perfil A --- vendors
+    modulos ABC Clientes
+    modulos ABC modulos plantillaModelo
+    Perfil E --- idEmpresa
+    modulos ABC modulos plantillaModelo
+
+Descripcion perfil E
+  Ingresar url, implementar Spring Security, para control de usuarios
+  Dependiendo de plantillaModelo de perfil E, se hace referencia a plantillaModelo con los 'modal' de cada uno de los elementosHTML.
+  perfilE puede dar mantenimiento ABC a nivel HTML de cada una de las secciones (texto, imagenes, ABC)
+  El componente 'modal' hace lectura de la estuctura de cada elemento atravez de objeto JSON.
+  El mantenimiento con los nuevos valores de campos y elementoHTML son validados del lado del cliente, menor carga de operacion en server
+  Se genera un nuevo JSON con los valores actualizados, tiene que ser posteado via jQuery.post$(),
+
+  servicios REST dentro de KaltiaControl, son estructurados tipo javaPersistence para ser incluidos BD
+
+
+
+Diseño Tecnico
