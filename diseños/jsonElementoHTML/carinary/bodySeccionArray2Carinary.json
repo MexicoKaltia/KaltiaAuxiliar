@@ -1,0 +1,12 @@
+{
+  "titulo" : "text",
+  "objeto" : {
+      "posicionObjeto" : "text",
+      "referenciaObjeto" : "text" ,
+      "imagenObjeto" : "text",
+      "tituloObjeto" : "text" ,
+      "subTituloObjeto" : "text"
+  }
+}
+
+titulo++one_quarter first&&referencia&&imagen.jpg&&tituloObjeto&&subTituloObjeto++one_quarter&&referencia&&imagen.jpg&&tituloObjeto&&subTituloObjeto++one_quarter&&referencia&&imagen.jpg&&tituloObjeto&&subTituloObjeto++one_quarter&&referencia&&imagen.jpg&&tituloObjeto&&subTituloObjeto

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: kaltiadb
+-- Host: 127.0.0.1    Database: kaltiadb
 -- ------------------------------------------------------
--- Server version	5.7.21
+-- Server version	5.7.18-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tc_usuarioGeneral`
+-- Table structure for table `tc_usuariogeneral`
 --
 
-DROP TABLE IF EXISTS `tc_usuarioGeneral`;
+DROP TABLE IF EXISTS `tc_usuariogeneral`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tc_usuarioGeneral` (
+CREATE TABLE `tc_usuariogeneral` (
   `idUsuarioGeneral` varchar(45) NOT NULL,
   `idEmpresa` varchar(45) DEFAULT NULL,
   `usuarioGeneralStatus` varchar(10) DEFAULT NULL,
@@ -36,13 +36,13 @@ CREATE TABLE `tc_usuarioGeneral` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tc_usuarioGeneral`
+-- Dumping data for table `tc_usuariogeneral`
 --
 
-LOCK TABLES `tc_usuarioGeneral` WRITE;
-/*!40000 ALTER TABLE `tc_usuarioGeneral` DISABLE KEYS */;
-INSERT INTO `tc_usuarioGeneral` VALUES ('userbronea1','bronea','activo','999999','perfilE','varios',NULL,NULL),('userbronea2','bronea','activo','999999','perfilE','varios',NULL,NULL);
-/*!40000 ALTER TABLE `tc_usuarioGeneral` ENABLE KEYS */;
+LOCK TABLES `tc_usuariogeneral` WRITE;
+/*!40000 ALTER TABLE `tc_usuariogeneral` DISABLE KEYS */;
+INSERT INTO `tc_usuariogeneral` VALUES ('userbronea1','bronea','activo','999999','perfilE','varios',NULL,NULL),('userbronea2','bronea','activo','999999','perfilE','varios',NULL,NULL);
+/*!40000 ALTER TABLE `tc_usuariogeneral` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-31 14:07:05
+-- Dump completed on 2018-04-11 20:24:10

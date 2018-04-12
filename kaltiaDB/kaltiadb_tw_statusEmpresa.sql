@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: kaltiadb
+-- Host: 127.0.0.1    Database: kaltiadb
 -- ------------------------------------------------------
--- Server version	5.7.21
+-- Server version	5.7.18-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tw_statusEmpresa`
+-- Table structure for table `tw_statusempresa`
 --
 
-DROP TABLE IF EXISTS `tw_statusEmpresa`;
+DROP TABLE IF EXISTS `tw_statusempresa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tw_statusEmpresa` (
+CREATE TABLE `tw_statusempresa` (
   `idEmpresa` varchar(45) NOT NULL,
   `statusEmpresa` varchar(45) DEFAULT NULL,
   `statusEmpresaFechaCorte` varchar(45) DEFAULT NULL,
@@ -34,13 +34,13 @@ CREATE TABLE `tw_statusEmpresa` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tw_statusEmpresa`
+-- Dumping data for table `tw_statusempresa`
 --
 
-LOCK TABLES `tw_statusEmpresa` WRITE;
-/*!40000 ALTER TABLE `tw_statusEmpresa` DISABLE KEYS */;
-INSERT INTO `tw_statusEmpresa` VALUES ('bronea','activo','999999','999999','999999','999999');
-/*!40000 ALTER TABLE `tw_statusEmpresa` ENABLE KEYS */;
+LOCK TABLES `tw_statusempresa` WRITE;
+/*!40000 ALTER TABLE `tw_statusempresa` DISABLE KEYS */;
+INSERT INTO `tw_statusempresa` VALUES ('bronea','activo','999999','999999','999999','999999');
+/*!40000 ALTER TABLE `tw_statusempresa` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-31 14:07:04
+-- Dump completed on 2018-04-11 20:24:10

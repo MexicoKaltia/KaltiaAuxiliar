@@ -1,0 +1,13 @@
+{
+  "objeto" : {
+    "subtituloObjeto" : "text",
+    "tituloObjeto" : "text",
+    "descricionObjeto" : "lorem",
+    "referenciaObjeto" : "text",
+    "imagenObjeto" : "img",
+    "tipoObjeto" : "text",
+    "botonObjeto" : "text"
+  }
+}
+
+subtituloObjeto&&tituloObjeto&&Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut a magnam distinctio debitis ut repudiandae molestiae officia repellendus.&&referenciaObjeto&&imagen.jpg&&tipoObjeto&&botonObjeto++subtituloObjeto&&tituloObjeto&&Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut a magnam distinctio debitis ut repudiandae molestiae officia repellendus.&&referenciaObjeto&&imagen.jpg&&tipoObjeto&&botonObjeto++subtituloObjeto&&tituloObjeto&&Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut a magnam distinctio debitis ut repudiandae molestiae officia repellendus.&&referenciaObjeto&&imagen.jpg&&tipoObjeto&&botonObjeto++

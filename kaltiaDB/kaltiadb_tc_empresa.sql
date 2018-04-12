@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: kaltiadb
+-- Host: 127.0.0.1    Database: kaltiadb
 -- ------------------------------------------------------
--- Server version	5.7.21
+-- Server version	5.7.18-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -43,7 +43,7 @@ CREATE TABLE `tc_empresa` (
 
 LOCK TABLES `tc_empresa` WRITE;
 /*!40000 ALTER TABLE `tc_empresa` DISABLE KEYS */;
-INSERT INTO `tc_empresa` VALUES ('bronea','bronea','BroneaNombreComplero','broneaRFC','broneaDireccion','broneaEmail','broneaContacto','broneaRepresentante','broneaVarios',NULL);
+INSERT INTO `tc_empresa` VALUES ('bronea','bronea','BroneaNombreComplero','broneaRFC','broneaDireccion','broneaEmail','broneaContacto','broneaRepresentante','broneaVarios',NULL),('idEmpresa','idAction','empresaNombreCompleto','empresaRFC','empresaDireccion','empresaEmail','empresaContacto','empresaRepresentante','empresaVarios','empresaUserKaltia');
 /*!40000 ALTER TABLE `tc_empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-31 14:07:05
+-- Dump completed on 2018-04-11 20:24:09
