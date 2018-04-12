@@ -1,0 +1,13 @@
+{
+  "objeto" : {
+    "referenciaObjeto" : "text",
+    "imagenObjeto" : "text",
+    "tituloObjeto" : "text",
+    "tag1Objeto" : "text",
+    "tag2Objeto" : "text",
+    "descricionObjeto" : "lorem",
+    "botonObjeto" : "text"
+  }
+}
+
+referenciaObjeto&&imagen.jpg&&tituloObjeto&&tag1&&tag2&&Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus doloremque sit dolores libero ut tempora!&&botonObjeto++referenciaObjeto&&imagen.jpg&&tituloObjeto&&tag1&&tag2&&Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus doloremque sit dolores libero ut tempora!&&botonObjeto++referenciaObjeto&&imagen.jpg&&tituloObjeto&&tag1&&tag2&&Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus doloremque sit dolores libero ut tempora!&&botonObjeto++referenciaObjeto&&imagen.jpg&&tituloObjeto&&tag1&&tag2&&Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus doloremque sit dolores libero ut tempora!&&botonObjeto++referenciaObjeto&&imagen.jpg&&tituloObjeto&&tag1&&tag2&&Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus doloremque sit dolores libero ut tempora!&&botonObjeto++referenciaObjeto&&imagen.jpg&&tituloObjeto&&tag1&&tag2&&Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus doloremque sit dolores libero ut tempora!&&botonObjeto++referenciaObjeto&&imagen.jpg&&tituloObjeto&&tag1&&tag2&&Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus doloremque sit dolores libero ut tempora!&&botonObjeto

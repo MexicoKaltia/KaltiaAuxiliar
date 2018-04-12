@@ -1,0 +1,15 @@
+{
+  "imagen" : "img",
+  "titulo" : "text",
+  "descripcion1" : "lorem",
+  "descripcion2" : "lorem",
+  "objeto" : {
+    "posicionObjeto" : "text",
+    "referenciaObjeto" : "text",
+    "iconoObjeto" : "text",
+    "tituloObjeto" : "text",
+    "descripcionObjeto" : "lorem"
+  }
+}
+
+servicios.png&&Kaltia a tu servicio&&Bienvenido a Kaltia Mexico, estamos comprometidos con la satisfaccion del cliente, con atencion personalizada, trato amable y apoyo en tus necesidades de negocio y proyecto.&&Contamos con asesoria funcional para darte el mejor trato con la rapidez que requieres a tus soluciones de webSite. Comparte con nosotros como te podemos apoyar en tu sitio web para que sea mas rentable.++one_third first&&referencia&&fa fa-user-plus&&Atencion Personalizada&&Estamos atentos atus comentarios, asi como el acercamiento personalizado a tus requerimientos++one_third&&referencia&&fa fa-lock&&Integridad Clientes&&Sabemos que tu negocio y/o proyecto son primordiales en la gestion y orden de tu productividad, por ello consideramos un analisis de funcion para tu Sitio Web.++one_third last&&referencia&&fa fa-map-marker&&Posicionamiento&&Podemos realizar un posicionamiento de tu sitioWeb en redes sociales y buscadores web, para una mejor busqueda y atencion a tu negocio.

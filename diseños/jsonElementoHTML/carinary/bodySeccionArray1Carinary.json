@@ -1,0 +1,13 @@
+{
+  "imagen" : "img",
+  "titulo" : "text",
+  "objeto" : {
+      "posicionObjeto" : "text",
+      "imagenObjeto" : "text",
+      "descripcionObjeto" : "lorem" ,
+      "tituloObjeto" : "text" ,
+      "subTituloObjeto" : "text"
+  }
+}
+
+imagen.jpg&&titulo++one_half first&&imagen.jpg&&Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat repellendus, necessitatibus velit, dolorem, culpa distinctio quibusdam facilis doloribus ex praesentium magni earum quasi quae natus id. Sapiente, maxime suscipit velit facilis voluptatem at.&&tituloObjeto&&subTituloObjeto++one_half&&imagen.jpg&&Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat repellendus, necessitatibus velit, dolorem, culpa distinctio quibusdam facilis doloribus ex praesentium magni earum quasi quae natus id. Sapiente, maxime suscipit velit facilis voluptatem at.&&tituloObjeto&&subTituloObjeto

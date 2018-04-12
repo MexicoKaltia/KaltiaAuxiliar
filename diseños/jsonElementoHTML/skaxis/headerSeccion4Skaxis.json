@@ -1,0 +1,12 @@
+{
+  "referencia1" : "text",
+  "imagen1" : "img",
+  "referencia2" : "text",
+  "imagen2" : "img",
+  "referencia3" : "text",
+  "imagen3" : "img",
+  "referencia4" : "text",
+  "boton" : "text"
+}
+
+referencia1++imagen.jpg++referencia2++imagen.jpg++referencia3++imagen.jpg++referencia4++boton

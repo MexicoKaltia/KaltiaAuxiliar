@@ -1,0 +1,8 @@
+{
+  "titulo" : "text",
+  "subtitulo" : "text",
+  "fecha" : "date",
+  "descripcion" : "lorem"
+}
+
+titulo ++subtitulo++ 2018-04-10 ++ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus optio, aliquam rem necessitatibus deleniti placeat saepe odit, reprehenderit ab natus accusamus impedit!
