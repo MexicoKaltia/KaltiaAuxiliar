@@ -16,30 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tc_promocion`
+-- Table structure for table `tc_empresa`
 --
 
-DROP TABLE IF EXISTS `tc_promocion`;
+DROP TABLE IF EXISTS `tc_empresa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tc_promocion` (
-  `idPromocion` varchar(45) NOT NULL,
-  `idEmpresa` varchar(45) DEFAULT NULL,
-  `idArticulos` varchar(45) DEFAULT NULL,
-  `promocionVarios0` varchar(45) DEFAULT NULL,
-  `promocionVarios1` varchar(450) DEFAULT NULL,
-  PRIMARY KEY (`idPromocion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `tc_empresa` (
+  `idEmpresa` varchar(45) NOT NULL,
+  `idAction` varchar(45) NOT NULL,
+  `empresaNombreCompleto` varchar(100) NOT NULL,
+  `empresaRFC` varchar(15) DEFAULT NULL,
+  `empresaDireccion` varchar(450) DEFAULT NULL,
+  `empresaEmail` varchar(65) DEFAULT NULL,
+  `empresaContacto` varchar(45) DEFAULT NULL,
+  `empresaRepresentante` varchar(45) DEFAULT NULL,
+  `empresaVarios` varchar(45) DEFAULT NULL,
+  `empresaUserKaltia` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idEmpresa`,`idAction`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tc_promocion`
+-- Dumping data for table `tc_empresa`
 --
 
-LOCK TABLES `tc_promocion` WRITE;
-/*!40000 ALTER TABLE `tc_promocion` DISABLE KEYS */;
-INSERT INTO `tc_promocion` VALUES ('01hambur','hambur','4,5','Nombre PromoVarios0','Descripcion de PromoVarios1'),('01puroCuero','PuroCuero','1,2','Puro Cuero Promocion','Hoy por fin de año, llevate una linda bolsa y te llevas de regalo un souvenir del lindo país de Mexico');
-/*!40000 ALTER TABLE `tc_promocion` ENABLE KEYS */;
+LOCK TABLES `tc_empresa` WRITE;
+/*!40000 ALTER TABLE `tc_empresa` DISABLE KEYS */;
+INSERT INTO `tc_empresa` VALUES ('bronea','bronea','BroneaNombreComplero','broneaRFC','broneaDireccion','broneaEmail','broneaContacto','broneaRepresentante','broneaVarios',NULL),('idEmpresa','idAction','empresaNombreCompleto','empresaRFC','empresaDireccion','empresaEmail','empresaContacto','empresaRepresentante','empresaVarios','empresaUserKaltia');
+/*!40000 ALTER TABLE `tc_empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
