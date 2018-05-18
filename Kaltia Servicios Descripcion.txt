@@ -1,0 +1,40 @@
+kaltia Servicios
+-Modulo Kaltia que da soporte y servicio tecnico y funcional al sector de clientes tipo 'servicio', quien basicamente la persona fisica o moral brindan sus profesiones u oficios:
+	-contadores
+	-doctores
+		-ojos
+		-cabeza
+		-infantiles
+		-especialidades
+	-enfermeros
+	-abogados
+	-profesores
+	-barberias
+	-esteticas
+	-mecanicos
+	-electricistas
+	-SPA
+	-salones de fiesta
+	-banquetes
+	-servicios meseros
+	-mariachis
+	-payasos
+	-veterinaria
+	
+Las funciones principales :
+	-quienes somos
+	-especialidades
+	-casos de experiencia
+	-ubicacion
+	-tarjeta por articulo
+	-agendar citas	
+	-cliente
+		-abc
+		-seguimiento
+		-historial
+	-foto almacen
+		-imagenes
+		-video
+		-blog	
+	-correo
+	
