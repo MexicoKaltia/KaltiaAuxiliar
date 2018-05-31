@@ -1,0 +1,5 @@
+sudo iptables -A INPUT -p tcp -i eth0 --dport 3306 -j ACCEPT
+
+sudo iptables -A INPUT -p tcp -i eth0 --dport 8012 -j ACCEPT
+
+sudo iptables -A OUTPUT -o eth0 -p tcp --sport 8012 -m state --state ESTABLISHED -j ACCEPT

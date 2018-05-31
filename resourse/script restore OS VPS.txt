@@ -4,6 +4,11 @@ configurar security
 https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04
 https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-putty-on-digitalocean-droplets-windows-users
 
+habilitar firewall y acceso a los puertos
+https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04
+
+
 crear un nuevo usuario hgrc
 	adduser hgrc
 		http://culturacion.com/como-crear-cuentas-de-usuario-en-linux/

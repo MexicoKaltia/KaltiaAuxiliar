@@ -25,6 +25,12 @@ https://stackoverflow.com/questions/1559955/host-xxx-xx-xxx-xxx-is-not-allowed-t
 deshabilitar apache2-webserver/
 https://askubuntu.com/questions/170640/how-to-disable-apache2-server-from-auto-starting-on-boot
 
+habilitar firewall y acceso a los puertos
+https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04
+
+
+
 agregar pérmisos de sudo
 gpasswd -a USER sudo
 
