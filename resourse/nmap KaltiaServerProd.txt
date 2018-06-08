@@ -1,0 +1,260 @@
+Starting Nmap 7.70 ( https://nmap.org ) at 2018-05-31 16:22 Hora de verano central (México)
+
+NSE: Loaded 148 scripts for scanning.
+
+NSE: Script Pre-scanning.
+
+Initiating NSE at 16:22
+
+Completed NSE at 16:22, 0.00s elapsed
+
+Initiating NSE at 16:22
+
+Completed NSE at 16:22, 0.00s elapsed
+
+Initiating Ping Scan at 16:22
+
+Scanning 31.220.60.92 [4 ports]
+
+Completed Ping Scan at 16:22, 0.46s elapsed (1 total hosts)
+
+Initiating Parallel DNS resolution of 1 host. at 16:22
+
+Completed Parallel DNS resolution of 1 host. at 16:22, 0.08s elapsed
+
+Initiating SYN Stealth Scan at 16:22
+
+Scanning 31.220.60.92 [1000 ports]
+
+Discovered open port 80/tcp on 31.220.60.92
+
+Discovered open port 443/tcp on 31.220.60.92
+
+Discovered open port 3306/tcp on 31.220.60.92
+
+Discovered open port 22/tcp on 31.220.60.92
+
+Discovered open port 10000/tcp on 31.220.60.92
+
+Completed SYN Stealth Scan at 16:23, 13.09s elapsed (1000 total ports)
+
+Initiating Service scan at 16:23
+
+Scanning 5 services on 31.220.60.92
+
+Completed Service scan at 16:24, 108.40s elapsed (5 services on 1 host)
+
+Initiating OS detection (try #1) against 31.220.60.92
+
+Retrying OS detection (try #2) against 31.220.60.92
+
+Initiating Traceroute at 16:24
+
+Completed Traceroute at 16:24, 0.02s elapsed
+
+Initiating Parallel DNS resolution of 3 hosts. at 16:24
+
+Completed Parallel DNS resolution of 3 hosts. at 16:25, 16.50s elapsed
+
+NSE: Script scanning 31.220.60.92.
+
+Initiating NSE at 16:25
+
+Completed NSE at 16:25, 31.09s elapsed
+
+Initiating NSE at 16:25
+
+Completed NSE at 16:25, 0.11s elapsed
+
+Nmap scan report for 31.220.60.92
+
+Host is up (0.010s latency).
+
+Not shown: 989 filtered ports
+
+PORT      STATE  SERVICE       VERSION
+
+22/tcp    open   ssh           OpenSSH 7.2p2 Ubuntu 4ubuntu2.4 (Ubuntu Linux; protocol 2.0)
+
+| ssh-hostkey: 
+
+|   2048 bd:63:01:61:9d:67:83:d8:b5:9f:b7:20:e6:4b:1a:75 (RSA)
+
+|   256 5f:eb:f2:af:72:a8:38:f2:f7:ac:a1:80:d3:42:72:26 (ECDSA)
+
+|_  256 ce:9f:1c:be:64:48:4a:de:1a:b4:90:d5:a2:bc:47:8c (ED25519)
+
+23/tcp    closed telnet
+
+53/tcp    closed domain
+
+80/tcp    open   http
+
+| fingerprint-strings: 
+
+|   FourOhFourRequest: 
+
+|     HTTP/1.0 404 Not Found
+
+|     Date: Thu, 31 May 2018 21:23:18 GMT
+
+|     Content-Length: 0
+
+|     Via: 1.0 proxy_nl.presidencia.gob.mx:80 (Cisco-WSA/9.0.1-162)
+
+|     Connection: close
+
+|   GetRequest: 
+
+|     HTTP/1.0 404 Not Found
+
+|     Date: Thu, 31 May 2018 21:23:09 GMT
+
+|     Content-Length: 0
+
+|     Via: 1.0 proxy_nl.presidencia.gob.mx:80 (Cisco-WSA/9.0.1-162)
+
+|     Connection: close
+
+|   HTTPOptions, RTSPRequest: 
+
+|     HTTP/1.0 404 Not Found
+
+|     Date: Thu, 31 May 2018 21:23:13 GMT
+
+|     Content-Length: 0
+
+|     Via: 1.0 proxy_nl.presidencia.gob.mx:80 (Cisco-WSA/9.0.1-162)
+
+|_    Connection: close
+
+| http-methods: 
+
+|_  Supported Methods: GET HEAD POST OPTIONS
+
+|_http-title: Site doesn't have a title.
+
+443/tcp   open   https?
+
+3306/tcp  open   mysql         MySQL 5.7.22-0ubuntu0.16.04.1
+
+| mysql-info: 
+
+|   Protocol: 10
+
+|   Version: 5.7.22-0ubuntu0.16.04.1
+
+|   Thread ID: 50452
+
+|   Capabilities flags: 63487
+
+|   Some Capabilities: SupportsCompression, IgnoreSigpipes, ConnectWithDatabase, IgnoreSpaceBeforeParenthesis, LongPassword, Support41Auth, LongColumnFlag, SupportsLoadDataLocal, SupportsTransactions, ODBCClient, FoundRows, DontAllowDatabaseTableColumn, InteractiveClient, Speaks41ProtocolNew, Speaks41ProtocolOld, SupportsMultipleStatments, SupportsAuthPlugins, SupportsMultipleResults
+
+|   Status: Autocommit
+
+|   Salt: I>\x1FWTyZj>G\x14-w\x1BM\x02\x013hi
+
+|_  Auth Plugin Name: 96
+
+3389/tcp  closed ms-wbt-server
+
+5800/tcp  closed vnc-http
+
+5900/tcp  closed vnc
+
+8090/tcp  closed opsmessaging
+
+10000/tcp open   http          MiniServ 1.870 (Webmin httpd)
+
+|_http-favicon: Unknown favicon MD5: 87C736BD099AAA3CAEC1546647426D2A
+
+| http-methods: 
+
+|_  Supported Methods: GET HEAD POST OPTIONS
+
+|_http-title: Site doesn't have a title (text/html; Charset=iso-8859-1).
+
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+
+SF-Port80-TCP:V=7.70%I=7%D=5/31%Time=5B1067C1%P=i686-pc-windows-windows%r(
+
+SF:GetRequest,A4,"HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Thu,\x2031\
+
+SF:x20May\x202018\x2021:23:09\x20GMT\r\nContent-Length:\x200\r\nVia:\x201\
+
+SF:.0\x20proxy_nl\.presidencia\.gob\.mx:80\x20\(Cisco-WSA/9\.0\.1-162\)\r\
+
+SF:nConnection:\x20close\r\n\r\n")%r(HTTPOptions,A4,"HTTP/1\.0\x20404\x20N
+
+SF:ot\x20Found\r\nDate:\x20Thu,\x2031\x20May\x202018\x2021:23:13\x20GMT\r\
+
+SF:nContent-Length:\x200\r\nVia:\x201\.0\x20proxy_nl\.presidencia\.gob\.mx
+
+SF::80\x20\(Cisco-WSA/9\.0\.1-162\)\r\nConnection:\x20close\r\n\r\n")%r(RT
+
+SF:SPRequest,A4,"HTTP/1\.0\x20404\x20Not\x20Found\r\nDate:\x20Thu,\x2031\x
+
+SF:20May\x202018\x2021:23:13\x20GMT\r\nContent-Length:\x200\r\nVia:\x201\.
+
+SF:0\x20proxy_nl\.presidencia\.gob\.mx:80\x20\(Cisco-WSA/9\.0\.1-162\)\r\n
+
+SF:Connection:\x20close\r\n\r\n")%r(FourOhFourRequest,A4,"HTTP/1\.0\x20404
+
+SF:\x20Not\x20Found\r\nDate:\x20Thu,\x2031\x20May\x202018\x2021:23:18\x20G
+
+SF:MT\r\nContent-Length:\x200\r\nVia:\x201\.0\x20proxy_nl\.presidencia\.go
+
+SF:b\.mx:80\x20\(Cisco-WSA/9\.0\.1-162\)\r\nConnection:\x20close\r\n\r\n");
+
+Device type: general purpose|WAP|storage-misc|router|load balancer
+
+Running (JUST GUESSING): Linux 2.6.X (97%), Linksys embedded (93%), Netgear embedded (92%), Synology embedded (92%), Vodafone embedded (91%), F5 Networks embedded (89%), F5 Networks TMOS 11.1.X (88%), Ubiquiti embedded (88%)
+
+OS CPE: cpe:/o:linux:linux_kernel:2.6.32 cpe:/h:linksys:befw11s4 cpe:/o:linux:linux_kernel:2.6 cpe:/h:netgear:readynas_3200 cpe:/h:synology:rt1900ac cpe:/h:vodafone:easybox_802 cpe:/o:f5:tmos:11.1
+
+Aggressive OS guesses: Linux 2.6.32 (97%), Linksys BEFW11S4 WAP (93%), Netgear ReadyNAS 3200 NAS device (Linux 2.6) (92%), Synology RT1900ac router (92%), Vodafone EasyBox 802 wireless ADSL router (91%), Linux 2.6.11 - 2.6.18 (89%), F5 BIG-IP load balancer (89%), F5 3600 LTM load balancer (88%), Ubiquiti WAP (Linux 2.6.32) (88%), Palo Alto PA-500 firewall (87%)
+
+No exact OS matches for host (test conditions non-ideal).
+
+Uptime guess: 3.222 days (since Mon May 28 11:05:33 2018)
+
+Network Distance: 3 hops
+
+TCP Sequence Prediction: Difficulty=260 (Good luck!)
+
+IP ID Sequence Generation: All zeros
+
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+
+
+TRACEROUTE (using port 53/tcp)
+
+HOP RTT     ADDRESS
+
+1   1.00 ms 172.20.161.254
+
+2   0.00 ms 10.210.0.10
+
+3   0.00 ms 31.220.60.92
+
+
+
+NSE: Script Post-scanning.
+
+Initiating NSE at 16:25
+
+Completed NSE at 16:25, 0.00s elapsed
+
+Initiating NSE at 16:25
+
+Completed NSE at 16:25, 0.00s elapsed
+
+Read data files from: C:\Program Files (x86)\Nmap
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+
+Nmap done: 1 IP address (1 host up) scanned in 177.94 seconds
+
+           Raw packets sent: 3049 (138.684KB) | Rcvd: 85 (4.133KB)
+
