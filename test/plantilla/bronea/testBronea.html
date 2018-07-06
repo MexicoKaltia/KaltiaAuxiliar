@@ -9,6 +9,7 @@
   <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
   <link href="layout/styles/bootstrap.css" rel="stylesheet" type="text/css" media="all">
   <link href="layout/styles/complemento.css" rel="stylesheet" type="text/css" media="all">
+  <link href="layout/styles/complementoBody2.css" rel="stylesheet" type="text/css" media="all">
 
 </head>
 
@@ -35,7 +36,7 @@
   <!-- headerSeccion1 -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
+      <div class="modal-content" style="background-image:url('images/imagen.jpg');">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">headerSeccion1</h5><br><h7>check para borrar</h7>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="headerSeccion1_btnClose">
@@ -44,9 +45,18 @@
         </div>
         <!--**********************************************************************************-->
         <div class="modal-body">
+          <div class="container auth" class="clear">
+          <div id="big-form" class="well auth-box">
+
+          <form action=""><fieldset>
           <div class="soloLectura">
             <hiden class="soloLectura_in"></hiden>
           </div>
+          <input id="textinput" name="nombreCompleto" placeholder="Nombre de Empresa Completo" class="form-control input-md" type="text"  value="Chilpancingo">
+          </fieldset></form>
+          </div>
+          </div>
+
           <!--**********************************************************************************-->
           <div class="soloEscritura">
             <div class="input-group input-group-sm">
@@ -72,6 +82,7 @@
   <script src="layout/scripts/popper.min.js"></script>
   <script src="layout/scripts/bootstrap.min.js"></script>
   <script src="layout/scripts/complemento.js"></script>
+  <script src="layout/scripts/complementoBody2.js"></script>
 
 </body>
 
