@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
-    <link href="css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/complemento.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/complementoBody2.css" rel="stylesheet" type="text/css" media="all">
+  <link href="css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" media="all">
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+  <link href="css/complemento.css" rel="stylesheet" type="text/css" media="all">
+  <link href="css/complementoBody2.css" rel="stylesheet" type="text/css" media="all">
 </head>
-     <div class="container auth" class="clear">
-       <div id="big-form" class="well auth-box">
-           <form action=""><fieldset>   
-              <input id="textinput" name="nombreCompleto" placeholder="Nombre de Empresa Completo" class="form-control input-md" type="text"  value="Chilpancingo"> <hr>
-
-        <div class='row'>
-          <div class='col-md-1'>
-            <label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label>
-          </div>
-          <div class='col-md-3'>
-            <input id='referencia'  class='form-control input-md' type='text'>
-          </div>
-        </div>
-        <div class='row'>
-          <div class='col-md-1'>
-            <label style='color:#00FFFF;font-size:12px;'>Texto</label>
-          </div>
-          <div class='col-md-3'>
-            <input id='texto'  class='form-control input-md' type='text'>
-          </div>
-        </div>
-        <div class='input-group-prepend' id='agregarStr'>
-          <span class='btn btn-link' id='inputGroup-sizing-sm'>Agregar</span>
-        </div>
 
 
-       </fieldset>
-     </form>   
-       </div>
-    </div>                   
- 
+<div class="container auth" class="clear">
+ <div id="big-form" class="well auth-box">
+   <form action=""><fieldset>   
+    <input id="textinput" name="nombreCompleto" placeholder="Nombre de Empresa Completo" class="form-control input-md" type="text"  value="Chilpancingo"> <hr>
+    <div class="row">
+      <span class="col-md-1 col-md-offset-2 text-center"><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></span>
+      <div class="col-md-8">
+        <input id="referencia" name="referencia" type="text" placeholder="referencia" class="form-control">
+      </div>
+    </div>
+    <div class="row">
+      <span class="col-md-1 col-md-offset-2 text-center"><label style='color:#00FFFF;font-size:12px;'>Texto</label></span>
+      <div class="col-md-8">
+        <input id="texto" name="texto" type="text" placeholder="Texto" class="form-control">
+      </div>
+    </div>
+    <div class='input-group-prepend' id='agregarStr'>
+      <span class='btn btn-link' id='inputGroup-sizing-sm'>Agregar</span>
+    </div>
+  </fieldset>
+</form>   
+</div>
+</div>    
+
+<form id="upload-file-form">
+  <label for="upload-file-input">Upload your file:</label>
+  <input id="upload-file-input" type="file" name="uploadfile" accept="image/jpeg" />
+</form>
+
+
 
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/complementoBody2.js"></script>
+<script src="js/complemento.js"></script>
 </html>
