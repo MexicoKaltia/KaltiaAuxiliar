@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.11, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: kaltiadb
 -- ------------------------------------------------------
--- Server version	8.0.11
+-- Server version	5.7.18-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
- SET NAMES utf8 ;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `tc_action`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
- SET character_set_client = utf8mb4 ;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tc_action` (
   `idAction` varchar(45) NOT NULL,
   `idEmpresa` varchar(45) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `tc_action` (
 
 LOCK TABLES `tc_action` WRITE;
 /*!40000 ALTER TABLE `tc_action` DISABLE KEYS */;
-INSERT INTO `tc_action` VALUES ('abele','abele','abele',1,1,1,1,1,1,NULL,NULL),('actionA','idEmpresaA','bronea',1,1,1,0,0,1,NULL,NULL),('aerogem','aerogem','aerogem',1,1,1,NULL,NULL,1,NULL,NULL),('algenius','algenius','algenius',1,1,1,NULL,NULL,1,NULL,NULL),('appsea','appsea','appsea',1,1,1,0,0,1,NULL,NULL),('arialogic','arialogic','arialogic',1,1,1,0,NULL,1,NULL,NULL),('arrival','arrival','arrival',1,1,1,NULL,NULL,1,NULL,NULL),('artland','artland','artland',1,1,1,NULL,NULL,1,NULL,NULL),('bronea','bronea','bronea',1,1,1,NULL,NULL,1,NULL,NULL),('carinary','carinary','carinary',1,1,1,0,0,1,NULL,NULL),('hambur','hambur','skaxis',1,1,1,0,0,1,NULL,NULL),('kaltia','Kaltia','viral',1,1,1,NULL,NULL,1,NULL,NULL),('mazda','Mazda','bronea',1,1,1,NULL,NULL,1,NULL,NULL),('menuA','panini','bronea',1,NULL,NULL,NULL,NULL,1,NULL,NULL),('PuroCuero','PuroCuero','skaxis',1,1,1,0,0,1,NULL,NULL),('skaxis','skaxis','skaxis',1,1,1,NULL,NULL,1,NULL,NULL),('viral','viral','viral',1,1,1,NULL,NULL,1,NULL,NULL),('vortex','Vortex','vortex',1,1,1,0,0,1,'',NULL);
+INSERT INTO `tc_action` VALUES ('abele','abele','abele',1,1,1,1,1,1,NULL,NULL),('actionA','idEmpresaA','bronea',1,1,1,0,0,1,NULL,NULL),('aerogem','aerogem','aerogem',1,1,1,NULL,NULL,1,NULL,NULL),('algenius','algenius','algenius',1,1,1,NULL,NULL,1,NULL,NULL),('appsea','appsea','appsea',1,1,1,0,0,1,NULL,NULL),('arialogic','arialogic','arialogic',1,1,1,0,NULL,1,NULL,NULL),('arrival','arrival','arrival',1,1,1,NULL,NULL,1,NULL,NULL),('artland','artland','artland',1,1,1,NULL,NULL,1,NULL,NULL),('bebedero','Bebe-Dero','skaxis',1,1,1,NULL,NULL,1,NULL,NULL),('bronea','bronea','bronea',1,1,1,NULL,NULL,1,NULL,NULL),('carinary','carinary','carinary',1,1,1,0,0,1,NULL,NULL),('hambur','hambur','skaxis',1,1,1,0,0,1,NULL,NULL),('kaltia','Kaltia','viral',1,1,1,NULL,NULL,1,NULL,NULL),('mazda','Mazda','bronea',1,1,1,NULL,NULL,1,NULL,NULL),('PuroCuero','PuroCuero','skaxis',1,1,1,0,0,1,NULL,NULL),('skaxis','skaxis','skaxis',1,1,1,NULL,NULL,1,NULL,NULL),('viral','viral','viral',1,1,1,NULL,NULL,1,NULL,NULL),('vortex','Vortex','vortex',1,1,1,0,0,1,'',NULL);
 /*!40000 ALTER TABLE `tc_action` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-23 17:13:18
+-- Dump completed on 2018-08-03 20:58:03
