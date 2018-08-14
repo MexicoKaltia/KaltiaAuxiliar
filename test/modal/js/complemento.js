@@ -27,3 +27,11 @@ function uploadFile() {
   });
 } // function uploadFile
 
+
+  $('#agregarStr').click(function(){
+      console.log("param:")
+       
+      $('.headerSeccion3').attr("data-toggle","modal");
+      $('.headerSeccion3').attr("data-target","#modalEdicion");
+  });
+

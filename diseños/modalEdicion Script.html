@@ -1,0 +1,40 @@
+modalEdicion:
+	-ventana alternativa con las caracteristicas de modal bootstrap
+	* modalEdicion.jsp    (generico)
+	* se activa al comparar la url y el contexto tipo=AAA  >> actualizar codigo para que se genere sesion de usuario
+		- funcion generica  (complemento.js)
+		
+	* DEFINIR EL METODO JQUERY PARA LA EDICION DE LA SECCION
+		Ee:
+		$('.headerSeccion2').click(function(){
+		if(validaParam()){
+			console.log("param:"+$.param)
+			action = "action";
+			seccion = "seccion";
+			
+			jsonCampos = {"telefono" : "text","email" : "text"}
+			valores = valoresSeccion("headerSeccion2_valores");
+			
+			$.valoresOriginal = ajusteJson(jsonCampos, valores);
+			 
+			$('.headerSeccion2').attr("data-toggle","modal");
+			$('.headerSeccion2').attr("data-target","#modalEdicion");
+			$("div.soloLectura > div").remove();
+			$("div.alerta > div").remove();
+			
+			elementosCampos($.valoresOriginal);
+			
+		}else{
+			console.log("param:Nulo");
+		}
+	});
+	
+	validaParam 	= Validacion para activar las sentencias de modalEdicion
+	valoresSeccion 	= Metodo para recuperar los valores de ORIGEN de la seccion y retornar un arreglo
+	ajusteJson 		= Metodo para configurar los valores Origen y retornar un JSON
+	pintar #modalEdicion 
+	reset valores de #modalEdicion
+	elementosCampos	= Metodo para pintar el MODAL con los campos de jsonCampos
+	#modalEdicion_btnClose = Sin Guardar cambios
+	#modalEdicion_btnSave = for( valida los valores hechos si hay cambios )
+							validaTipo(tipo, $("#"+tipo).val())
