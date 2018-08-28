@@ -28,6 +28,10 @@ https://askubuntu.com/questions/170640/how-to-disable-apache2-server-from-auto-s
 habilitar firewall y acceso a los puertos
 https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04
+netstat -putona
+netstat -tuple
+lsof -P -i -n 
+sudo ufw status verbose
 
 
 
