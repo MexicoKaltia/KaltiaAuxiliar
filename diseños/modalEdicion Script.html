@@ -40,3 +40,34 @@ modalEdicion:
 							validaTipo(tipo, $("#"+tipo).val()) 
 							validaTipo = Metodo de validacion de campos
 							
+_____________________________________________________________________________________							
+/***********************************************************************************/
+		version 2 modal EDICION
+		
+	-HTML
+		Al final de la etiqueta </body> Agregar en cada modelo/page (Ee. bronea/broneaBody.jsp) el modal por seccion, copiar la plantilla del archivo modalEdicion.jsp
+		cambiar los valores de seccion, <div class="modal fade" id="modalEdicion_bodySeccion1/>
+		y el boton de guardar cambios : <button type="submit" class="btn btn-primary" id="modalEdicionBodySeccion1_btnSave">Guardar Cambios</button>
+		Copiar la modeloSeccion (Ee. broneaSeccion1)  en el <div class="modal-body">...</div>
+		Acondicionar los campos editables, como text , areaText , Imagen.
+		<input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='body.BodySeccion1.get(1)'/>"/>
+		<textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='body.BodySeccion1.get(2)'/></textarea>
+		
+		
+	-JS complemento.js
+		Se ha agredago las lineas de codigo para la version 2 modal EDICION (Funciones Genericas)
+	-JS edicionSecciones.js
+		Agregar el evento de click en la seccion:
+				$('.bodySeccionArray3').click(function(){
+					if(validaParam()){
+						cargaModal("bodySeccionArray3");
+						$('#modalEdicionBodySeccionArray3_btnSave').click(function(){
+							modalEdicionBody_btnSave("bodySeccionArray3");
+						});
+					}else{
+					console.log("param:Nulo");
+					}
+				});
+				_____________________________________________________________________________________
+	
+		
