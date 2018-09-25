@@ -27,13 +27,19 @@ CREATE TABLE `tc_empresa` (
   `idAction` varchar(45) NOT NULL,
   `empresaNombreCompleto` varchar(100) NOT NULL,
   `empresaRFC` varchar(15) DEFAULT NULL,
-  `empresaDireccion` varchar(450) DEFAULT NULL,
-  `empresaEmail` varchar(65) DEFAULT NULL,
-  `empresaContacto` varchar(45) DEFAULT NULL,
-  `empresaRepresentante` varchar(45) DEFAULT NULL,
+  `empresaDireccion` varchar(450) NOT NULL,
+  `empresaEmail` varchar(65) NOT NULL,
+  `empresaContacto` varchar(45) NOT NULL,
+  `empresaIdPerfilI` varchar(45) NOT NULL,
   `empresaVarios` varchar(45) DEFAULT NULL,
-  `empresaUserKaltia` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idEmpresa`,`idAction`)
+  `empresaIdPerfilE` varchar(45) DEFAULT NULL,
+  `empresaModelo` varchar(45) NOT NULL,
+  `empresaStatus` varchar(45) DEFAULT NULL,
+  `empresaFechaCorte` varchar(45) DEFAULT NULL,
+  `empresaModoPago` varchar(45) DEFAULT NULL,
+  `empresaFactura` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idEmpresa`,`idAction`),
+  KEY `userKaltiaRepresentante_idx` (`empresaIdPerfilI`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -43,7 +49,7 @@ CREATE TABLE `tc_empresa` (
 
 LOCK TABLES `tc_empresa` WRITE;
 /*!40000 ALTER TABLE `tc_empresa` DISABLE KEYS */;
-INSERT INTO `tc_empresa` VALUES ('bronea','bronea','BroneaNombreComplero','broneaRFC','broneaDireccion','broneaEmail','broneaContacto','broneaRepresentante','broneaVarios',NULL),('idEmpresa','idAction','empresaNombreCompleto','empresaRFC','empresaDireccion','empresaEmail','empresaContacto','empresaRepresentante','empresaVarios','empresaUserKaltia');
+INSERT INTO `tc_empresa` VALUES ('bronea','bronea','BroneaNombreComplero','broneaRFC','broneaDireccion','broneaEmail','broneaContacto','kaltiaUserI','broneaVarios','kaltiaUserE','',NULL,NULL,NULL,NULL),('mazda','mazda','Mazda Prueba','empresaRFC','empresaDireccion','empresaEmail','empresaContacto','kaltiaUserI','empresaVarios','mazdaE','',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tc_empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-03 20:58:02
+-- Dump completed on 2018-09-24 22:45:57

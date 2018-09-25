@@ -29,9 +29,6 @@ CREATE TABLE `tc_userkaltiacontrol` (
   `userKaltiaControlDescr` text,
   `userKaltiaControlPerfil` varchar(15) DEFAULT NULL,
   `userKaltiaControlNombre` text,
-  `userKaltiaControlEstilo` text,
-  `userKaltiaControlIdEmpresa` text,
-  `userKaltiaControlIdAction` text,
   `userKaltiaControlStatus` text,
   PRIMARY KEY (`idUserKaltiaControlUser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -43,7 +40,7 @@ CREATE TABLE `tc_userkaltiacontrol` (
 
 LOCK TABLES `tc_userkaltiacontrol` WRITE;
 /*!40000 ALTER TABLE `tc_userkaltiacontrol` DISABLE KEYS */;
-INSERT INTO `tc_userkaltiacontrol` VALUES ('Edgar','edgar@edgar.com','edgar','userPruebaI','perfilI','userPruebaI',NULL,NULL,NULL,'activoI'),('pruebaAdmon','admon@gmail.com','pass','userPruebaA','perfilA','pruebaNombreA','','kaltia','','activoE'),('pruebaBronea','user@gmail.com','pass','userPruebaE','perfilE','pruebaNombreE','','bronea','','activoE'),('root','user','pass','userPrimario','perfilAdmin1','userPrimarioNombre',NULL,NULL,NULL,NULL);
+INSERT INTO `tc_userkaltiacontrol` VALUES ('kaltiaUserA','admon@gmail.com','pass','userPruebaA','perfilA','pruebaNombreA','activo'),('kaltiaUserE','user@gmail.com','pass','userPruebaE','perfilE','pruebaNombreE','activo'),('kaltiaUserI','perfiIi@kaltia.com','pass','userPruebaI','perfilI','pruebaNombreI','activo');
 /*!40000 ALTER TABLE `tc_userkaltiacontrol` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-03 20:58:02
+-- Dump completed on 2018-09-24 22:45:58

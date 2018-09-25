@@ -1,0 +1,33 @@
+Formato PerfilI
+	Secciones
+	*General
+	*Alta
+	*Seleccion Empresa
+	*Estadistica Perfil I
+	
+Plantilla para mantenimiento de ABC Empresa
+
+*General
+	campos:						Edicion		Heigth
+________________________________________________________________________________________________________
+	id de userPerfilI		 	No			varchar45
+	Simbre Corto				No			varchar45
+	Domicilio					No			varchar45
+	email						No
+	contacto					No
+	
+*Alta
+________________________________________________________________________________________________________
+	Simbre de Empresa Completo 	Si			varchar45
+	Simbre Corto				Si			varchar45
+	IdAction					Si			varchar45
+	RFC							Si					
+	Direccion					Si
+	email						Si
+	contacto					Si
+	representante				Si
+	idEstilo					Si
+	empresaStatus				No
+	empresaFechaCorte			No
+	empresaModoPago				Si
+	empresaFactura				No

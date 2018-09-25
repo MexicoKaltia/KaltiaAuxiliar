@@ -68,8 +68,7 @@ script crear nueva empresa
 6.-Dar de alta los valores en Tablas de BD
 	tc_empresa
 		st_altaEmpresa
-			tc_statusEmpresa              ---> KALTIA CONTROL
-			tc_usuarioGeneral
+			tw_statusEmpresa              ---> KALTIA CONTROL
 			tc_userKaltiaControl
 			tc_action
 
