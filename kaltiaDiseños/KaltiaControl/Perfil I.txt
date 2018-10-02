@@ -1,8 +1,9 @@
 Formato PerfilI
 	Secciones
-	*General
-	*Alta
-	*Seleccion Empresa
+	*Inicio
+		*Datos General Usuario
+		*Informacion Empresa --> Edicion Empresa
+		*Alta Empresa
 	*Estadistica Perfil I
 	
 Plantilla para mantenimiento de ABC Empresa
@@ -11,23 +12,27 @@ Plantilla para mantenimiento de ABC Empresa
 	campos:						Edicion		Heigth
 ________________________________________________________________________________________________________
 	id de userPerfilI		 	No			varchar45
-	Simbre Corto				No			varchar45
+	Nombre Corto				No			varchar45
+	Perfil						No
+	Descripcion					No
 	Domicilio					No			varchar45
 	email						No
 	contacto					No
 	
 *Alta
 ________________________________________________________________________________________________________
-	Simbre de Empresa Completo 	Si			varchar45
-	Simbre Corto				Si			varchar45
-	IdAction					Si			varchar45
-	RFC							Si					
-	Direccion					Si
-	email						Si
-	contacto					Si
-	representante				Si
-	idEstilo					Si
-	empresaStatus				No
-	empresaFechaCorte			No
-	empresaModoPago				Si
-	empresaFactura				No
+	empresaNombreCompleto	si
+	idEmpresa				Si			varchar45
+	idAction 				Si			varchar45
+	empresaRFC 				Si					
+	empresaDireccion 		Si
+	empresaEmail 			Si
+	empresaContacto 		Si
+	empresaIdPerfilI 		Si
+	empresaIdPerfilE 		No
+	empresaModelo 			No
+	empresaStatus 			Si
+	empresaFechaCorte 		No
+	empresaModoPago 
+	empresaFactura	
+	empresaVarios 			Si
