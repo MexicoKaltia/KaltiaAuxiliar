@@ -36,3 +36,7 @@ ________________________________________________________________________________
 	empresaModoPago 
 	empresaFactura	
 	empresaVarios 			Si
+
+	
+	
+	
