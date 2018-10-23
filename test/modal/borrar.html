@@ -1,91 +1,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" media="all">
-  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
-  <link href="css/complemento.css" rel="stylesheet" type="text/css" media="all">
-  <!-- <link href="css/complementoBody2.css" rel="stylesheet" type="text/css" media="all"> -->
-  
-  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+	<link href="css/complemento.css" rel="stylesheet" type="text/css" media="all">
+	<!-- <link href="css/complementoBody2.css" rel="stylesheet" type="text/css" media="all"> -->
+
+	<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 	
 	
 
 </head>
 <body>
 
-<a data-toggle="modal" href="#centralModalSm" class="btn btn-primary">Launch modal</a>
-<!-- Central Modal Small -->
-<div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-
-    <!-- Change class .modal-sm to change the size of the modal -->
-    <div class="modal-dialog modal-fluid" role="document">
+	<a data-toggle="modal" href="#modalEdicion_headerSeccion1" class="btn btn-primary">Launch modal</a>
 
 
-      <div class="modal-content">
-        <div class="modal-header"> 
-          <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-
-   		<!--**********************************************************************************-->
- 			<div id="carouselExampleIndicators" class="carousel slide" >
-				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<li class="<s:property value='#bodySeccionArray1.objetoVO.get(0)' />">
-			            <article><a href="<s:property value='identidadVO.idAction'/>/<s:property value='#bodySeccionArray1.objetoVO.get(1)' />">
-			            <i class="<s:property value='#bodySeccionArray1.objetoVO.get(2)' />"></i></a>
-			              <h6 class="heading font-x1"><input type="text" id="tituloObjeto<s:property value='#conta'/>" value="<s:property value='#bodySeccionArray1.objetoVO.get(3)' />"/></h6>
-			              <p><textarea class='form-control' id="descripcionObjeto<s:property value='#conta'/>"><s:property value='#bodySeccionArray1.objetoVO.get(4)' /></textarea></p>
-			            </article>
-			          </li>
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100" src="images/indice.jpg" alt="Second slide">
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100" src="images/images.jpg" alt="Third slide">
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100" src="images/images2.jpg" alt="Third slide">
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100" src="images/images3.jpg" alt="Third slide">
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100" src="images/loading.gif" alt="Third slide">
-					</div>
-					<div class="carousel-item">
-						<img class="d-block w-100" src="images/marco.jpg" alt="Third slide">
+	<div class="modal" id="modalEdicion_headerSeccion1" tabindex="-1" role="dialog"  aria-hidden="true">
+		<div class="modal-dialog modal-fluid" role="document">
+			<div class="modal-content" style="background-image:url('images/indice.jpg');">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalTitle">Edicion Seccion</h5>
+					<br>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnClose">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<div class="alerta">
+						<hiden class="alerta_in"></hiden>
 					</div>
 				</div>
-				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
+				<!--**********************************************************************************-->
+				<div class="modal-body">
+					<!-- carrusel -->
+					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"  data-interval="false">
+						<ol class="carousel-indicators">
+							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner container" role="listbox">
+							<div class="carousel-item active">
+								<div class="col-xs-1 p-y-12 center">
+									<li>							
+										<input type="text" id="tituloObjetoHS1<s:property value='#conta'/>" value="hola"/>
+										<select class="" id="enlaceObjetoHS1">
+											<option value="hola" selected disabled>hola</option>
+											<hr>                    
+											<option value="Ubicacion">Ubicacion</option>
+											<option value="Cita">Cita</option>
+											<option value="Contacto">Contacto</option>
+											<option value="Registro">Registro</option>
+										</select>
+									</li>
+								</div>
+							</div>
+							<div class="carousel-item  col-xs-8">
+								<li>
+									<input type="text" id="tituloObjetoHS1<s:property value='#conta'/>" value="hola2"/>
+									<select class="" id="enlaceObjetoHS1">
+										<option value="hola" selected disabled>hola</option>
+										<hr>                    
+										<option value="Ubicacion">Ubicacion</option>
+										<option value="Cita">Cita</option>
+										<option value="Contacto">Contacto</option>
+										<option value="Registro">Registro</option>
+									</select>
+								</li>
+							</div>
+							<div class="carousel-item  col-xs-8">
+								<li>
+									<input type="text" id="tituloObjetoHS1<s:property value='#conta'/>" value="hola3"/>
+									<select class="" id="enlaceObjetoHS1">
+										<option value="hola" selected disabled>hola</option>
+										<hr>                    
+										<option value="Ubicacion">Ubicacion</option>
+										<option value="Cita">Cita</option>
+										<option value="Contacto">Contacto</option>
+										<option value="Registro">Registro</option>
+									</select>
+								</li>
+							</div>
+						</div>
+						<div class="controls-top">
+							<a class="btn-floating" href="#carouselExampleIndicators" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+							<a class="btn-floating" href="#carouselExampleIndicators" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+						</div>
+					</div>
+					
+					<!-- fin carrusel -->
+				</div>
+				<!--**********************************************************************************-->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
+					<button type="submit" class="btn btn-primary" id="modalEdicionHeaderSeccion1_btnSave">Guardar Cambios</button>
+				</div>
 			</div>
- 		<!--**********************************************************************************-->
+		</div>
+	</div>
+	<!-- Central Modal Small -->
 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary btn-sm">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Central Modal Small -->
 
 </body>
 <script src="js/jquery-3.3.1.min.js"></script>

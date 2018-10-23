@@ -47,8 +47,8 @@ VISTA RAPIDA
 			
 		Modulo Alta Empresa -- Edicion
 			-Cambiar el nombre de modal : Edicion Seccion --> Nombre de Seccion (idEmpresa - Header Seccion N)
-			-Modificar el modal HeaderSeccion1 que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
-			-Cambiar el Codigo de Retorno de jQuery metodo : 31.220.60.92:8012/edicion/empresa : Integer 0  --> String "00"  y en KaltiaTransaccion/Edicion/empresa : Integer 0  --> String "00"
+			+-Modificar el modal HeaderSeccion1 que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
+			*-Cambiar el Codigo de Retorno de jQuery metodo : 31.220.60.92:8012/edicion/empresa : Integer 0  --> String "00"  y en KaltiaTransaccion/Edicion/empresa : Integer 0  --> String "00"
 			-Agregar los Modal de Registro Usuarios, Citas, Contacto, (ubicacion eliminar el alert "guardar cambios")
 			-Validar los campos de captura !!
 			-Reconfigurar la seccion de  HeaderSeccion3  en General !!
