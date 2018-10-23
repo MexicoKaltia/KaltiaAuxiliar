@@ -1,0 +1,84 @@
+ISSUES KALTIA SISTEMA VERSION 1.0 - 22 OCTUBRE 2018
+
+VISTA RAPIDA
+	KaltiaControl:
+		-Generar certificado SSL kaltiamx.xyz
+		-Redireccionar K A L T I A Control   --> #
+		-Encabezado de plantilla modificar en modo fijo para que solo se vea <div class="wrapper row1">
+		-Verificar numero de telefono y correo electronico
+		-Agregar Acciones a los iconos de 'home','help','logout' y 'editar datos'
+		-Agregar las acciones para los link de 'Inicio' 'Edicion' 'Estadistica' etc  (para cada perfil)
+		-Agregar Footer de KaltiaControl
+		*PerfilA:
+			-Generar PerfilA
+		*PerfilE
+		 Modulo Inicio
+			-Generar de manera automatica los usuarios creados desde PerfilI
+			-Agregar la seccion de Factura en el modulo de acceso Rapido
+			-Completar las secciones de General:
+				campos : Modelo , (Status , Fecha de corte , Modo de Pago , Factura)   <-- eliminar pasarlos a seccion de Status y Factura
+			-Seccion Usuario
+				campos : Renovar Password
+			-Seccion Status
+				campos : Status , Fecha de corte , Modo de Pago 
+			-Seccion Factura
+				campos : Factura    
+			-Eliminar Action y Boton de Guardar Datos. los campos no son editables.
+			-Enmarcar de manera independiente las secciones : General Status Usuario Factura
+		
+		Modulo Edicion
+			-Configurar el acceso de iframe : "http://www.kaltia.xyz/bronea?tipo=AAA" , ya que viendo el codigo se puede ingresar a la seccion de edicion sin firmarse por KaltiaControl.
+			
+		Modulo Estadistica
+			-Generar los reportes de visitas y accesos, asi como registro ABC de usuarios, Citas , Ubicacion y Contacto.
+		
+		*PerfilI
+		Modulo Inicio
+			-Habilitar Modal para la edicion de los campos generales de UsuarioKaltiaControl
+			-Habilitar Modal con los datos Completos de Empresa, 
+			-Cambiar el Acceso Rapido de 'Informacion Empresa'  a  'Relacion de Empresas'
+			-Enmarcar de manera independiente las Empresas
+			-Cambiar los campos de presentacion (Nombre Empresa Completo, nombre corto, action, status, fecha de corte)
+		
+		Modulo Alta Empresa
+			-Enmarcar de manera independiente las Secciones
+			-Cambiar el nombre de factura www.kaltiaControl.xyz/factura/Nombre Corto   --> www.kaltiaControl.xyz/factura/Nombre_Corto (sin espacios o con el IdAction)
+			-Cambiar el nombre de usuario Nombre Corto@kaltiaControl.com --> Nombre_Corto@kaltiaControl.com (sin espacios o con el IdAction)
+			
+		Modulo Alta Empresa -- Edicion
+			-Cambiar el nombre de modal : Edicion Seccion --> Nombre de Seccion (idEmpresa - Header Seccion N)
+			-Modificar el modal HeaderSeccion1 que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
+			-Cambiar el Codigo de Retorno de jQuery metodo : 31.220.60.92:8012/edicion/empresa : Integer 0  --> String "00"  y en KaltiaTransaccion/Edicion/empresa : Integer 0  --> String "00"
+			-Agregar los Modal de Registro Usuarios, Citas, Contacto, (ubicacion eliminar el alert "guardar cambios")
+			-Validar los campos de captura !!
+			-Reconfigurar la seccion de  HeaderSeccion3  en General !!
+			-Reconfigurar los href de los botones HeaderSeccion4Bronea el href
+			-Reconfigurar el modal de BodySeccionArray1Bronea, no esta correctamente configurado el carrusel de los Objetos
+			-Habilitar la seccion de EdicionModal - Iconos
+			-Reconfigurar las imagenes default por medio de KaltiaTransaccion/fileUpload, para que carguen de manera inicial con imagen default
+			-Reconfigurar en AltaEmpresa en el shell EmpresaNueva.sh : /kaltia/empresa/Nombre Corto/imagenes --> /kaltia/empresa/Nombre_Corto/imagenes (sin espacios o con el IdAction)
+			-Modificar el modal BodySeccionArray2Bronea que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto y actualizar EdicionModal - Iconos
+			-BodySeccionArray1Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
+			-BodySeccionArray2Bronea no genera el String correcto de la configuracion
+			-BodySeccionArray2Bronea habilitar la edicion de imagen por objeto
+			-BodySeccionArray2Bronea habilitar el cambio de colores del texto para edicion
+			-BodySeccionArray2Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
+			-BodySeccion1Bronea no genera el String correcto de la configuracion
+			-BodySeccion1Bronea habilitar la edicion de imagen por objeto
+			-BodySeccion1Bronea Reconfigurar los href de los botones HeaderSeccion4Bronea el href
+			-BodySeccion1Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
+			-BodySeccionArray3Bronea no genera el String correcto de la configuracion
+			-BodySeccionArray3Bronea habilitar la edicion de imagen por objeto
+			-BodySeccionArray3Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
+			-FooterSeccion1Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
+			-FooterSeccion1Bronea Generar un campo para agregar el link de ubicacion/
+			-FooterSeccion(es)	reconfigurar las secciones de footerSeccion2 y footerSeccion3.
+			-Reconfigurar el Copyrigth con el nombre de Empresa KALTIA-MX Sistemas IT.
+			
+			
+			
+		
+		
+			
+		
+		
