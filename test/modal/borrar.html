@@ -13,14 +13,14 @@
 </head>
 <body>
 
-	<a data-toggle="modal" href="#modalEdicion_headerSeccion1" class="btn btn-primary">Launch modal</a>
+	<a data-toggle="modal" href="#Registro" class="btn btn-primary">Launch modal</a>
 
 
-	<div class="modal" id="modalEdicion_headerSeccion1" tabindex="-1" role="dialog"  aria-hidden="true">
+	<div class="modal" id="Registro" tabindex="-1" role="dialog"  aria-hidden="true">
 		<div class="modal-dialog modal-fluid" role="document">
 			<div class="modal-content" style="background-image:url('images/indice.jpg');">
 				<div class="modal-header">
-					<h5 class="modal-title" id="modalTitle">Edicion Seccion</h5>
+					<h5 class="modal-title" id="modalTitle">Registro</h5>
 					<br>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnClose">
 						<span aria-hidden="true">&times;</span>
@@ -31,73 +31,30 @@
 				</div>
 				<!--**********************************************************************************-->
 				<div class="modal-body">
-					<!-- carrusel -->
-					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"  data-interval="false">
-						<ol class="carousel-indicators">
-							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-							<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-						</ol>
-						<div class="carousel-inner container" role="listbox">
-							<div class="carousel-item active">
-								<div class="col-xs-1 p-y-12 center">
-									<li>							
-										<input type="text" id="tituloObjetoHS1<s:property value='#conta'/>" value="hola"/>
-										<select class="" id="enlaceObjetoHS1">
-											<option value="hola" selected disabled>hola</option>
-											<hr>                    
-											<option value="Ubicacion">Ubicacion</option>
-											<option value="Cita">Cita</option>
-											<option value="Contacto">Contacto</option>
-											<option value="Registro">Registro</option>
-										</select>
-									</li>
-								</div>
-							</div>
-							<div class="carousel-item  col-xs-8">
-								<li>
-									<input type="text" id="tituloObjetoHS1<s:property value='#conta'/>" value="hola2"/>
-									<select class="" id="enlaceObjetoHS1">
-										<option value="hola" selected disabled>hola</option>
-										<hr>                    
-										<option value="Ubicacion">Ubicacion</option>
-										<option value="Cita">Cita</option>
-										<option value="Contacto">Contacto</option>
-										<option value="Registro">Registro</option>
-									</select>
-								</li>
-							</div>
-							<div class="carousel-item  col-xs-8">
-								<li>
-									<input type="text" id="tituloObjetoHS1<s:property value='#conta'/>" value="hola3"/>
-									<select class="" id="enlaceObjetoHS1">
-										<option value="hola" selected disabled>hola</option>
-										<hr>                    
-										<option value="Ubicacion">Ubicacion</option>
-										<option value="Cita">Cita</option>
-										<option value="Contacto">Contacto</option>
-										<option value="Registro">Registro</option>
-									</select>
-								</li>
-							</div>
+					<div class="conteiner">
+						<div class="row">
+							<label><s:property value='identidadVO.empresa'/> - Registo Cliente</label>
 						</div>
-						<div class="controls-top">
-							<a class="btn-floating" href="#carouselExampleIndicators" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-							<a class="btn-floating" href="#carouselExampleIndicators" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+						<span class="col-md-1 col-md-offset-2 text-center"><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></span>
+						<div class="col-md-8">
+							<input id="referencia" name="referencia" type="text" placeholder="referencia" class="form-control">
 						</div>
 					</div>
-					
-					<!-- fin carrusel -->
+					<span class="col-md-1 col-md-offset-2 text-center"><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></span>
+					<div class="col-md-8">
+						<input id="referencia" name="referencia" type="text" placeholder="referencia" class="form-control">
+					</div>
 				</div>
-				<!--**********************************************************************************-->
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
-					<button type="submit" class="btn btn-primary" id="modalEdicionHeaderSeccion1_btnSave">Guardar Cambios</button>
-				</div>
+			</div>
+			<!--**********************************************************************************-->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary" id="modalEdicionHeaderSeccion1_btnSave">Guardar Cambios</button>
 			</div>
 		</div>
 	</div>
-	<!-- Central Modal Small -->
+</div>
+<!-- Central Modal Small -->
 
 
 </body>

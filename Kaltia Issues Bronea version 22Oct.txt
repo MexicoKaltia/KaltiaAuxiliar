@@ -46,12 +46,12 @@ VISTA RAPIDA
 			-Cambiar el nombre de usuario Nombre Corto@kaltiaControl.com --> Nombre_Corto@kaltiaControl.com (sin espacios o con el IdAction)
 			
 		Modulo Alta Empresa -- Edicion
-			-Cambiar el nombre de modal : Edicion Seccion --> Nombre de Seccion (idEmpresa - Header Seccion N)
-			+-Modificar el modal HeaderSeccion1 que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
+			*-Cambiar el nombre de modal : Edicion Seccion --> Nombre de Seccion (idEmpresa - Header Seccion N)
+			*-Modificar el modal HeaderSeccion1 que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
 			*-Cambiar el Codigo de Retorno de jQuery metodo : 31.220.60.92:8012/edicion/empresa : Integer 0  --> String "00"  y en KaltiaTransaccion/Edicion/empresa : Integer 0  --> String "00"
-			-Agregar los Modal de Registro Usuarios, Citas, Contacto, (ubicacion eliminar el alert "guardar cambios")
+			+faltacitas-Agregar los Modal de Registro Usuarios, Citas, Contacto, (Ubicacion eliminar el alert "guardar cambios")
 			-Validar los campos de captura !!
-			-Reconfigurar la seccion de  HeaderSeccion3  en General !!
+			+-Reconfigurar la seccion de  HeaderSeccion3  en General !!
 			-Reconfigurar los href de los botones HeaderSeccion4Bronea el href
 			-Reconfigurar el modal de BodySeccionArray1Bronea, no esta correctamente configurado el carrusel de los Objetos
 			-Habilitar la seccion de EdicionModal - Iconos
@@ -75,9 +75,6 @@ VISTA RAPIDA
 			-FooterSeccion(es)	reconfigurar las secciones de footerSeccion2 y footerSeccion3.
 			-Reconfigurar el Copyrigth con el nombre de Empresa KALTIA-MX Sistemas IT.
 			
-			
-			
-		
 		
 			
 		

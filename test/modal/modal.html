@@ -1,171 +1,40 @@
 <head>
-    <link href="css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/complemento.css" rel="stylesheet" type="text/css" media="all">
-    <link href="css/complementoBody2.css" rel="stylesheet" type="text/css" media="all">
+  <link href="css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" media="all">
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+  <link href="css/complemento.css" rel="stylesheet" type="text/css" media="all">
+  <!-- <link href="css/complementoBody2.css" rel="stylesheet" type="text/css" media="all"> -->
 
 </head>
 
 <a data-toggle="modal" href="#myModal" class="btn btn-primary">Launch modal</a>
 
 <div class="modal fade" id="myModal">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h4 class="modal-title">Modal 1</h4>
-
       </div>
-      <div class="container"></div>
+      <!--**********************************************************************************-->
       <div class="modal-body">
-        <form id="upload-file-form">
-            <label for="upload-file-input">Upload your file:</label>
-            <input id="upload-file-input" type="file" name="uploadfile" accept="image/jpeg" />
-        </form>
-        <a data-toggle="modal" href="#myModal2" class="btn btn-primary">Launch modal</a>
-      </div>
-      <div class="modal-footer"> <a href="#" data-dismiss="modal" class="btn">Close</a>
-        <a href="#" class="btn btn-primary">Save changes</a>
 
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade rotate" id="myModal2">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title">Modal 2</h4>
-      </div>
-      <div class="container"></div>
-      <div class="modal-body">
-        <div class='row'>
-            <div class='col-xs-1'>
-                <label style='color:#00FFFF;font-size:12px;'>"+tipo+"</label>
-            </div>
-            <div class='col-xs-3'>
-                <div class='upload-file'>
-                    <input id="+tipo+" name="+tipo+" placeholder="+tipo+" type='file' class='upload-file-input' value="+jsonSeccion[tipo]+">
-                    <label class='upload-file-label' for="+tipo+">"+jsonSeccion[tipo]+"</label>
-                </div>
-            </div>
+        <div class="row">
+          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+          <div class="col-md-8">
+            <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+          </div>
         </div>
-        <a data-toggle="modal" href="#myModal3" class="btn btn-primary">Launch modal</a>
+        
       </div>
+      <!--**********************************************************************************-->
       <div class="modal-footer"> <a href="#" data-dismiss="modal" class="btn">Close</a>
         <a href="#" class="btn btn-primary">Save changes</a>
-
       </div>
     </div>
   </div>
 </div>
-<div class="modal fade" id="myModal3">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title">Modal 3</h4>
+<!--  -->
 
-      </div>
-      <div class="container"></div>
-      <div class="modal-body">Content for the dialog / modal goes here.
-        <br>
-        <br>
-        <br>
-        <br>
-        <br> <a data-toggle="modal" href="#myModal4" class="btn btn-primary">Launch modal</a>
-
-      </div>
-      <div class="modal-footer"> <a href="#" data-dismiss="modal" class="btn">Close</a>
-        <a href="#" class="btn btn-primary">Save changes</a>
-
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="myModal4">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title">Modal 4</h4>
-
-      </div>
-      <div class="container"></div>
-      <div class="modal-body">Content for the dialog / modal goes here.</div>
-      <div class="modal-footer"> <a href="#" data-dismiss="modal" class="btn">Close</a>
-        <a href="#" class="btn btn-primary">Save changes</a>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well well-sm">
-                <form class="form-horizontal" method="post">
-                    <fieldset>
-                        <legend class="text-center header">Contact us</legend>
-
-                        <div class="row">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                            <div class="col-md-8">
-                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="container auth" class="clear">
-                        <div id="big-form" class="well auth-box">
-                            <form action=""><fieldset>
-          
-                       <input id="textinput" name="nombreCompleto" placeholder="Nombre de Empresa Completo" class="form-control input-md" type="text"  value="Chilpancingo">
-                        </fieldset></form>
-                        </div>
-                        </div>                    
-
-                           <div class="row">
-                            <div class="col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-
-
-            </div>
-        </div>
-    </div>
-</div>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/complementoBody2.js"></script>
+<!-- <script src="js/complementoBody2.js"></script> -->
