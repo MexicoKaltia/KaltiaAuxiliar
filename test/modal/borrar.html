@@ -13,48 +13,72 @@
 </head>
 <body>
 
-	<a data-toggle="modal" href="#Registro" class="btn btn-primary">Launch modal</a>
+<a data-toggle="modal" href="#modalEdicion_bodySeccionArray1Bronea" class="btn btn-primary">Launch modal1</a>
+<a data-toggle="modal" href="#modalEdicion_bodySeccionArray2Bronea" class="btn btn-primary">Launch modal2</a>
 
-
-	<div class="modal" id="Registro" tabindex="-1" role="dialog"  aria-hidden="true">
-		<div class="modal-dialog modal-fluid" role="document">
-			<div class="modal-content" style="background-image:url('images/indice.jpg');">
-				<div class="modal-header">
-					<h5 class="modal-title" id="modalTitle">Registro</h5>
-					<br>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnClose">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<div class="alerta">
+<!-- modalBodySeccionArray1 -->
+<div class="modal fade" id="modalEdicion_bodySeccionArray1Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-fluid" role="document">
+		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> bodySeccionArray1</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" id="modalEdicionBody_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="alerta">
 						<hiden class="alerta_in"></hiden>
-					</div>
-				</div>
-				<!--**********************************************************************************-->
-				<div class="modal-body">
-					<div class="conteiner">
-						<div class="row">
-							<label><s:property value='identidadVO.empresa'/> - Registo Cliente</label>
-						</div>
-						<span class="col-md-1 col-md-offset-2 text-center"><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></span>
-						<div class="col-md-8">
-							<input id="referencia" name="referencia" type="text" placeholder="referencia" class="form-control">
-						</div>
-					</div>
-					<span class="col-md-1 col-md-offset-2 text-center"><label style='color:#00FFFF;font-size:12px;'>ReferenciaX</label></span>
-					<div class="col-md-8">
-						<input id="referencia" name="referencia" type="text" placeholder="referencia" class="form-control">
-					</div>
 				</div>
 			</div>
-			<!--**********************************************************************************-->
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalEdicionBody_btnClose">Cerrar</button>
-				<button type="submit" class="btn btn-primary" id="modalEdicionHeaderSeccion1_btnSave">Guardar Cambios</button>
+ 			<!--**********************************************************************************-->
+			    <!-- main body -->
+			<div class="modal-body">
+				modal1
+			  </div>	<!-- end bodymodal -->	
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal"
+					id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary"
+					id="modalEdicionBodySeccionArray1_btnSave">Guardar Cambios</button>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- Central Modal Small -->
+<!-- fin modalEdicion -->
+
+<!-- modalBodySeccionArray2 -->
+<div class="modal fade" id="modalEdicion_bodySeccionArray2Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-fluid" role="document">
+		<div class="modal-content" style="background-image:url('<%=request.getContextPath()%>/layout/images/imagen.jpg');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle"><s:property value='identidadVO.empresa'/> bodySeccionArray1</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" id="modalEdicionBody_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="alerta">
+						<hiden class="alerta_in"></hiden>
+				</div>
+			</div>
+ 			<!--**********************************************************************************-->
+ 						    <!-- main body -->
+			<div class="modal-body">
+  			        modal2
+			</div>
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal"
+					id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary"
+					id="modalEdicionBodySeccionArray2_btnSave">Guardar Cambios</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 
 </body>
