@@ -49,7 +49,7 @@ VISTA RAPIDA
 			*-Cambiar el nombre de modal : Edicion Seccion --> Nombre de Seccion (idEmpresa - Header Seccion N)
 			*-Modificar el modal HeaderSeccion1 que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
 			*-Cambiar el Codigo de Retorno de jQuery metodo : 31.220.60.92:8012/edicion/empresa : Integer 0  --> String "00"  y en KaltiaTransaccion/Edicion/empresa : Integer 0  --> String "00"
-			+faltacitas+falta orfenar campos-Agregar los Modal de Registro Usuarios, Citas, Contacto, (Ubicacion eliminar el alert "guardar cambios")
+			+CitasPro+falta orfenar campos-Agregar los Modal de Registro Usuarios, Citas, Contacto, 
 			-Validar los campos de captura !!
 			*-Acomodar los campos-Reconfigurar la seccion de  HeaderSeccionArray5  en General !!
 			*-Fijar el encabezado de secciones - fixed- sticky-top
