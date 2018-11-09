@@ -55,13 +55,13 @@ VISTA RAPIDA
 			*-Fijar el encabezado de secciones - fixed- sticky-top
 			*-Reconfigurar los href de los botones HeaderSeccion4Bronea el href
 			*-Reconfigurar el modal de BodySeccionArray1Bronea, no esta correctamente configurado el carrusel de los Objetos
-			-Habilitar la seccion de EdicionModal - Iconos
+			*-Habilitar la seccion de EdicionModal - Iconos
 			-Reconfigurar las imagenes default por medio de KaltiaTransaccion/fileUpload, para que carguen de manera inicial con imagen default
 			-Reconfigurar en AltaEmpresa en el shell EmpresaNueva.sh : /kaltia/empresa/Nombre Corto/imagenes --> /kaltia/empresa/Nombre_Corto/imagenes (sin espacios o con el IdAction)
 			*-Modificar el modal BodySeccionArray2Bronea que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto y actualizar EdicionModal - Iconos
 			*-BodySeccionArray1Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
 			*-BodySeccionArray2Bronea no genera el String correcto de la configuracion
-			-BodySeccionArray2Bronea habilitar la edicion de icono por objeto
+			*-BodySeccionArray2Bronea habilitar la edicion de icono por objeto
 			*-BodySeccionArray2Bronea habilitar el cambio de colores del texto para edicion
 			*-BodySeccionArray2Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
 			*-BodySeccion1Bronea no genera el String correcto de la configuracion
@@ -69,11 +69,11 @@ VISTA RAPIDA
 			*-BodySeccion1Bronea Reconfigurar los href de los botones HeaderSeccion4Bronea el href
 			*-BodySeccion1Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
 			*-BodySeccionArray3Bronea no genera el String correcto de la configuracion
-			-BodySeccionArray3Bronea habilitar la edicion de imagen por objeto
+			*-BodySeccionArray3Bronea habilitar la edicion de imagen por objeto
 			*-BodySeccionArray3Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
-			-FooterSeccion1Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
-			-FooterSeccion1Bronea Generar un campo para agregar el link de ubicacion/
-			-FooterSeccion(es)	reconfigurar las secciones de footerSeccion2 y footerSeccion3.
+			*-FooterSeccion1Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
+			*-FooterSeccion1Bronea Generar un campo para agregar el link de ubicacion/
+			+falta redes sociales-FooterSeccion(es)	reconfigurar las secciones de footerSeccion2 y footerSeccion3.
 			-Reconfigurar el Copyrigth con el nombre de Empresa KALTIA-MX Sistemas IT.
 			
 		
