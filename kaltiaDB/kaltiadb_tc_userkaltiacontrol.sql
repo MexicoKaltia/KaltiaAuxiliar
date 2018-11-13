@@ -2,7 +2,7 @@
 --
 -- Host: 31.220.60.92    Database: kaltiadb
 -- ------------------------------------------------------
--- Server version	5.7.23-0ubuntu0.16.04.1
+-- Server version	5.7.24-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,13 +23,13 @@ DROP TABLE IF EXISTS `tc_userkaltiacontrol`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tc_userkaltiacontrol` (
-  `idUserKaltiaControlUser` varchar(20) NOT NULL,
-  `userKaltiaControlUser` text,
-  `userKaltiaControlPass` text,
-  `userKaltiaControlDescr` text,
-  `userKaltiaControlPerfil` varchar(15) DEFAULT NULL,
-  `userKaltiaControlNombre` text,
-  `userKaltiaControlStatus` text,
+  `idUserKaltiaControlUser` varchar(15) NOT NULL,
+  `userKaltiaControlUser` varchar(45) DEFAULT NULL,
+  `userKaltiaControlPass` varchar(45) DEFAULT NULL,
+  `userKaltiaControlDescr` varchar(45) DEFAULT NULL,
+  `userKaltiaControlPerfil` varchar(45) DEFAULT NULL,
+  `userKaltiaControlNombre` varchar(45) DEFAULT NULL,
+  `userKaltiaControlStatus` varchar(45) DEFAULT NULL,
   `userKaltiaControlDomicilio` varchar(45) DEFAULT NULL,
   `userKaltiaControlCorreo` varchar(45) DEFAULT NULL,
   `userKaltiaControlContacto` varchar(45) DEFAULT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `tc_userkaltiacontrol` (
 
 LOCK TABLES `tc_userkaltiacontrol` WRITE;
 /*!40000 ALTER TABLE `tc_userkaltiacontrol` DISABLE KEYS */;
-INSERT INTO `tc_userkaltiacontrol` VALUES ('kaltiaUserA','admon@gmail.com','pass','userPruebaA','perfilA','pruebaNombreA','activo',NULL,NULL,NULL),('kaltiaUserE','user@gmail.com','pass','userPruebaE','perfilE','pruebaNombreE','activo',NULL,NULL,NULL),('kaltiaUserI','perfilI@kaltia.com','pass','userPruebaI','perfilI','pruebaNombreI','activo','domicilio kaltiaI','correo kaltia I','contacto 5558909313');
+INSERT INTO `tc_userkaltiacontrol` VALUES ('kaltiaUserA','perfilA@kaltia.xyz','pass','Perfil Administrador','perfilA','Administrador','activo',NULL,NULL,NULL),('kaltiaUserE','perfilE@kaltia.xyz','pass','Perfil Empresa','perfilE','Empresa','activo',NULL,NULL,NULL),('kaltiaUserI','perfilI@kaltia.xyz','pass','Perfil Integrador','perfilI','Integrador','activo',NULL,NULL,NULL),('kaltiaUserO','perfilO@kaltia.xyz','pass','Perfil Observador','perfilO','Observador','activo',NULL,NULL,NULL),('kaltiaUserU','perfilU@kaltia.xyz','pass','Perfil Usuario','perfilU','Usuario','activo',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tc_userkaltiacontrol` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-22 20:28:24
+-- Dump completed on 2018-11-12 22:27:56

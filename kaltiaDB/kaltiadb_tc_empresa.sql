@@ -2,7 +2,7 @@
 --
 -- Host: 31.220.60.92    Database: kaltiadb
 -- ------------------------------------------------------
--- Server version	5.7.23-0ubuntu0.16.04.1
+-- Server version	5.7.24-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -49,7 +49,7 @@ CREATE TABLE `tc_empresa` (
 
 LOCK TABLES `tc_empresa` WRITE;
 /*!40000 ALTER TABLE `tc_empresa` DISABLE KEYS */;
-INSERT INTO `tc_empresa` VALUES ('bronea','bronea','BroneaNombreComplero','broneaRFC','broneaDireccion','broneaEmail','broneaContacto','kaltiaUserI','broneaVarios','kaltiaUserE','',NULL,NULL,NULL,NULL),('mazda','mazda','Mazda Prueba','empresaRFC','empresaDireccion','empresaEmail','empresaContacto','kaltiaUserI','empresaVarios','mazdaE','',NULL,NULL,NULL,NULL),('Nombre_Corto','modelo','Nombre Completo Empresa','XXX000000XXX','Direccion completa de Empresa con caracteres especiales (#-)','email@valido.com','Contacto con la empresa nombre y telefono Verificado +5215558909313','kaltiaUserI','Separar los campos con el caracter \'|\' .','Nombre_Corto@kaltiaControl.com','bronea','Inicio','Periodo : 22/Octubre/2018 hasta 22/Noviembre/2018','efectivo','www.kaltiaControl.xyz/factura/Nombre_Corto');
+INSERT INTO `tc_empresa` VALUES ('bronea','bronea','BroneaNombreComplero','broneaRFC','broneaDireccion','broneaEmail','broneaContacto','kaltiaUserI','broneaVarios','kaltiaUserE','',NULL,NULL,NULL,NULL),('mazda','mazda','Mazda Prueba','empresaRFC','empresaDireccion','empresaEmail','empresaContacto','kaltiaUserI','empresaVarios','mazdaE','',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tc_empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-22 20:28:15
+-- Dump completed on 2018-11-12 22:27:54

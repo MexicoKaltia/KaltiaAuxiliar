@@ -73,7 +73,7 @@ VISTA RAPIDA
 			*-BodySeccionArray3Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
 			*-FooterSeccion1Bronea Modificar el modal que se puedan ver los controles de carrusel (izq y derecha) recortar los campos de texto
 			*-FooterSeccion1Bronea Generar un campo para agregar el link de ubicacion/
-			+falta redes sociales-FooterSeccion(es)	reconfigurar las secciones de footerSeccion2 y footerSeccion3.
+			*-falta redes sociales-FooterSeccion(es)	reconfigurar las secciones de footerSeccion2 y footerSeccion3.
 			-Reconfigurar el Copyrigth con el nombre de Empresa KALTIA-MX Sistemas IT.
 			
 		
