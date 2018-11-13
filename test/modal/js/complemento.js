@@ -1,64 +1,61 @@
-$(function() {
-$("#upload-file-input").on("change", uploadFile);
-});
+/*
+*    segundo modo para habilitar script desde la carga del documento
+*/
+  /*$(document).on(
 
-/**
- * Upload the file sending it via Ajax at the Spring Boot server.
- */
-function uploadFile() {
-  $.ajax({
-    url: "http://localhost:8010/fileUpload",
-    type: "POST",
-    data: new FormData($("#upload-file-form")[0]),
-    enctype: 'multipart/form-data',
-    processData: false,
-    contentType: false,
-    cache: false,
-    success: function () {
-      // Handle upload success
-      // ...
-      alert("exito")
-    },
-    error: function () {
-      // Handle upload error
-      // ...
-      alert("negative")
-    }
-  });
-} // function uploadFile
+    alert("one")
+
+    );*/
 
 
-  $('#agregarStr').click(function(){
-      console.log("param:")
-       
-      $('.headerSeccion3').attr("data-toggle","modal");
-      $('.headerSeccion3').attr("data-target","#modalEdicion");
-  });
 
 $(document).ready(function() {
 
-  $('#openBtn').click(function() {
-    $('#myModal').modal({
-      show: true
-    })
-  });
+$('#pagination-demo').twbsPagination({
+totalPages: 5,
+// the current page that show on start
+startPage: 1,
 
-  $(document).on({
-    'show.bs.modal': function() {
-      var zIndex = 1040 + (10 * $('.modal:visible').length);
-      $(this).css('z-index', zIndex);
-      setTimeout(function() {
-        $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
-      }, 0);
-    },
-    'hidden.bs.modal': function() {
-      if ($('.modal:visible').length > 0) {
-        // restore the modal-open class to the body element, so that scrolling works
-        // properly after de-stacking a modal.
-        setTimeout(function() {
-          $(document.body).addClass('modal-open');
-        }, 0);
-      }
-    }
-  }, '.modal');
+// maximum visible pages
+visiblePages: 5,
+
+initiateStartPageClick: true,
+
+// template for pagination links
+href: false,
+
+// variable name in href template for page number
+hrefVariable: '{{number}}',
+
+// Text labels
+first: 'First',
+prev: 'Previous',
+next: 'Next',
+last: 'Last',
+
+// carousel-style pagination
+loop: false,
+
+// callback function
+onPageClick: function (event, page) {
+  $('.page-active').removeClass('page-active');
+  $('#page'+page).addClass('page-active');
+},
+
+// pagination Classes
+paginationClass: 'pagination',
+nextClass: 'next',
+prevClass: 'prev',
+lastClass: 'last',
+firstClass: 'first',
+pageClass: 'page',
+activeClass: 'active',
+disabledClass: 'disabled'
+
 });
+
+
+
+});//fin de documento 
+
+
