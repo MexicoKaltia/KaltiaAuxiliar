@@ -1,0 +1,47 @@
+{
+	dias1:0-4,
+	dias2:5,
+	horario11in:900,
+	horario11out:1400,
+	horario12in:1500,
+	horario12out:1800,
+}
+		1:{
+			900:{user:uaserA, mensaje:/*..*/},
+			930:{user:disponible mensaje:""},
+			/*
+			*
+			*/
+			1730:{user:"", mensaje:""}
+		},	
+		2:{
+			900:{user:uaserA, mensaje:/*..*/},
+			930:{user:disponible mensaje:""},
+			/*
+			*
+			*/
+			1730:{user:"", mensaje:""}
+		},
+		3:{
+			900:{user:uaserA, mensaje:/*..*/},
+			930:{user:disponible mensaje:""},
+			/*
+			*
+			*/
+			1730:{user:"", mensaje:""}
+		},
+		/*
+		*
+		*/
+		31:{
+			900:{user:uaserA, mensaje:/*..*/},
+			930:{user:disponible mensaje:""},
+			/*
+			*
+			*/
+			1730:{user:"", mensaje:""}
+		}
+	}
+}
+	
+	
