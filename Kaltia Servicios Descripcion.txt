@@ -10,7 +10,12 @@ kaltia Servicios
 	-abogados
 	-profesores
 	-barberias
+	-tatuajes
 	-esteticas
+	-salones de belleza
+	-salones de baile
+	-nutricion
+	-ejecutivos bienes raices
 	-mecanicos
 	-electricistas
 	-SPA
