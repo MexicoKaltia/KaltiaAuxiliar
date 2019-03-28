@@ -12,6 +12,7 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-u
 crear un nuevo usuario hgrc
 	adduser hgrc
 		http://culturacion.com/como-crear-cuentas-de-usuario-en-linux/
+		https://www.alvarolara.com/2013/05/07/crea-usuario-con-privilegios-de-root/
 
 Configurar VirtualMin
 	https://31.220.60.92:10000/
@@ -53,6 +54,10 @@ cambiar la IP en el virtual host
 
 deploy war cambiar la Ip de Mysql
 
+
+intall mysql
+	https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-16-04
+
 importar tablas kaltiadb
 	conectar remotamente Mysql
 	https://medium.com/@kasunsiyambalapitiya/how-to-setup-a-mysql-server-on-local-area-network-lan-c3c5012c7d6b
@@ -63,4 +68,4 @@ importar tablas kaltiadb
 	https://httpd.apache.org/docs/current/vhosts/index.html
 	https://httpd.apache.org/docs/current/vhosts/fd-limits.html
 	
-	
+	CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';

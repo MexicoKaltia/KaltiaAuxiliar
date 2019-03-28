@@ -23,6 +23,7 @@ https://stackoverflow.com/questions/14779104/how-to-allow-remote-connection-to-m
 https://stackoverflow.com/questions/1559955/host-xxx-xx-xxx-xxx-is-not-allowed-to-connect-to-this-mysql-server
 
 deshabilitar apache2-webserver/
+https://www.howtoinstall.co/es/ubuntu/xenial/apache2?action=remove
 https://askubuntu.com/questions/170640/how-to-disable-apache2-server-from-auto-starting-on-boot
 
 habilitar firewall y acceso a los puertos
@@ -32,6 +33,8 @@ netstat -putona
 netstat -tuple
 lsof -P -i -n 
 sudo ufw status verbose
+
+
 
 
 
