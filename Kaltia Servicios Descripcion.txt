@@ -25,6 +25,7 @@ kaltia Servicios
 	-mariachis
 	-payasos
 	-veterinaria
+	-pasteleria
 	
 Las funciones principales :
 	-quienes somos

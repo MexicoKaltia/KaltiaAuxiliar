@@ -34,33 +34,49 @@ VISTA RAPIDA
 		
 		*PerfilI
 		Modulo Inicio
-			-Habilitar Modal para la edicion de los campos generales de UsuarioKaltiaControl
+			-Habilitar Modal para la edicion de los campos generales de UsuarioKaltiaControl <-- solo para perfilA
 			-Habilitar Modal con los datos Completos de Empresa, 
-			-Cambiar el Acceso Rapido de 'Informacion Empresa'  a  'Relacion de Empresas'
-			-Enmarcar de manera independiente las Empresas
+			*Cambiar el Acceso Rapido de 'Informacion Empresa'  a  'Relacion de Empresas'
+			*Enmarcar de manera independiente las Empresas
 			-Cambiar los campos de presentacion (Nombre Empresa Completo, nombre corto, action, status, fecha de corte)
 		
 		Modulo Alta Empresa
-			-Enmarcar de manera independiente las Secciones
+			*Enmarcar de manera independiente las Secciones
 			-Cambiar el nombre de factura www.kaltiaControl.xyz/factura/Nombre Corto   --> www.kaltiaControl.xyz/factura/Nombre_Corto (sin espacios o con el IdAction)
-			-Cambiar el nombre de usuario Nombre Corto@kaltiaControl.com --> Nombre_Corto@kaltiaControl.com (sin espacios o con el IdAction)
+			*Cambiar el nombre de usuario Nombre Corto@kaltiaControl.com --> Nombre_Corto@kaltiaControl.com (sin espacios o con el IdAction)
 			
 		Modulo Alta Empresa -- Edicion
 			+CitasPro+falta orfenar campos-Agregar los Modal de Registro Usuarios, Citas, Contacto, Ingresa 
 			-Validar los campos de captura !!
-			-Reconfigurar las imagenes default por medio de KaltiaTransaccion/fileUpload, para que carguen de manera inicial con imagen default
-			-Reconfigurar en AltaEmpresa en el shell EmpresaNueva.sh : /kaltia/empresa/Nombre Corto/imagenes --> /kaltia/empresa/Nombre_Corto/imagenes (sin espacios o con el IdAction)
+			*Reconfigurar las imagenes default por medio de KaltiaTransaccion/fileUpload, para que carguen de manera inicial con imagen default
+			*Reconfigurar en AltaEmpresa en el shell EmpresaNueva.sh : /kaltia/empresa/Nombre Corto/imagenes --> /kaltia/empresa/Nombre_Corto/imagenes (sin espacios o con el IdAction)
 		
 			
 30 Marzo
 
 - kaltia transaccion
 	-edicion:
-		-cambiar mensajes de edicion, alta kue, ingreso kue
+		+generar metodo de envia correo cita+ generar un JSON para la lectura de KE y pueda aceptar la cita. genera el correo de aceptacion de cita para KUE
 	-mail:
-		-generar metodo de envia correo cita
+		
 		
 		
 - kaltia
-		-generar el envio de correo cita
+		+anuncio de proceso de validacion de aceptacion de cita, inhanilitar el boton cita-
+		
+		
+		55 46 31 26 69
+		5204 1652 9048 4090
+		700472664488
+		
+		aclaraciones@citybanamex.com
+		numero folio 19501697
+		viernes 
+		
+		42188374689002 num credito kia
+		cardif 01800 522 7343 -6
+		cardif 01800 801 0132 
+		5511 000310 att cetelem kia
+		
+		5510548020 -2 credito personal bbva
 		
