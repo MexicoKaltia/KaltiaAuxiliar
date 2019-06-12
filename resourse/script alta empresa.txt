@@ -72,6 +72,19 @@ script crear nueva empresa
 			tc_userKaltiaControl
 			tc_action
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------
+PLANTILLAS DINAMICAS
+	IR POR SECCION POR SECCION
+		CONSIDERAR CADA UNA DE LAS SECCIONES DEFINIDAS CON LAS PROPIEDADES DE STRUTS FRONT 
+		AGREGAR CADA UNO DE LOS <DIV ID = "SECCION"/>
+		CAMBIAR LAS URL DE IMAGEN 
+			<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1'
+		headerArraySeccion5:
+			CAMBIAR LA DIMENSION DE LOGOTIPO 
+				(style="max-width: 2.0em; max-height: 2.0em)
+			MODIFICAR EL MENU :	
+				CONFIGURAR EL MENU PARA SEA FIJO EN EL SCROLL DE LA PANTALLA
+				
+	
 
 	
