@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<!--      CARGA DE HOJAS DE ESTILO  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/complemento.css">
+</head>
+<body>
+<!--      INICIO DE PRUEBAS  -->
+<a data-toggle="modal" href="#modalEdicion_bodySeccionArray1Bronea" class="btn btn-primary">Launch modal1</a>
+
+<!-- MODAL PRUEBA -->
+<div class="modal fade" id="modalEdicion_bodySeccionArray1Bronea" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content" style="background-image:url('images/imagen.jpg');">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle">Es</h5>
+				<br>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close" id="modalEdicionBody_btnClose">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="alerta">
+						<hiden class="alerta_in"></hiden>
+				</div>
+			</div>
+ 			<!--**********************************************************************************-->
+			    <!-- main body -->
+  			<div class="modal-body">
+          <form>
+          <div class="form-group row">
+            <span class="col-sm-2 col-form-label text-left colorLabel">Titulo</span>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="tituloObjetoHS1<s:property value='#conta'/>" value="value" required/>
+            </div>
+          </div>
+          <div class="form-group row">
+            <span class="col-sm-2 col-form-label text-left colorLabel">Referencia</span>
+            <div class="col-sm-10">
+              <select class="custom-select form-control" id="seleccionObjetoHS1<s:property value='#conta'/>">
+              <!-- <option value="<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option> -->
+               <option selected>Selecciona una Opcion del Menú con los Modulos Activos</option>
+              <option value="Ingresa">Ingresa</option>
+              <option value="Cita">Cita</option>
+              <option value="Contacto">Contacto</option>
+              <option value="Registro">Registro</option>
+            </select>
+            </div>
+          </div>
+          </form>
+
+  			</div>	<!-- end bodymodal -->
+ 			<!--**********************************************************************************-->
+ 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal"
+					id="modalEdicionBody_btnClose">Cerrar</button>
+				<button type="submit" class="btn btn-primary"
+					id="modalEdicionBodySeccionArray1_btnSave">Guardar Cambios</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--      CARGA DE JAVASCRIPT  -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

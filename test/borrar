@@ -1,1 +1,68 @@
-460x700.png&&Construir tu Proyecto&&Estamos comprometidos a apoyar el crecimiento de tu proyecto en los aspectos ANALISIS , TECNOLOGICOS y  ADMINISTRACION,  Kaltia realiza el marco de webSite proporcionando las herramientas necesarias y particulares sea el tipo de modelo de negocio: Consumibles, Servicios y Sociales++one_third first&&referencia&&fa-location-arrow&&Proyectos&&Categorias de proyectos desarrollados++one_third&&referencia&&fa fa-lock&&Integridad Clientes&&Sabemos que tu negocio y/o proyecto son primordiales en la gestion y orden de tu productividad, por ello consideramos++one_third last&&referencia&&fa fa-map-marker&&Posicionamiento&&Tenemos CLientes regados por toda la RepublicaMexicana y paises de Centro America
+<div class="row">
+    <span class="col-md-4 col-md-offset-4 text-left">Titulo</span>
+    <div class="col-md-8">
+      <input type="text" id="tituloObjetoHS1<s:property value='#conta'/>" value="<s:property value='#menu2Value.substring(0,#menu2Value.indexOf("."))' />"/>
+    </div>
+  </div>
+  <div class="row">
+    <span class="col-md-4 col-md-offset-4 text-left">Referencia</span>
+    <div class="col-md-8">
+<select class="form-control" id="seleccionObjetoHS1<s:property value='#conta'/>">
+  <option value="<s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option>
+  <hr>
+      <option value="Ingresa">Ingresa</option>
+    <option value="Cita">Cita</option>
+    <option value="Contacto">Contacto</option>
+    <option value="Registro">Registro</option>
+</select>
+    </div>
+  </div>
+
+
+
+
+
+                <article>
+              					<div>
+              						<p class="heading">
+              							<input type="text" id="subtituloHS4" value="<s:property value='header.headerSeccion4.get(0)'/>"/>
+              						</p>
+              						<h2 class="heading">
+              							<input type="text" id="tituloHS4" value="<s:property value='header.headerSeccion4.get(1)'/>"/>
+              						</h2>
+              						<p>
+              							<textarea class='form-control' id="descripcionHS4"><s:property value='header.headerSeccion4.get(2)'/></textarea>
+              						</p>
+              					</div>
+              					<div>
+              					</div>
+
+              			          <ul class="nospace inline pushright">
+                                <%-- Identificar Secciones
+              			            <li><a class="btn inverse" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(3)'/>"><s:property value='header.headerSeccion4.get(4)'/></a></li> --%>
+              						      <li><input type="text" id="boton1HS4" value="<s:property value='header.headerSeccion4.get(4)'/>"/>
+              						      <select class="form-control" id="seleccion1HS4">
+              											  <option value="<s:property value='header.headerSeccion4.get(3)'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option>
+              											  <hr>
+                    										  <option value="Ingresa">Ingresa</option>
+              										      <option value="Cita">Cita</option>
+              										      <option value="Contacto">Contacto</option>
+              										      <option value="Registro">Registro</option>
+              										 </select>
+              						</li>
+              <%-- Identificar Secciones
+              			            <li><a class="btn" href="<s:property value='identidadVO.idAction'/>/<s:property value='header.headerSeccion4.get(5)'/>"><s:property value='header.headerSeccion4.get(6)'/></a></li> --%>
+              			            <li><input type="text" id="boton2HS4" value="<s:property value='header.headerSeccion4.get(6)'/>"/>
+              							<select class="form-control" id="seleccion2HS4">
+              											  <option value="<s:property value='header.headerSeccion4.get(5)'/>" selected disabled><s:property value='#menu2Value.substring(#menu2Value.lastIndexOf(".")+1,#menu2Value.length())'/></option>
+              											  <hr>
+                    										  <option value="Ingresa">Ingresa</option>
+              										      <option value="Cita">Cita</option>
+              										      <option value="Contacto">Contacto</option>
+              										      <option value="Registro">Registro</option>
+              										 </select>
+              						</li>
+              			          </ul>
+              		        </footer>
+
+              				</article>
