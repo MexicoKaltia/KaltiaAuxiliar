@@ -74,14 +74,33 @@ script crear nueva empresa
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 PLANTILLAS DINAMICAS
+	ELEMENTOS DE EDICION:
+	
+		AGREGAR LA CARPETA EN KALTIAMICROSERVICIOS y GENERAR LA CARPETA EN HOSTING
+			/kaltia/shell/empresa/MODELO
+		MODIFICAR LOS TILES EN BASE DE DATOS TW_header  TW_BODY TW_FOOTER
+			IDheader : algenius-header
+		AGREGAR LAS RUTAS DE LAS IMAGENES EN TABLA DE Action
+			 en la tabla kaltiadb.tc_action AMBIENTE = http://kaltia-store.xyz/kaltia/empresa/
+		
+		GENERAR EL MODALEDICION.JSP DENTRO DE MODELO/PAGES/
+			con las propiedades de cada modelSeccion
+			reemplazar Bronea --> MODELO
+		GENERAR EL EDICIONSECCIONES.JS DENTRO DE MODELO/LAYOUT/SCRIPTS
+			con las propiedades de cada seccion
+			reemplazar Bronea --> MODELO
+		
 	IR POR SECCION POR SECCION
 		CONSIDERAR CADA UNA DE LAS SECCIONES DEFINIDAS CON LAS PROPIEDADES DE STRUTS FRONT 
-			SEPARAR CADA SECCION <!-- ################################################################################################ -->
-		AGREGAR CADA UNO DE LOS <DIV ID = "SECCION"/>
+		AGREGAR CADA UNO DE LOS 
+			<DIV class ="SECCION" ID = "SECCION"/>
+		AGREGAR LOS IDENTIFICADORES DE SECCION
+			<a  id="seccion1"></a>
 		CAMBIAR LAS URL DE IMAGEN 
 			<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1'
-		AGREGAR EN LA TABLA TC_ACTION LA url DE AMBIENTE  
-			http://kaltia-store.xyz/kaltia/empresa/
+			
+		headerSeccion1:
+			agregar los parametros DE MODULOS en la tabla kaltiadb.tc_action actionModulos
 		headerArraySeccion5:
 			CAMBIAR LA DIMENSION DE LOGOTIPO 
 				(style="max-width: 2.0em; max-height: 2.0em)
