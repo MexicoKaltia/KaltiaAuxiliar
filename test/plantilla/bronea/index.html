@@ -2,7 +2,7 @@
 <!--
 Template Name: Bronea
 -->
-<html lang="">
+<html lang="es">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
 <title>Bronea</title>
@@ -42,40 +42,31 @@ Template Name: Bronea
   <!-- ################################################################################################ -->
   <div class="wrapper row1 headerSeccion3 " id="headerSeccion3"> 
       <header id="header" class="hoc clear">
-        <div id="logo" class="fl_left ">      
-          <h1><a href="<s:property value='identidadVO.idAction'/>">
-            <img src="images/02.jpg?v=1" alt="">
-                 PRUEBA
-              </a></h1>     
-        </div>
-        <nav id="mainav" class="fl_right">
-        <ul class="clear">
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a class="drop" href="#">Pages</a>
-                <ul>
-                  <li><a href="pages/gallery.html">Gallery</a></li>
-                  <li><a href="pages/full-width.html">Full Width</a></li>
-                  <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
-                  <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
-                  <li><a href="pages/basic-grid.html">Basic Grid</a></li>
+        <nav class="navbar  navbar-expand-md navbar-dark">
+            <a class="navbar-brand" href="#">Responsive navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">☰</button> 
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item active"> <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Link 1</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Link 2</a>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="#">Link 3</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </li>
                 </ul>
-              </li>
-              <li><a class="drop" href="#">Dropdown</a>
-                <ul>
-                  <li><a href="#">Level 2</a></li>
-                  <li><a class="drop" href="#">Level 2 + Drop</a>
-                    <ul>
-                      <li><a href="#">Level 3</a></li>
-                      <li><a href="#">Level 3</a></li>
-                      <li><a href="#">Level 3</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Level 2</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Link Text</a></li>
-              <li><a href="#">Link Text</a></li>
-            </ul>
+            </div>
         </nav>
       </header>
   </div>
