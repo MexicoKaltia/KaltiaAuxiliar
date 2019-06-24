@@ -106,7 +106,13 @@ PLANTILLAS DINAMICAS
 				(style="max-width: 2.0em; max-height: 2.0em)
 			MODIFICAR EL MENU :	
 				CONFIGURAR EL MENU PARA SEA FIJO EN EL SCROLL DE LA PANTALLA
-				
+			COPIAR LA PLANTILLA DE MENURESPONSIVE, UBICADO EN :
+				C:\Kaltia\GIT\KaltiaAuxiliar\test\plantilla\bronea\menuResponsive_Ver1
+			
+			
+			
+			
+
 	
 
 	
