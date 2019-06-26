@@ -98,6 +98,8 @@ PLANTILLAS DINAMICAS
 			<a  id="seccion1"></a>
 		CAMBIAR LAS URL DE IMAGEN 
 			<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1'
+		EFECTOS SCROLL
+			aniview reallyslow" data-av-animation="fadeIn" 
 			
 		headerSeccion1:
 			agregar los parametros DE MODULOS en la tabla kaltiadb.tc_action actionModulos
