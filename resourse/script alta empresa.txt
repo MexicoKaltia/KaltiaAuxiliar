@@ -83,13 +83,6 @@ PLANTILLAS DINAMICAS
 		AGREGAR LAS RUTAS DE LAS IMAGENES EN TABLA DE Action
 			 en la tabla kaltiadb.tc_action AMBIENTE = http://kaltia-store.xyz/kaltia/empresa/
 		
-		GENERAR EL MODALEDICION.JSP DENTRO DE MODELO/PAGES/
-			con las propiedades de cada modelSeccion
-			reemplazar Bronea --> MODELO
-		GENERAR EL EDICIONSECCIONES.JS DENTRO DE MODELO/LAYOUT/SCRIPTS
-			con las propiedades de cada seccion
-			reemplazar Bronea --> MODELO
-		
 	IR POR SECCION POR SECCION
 		CONSIDERAR CADA UNA DE LAS SECCIONES DEFINIDAS CON LAS PROPIEDADES DE STRUTS FRONT 
 		AGREGAR CADA UNO DE LOS 
@@ -100,6 +93,12 @@ PLANTILLAS DINAMICAS
 			<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1'
 		EFECTOS SCROLL
 			aniview reallyslow" data-av-animation="fadeIn" 
+		GENERAR EL MODALEDICION.JSP DENTRO DE MODELO/PAGES/
+			con las propiedades de cada modelSeccion
+			reemplazar Bronea --> MODELO
+		GENERAR EL EDICIONSECCIONES.JS DENTRO DE MODELO/LAYOUT/SCRIPTS
+			con las propiedades de cada seccion
+			reemplazar Bronea --> MODELO
 			
 		ADECUAR LA SECCION CON LOS CAMPOS RECICLANDO VIEJAS SECCIONES CONFIGURADAS EN MODALEDICION.JSP
 			cambiar ctrl+H los valores de campos :  footer.footerSeccion2.get(0) - footer.footerSeccion1.get(0)
@@ -136,8 +135,12 @@ PLANTILLAS DINAMICAS
 				CONFIGURAR EL MENU PARA SEA FIJO EN EL SCROLL DE LA PANTALLA
 			COPIAR LA PLANTILLA DE MENURESPONSIVE, UBICADO EN :
 				C:\Kaltia\GIT\KaltiaAuxiliar\test\plantilla\bronea\menuResponsive_Ver1
+				CAMBIAR LA DIMENSION DE LOGOTIPO 
+					(style="max-width: 2.0em; max-height: 2.0em)
+				MODIFICAR EL MENU :	
+					CONFIGURAR EL MENU PARA SEA FIJO EN EL SCROLL DE LA PANTALLA
 
-	
+			
 			
 			
 			
