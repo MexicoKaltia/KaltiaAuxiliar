@@ -101,6 +101,32 @@ PLANTILLAS DINAMICAS
 		EFECTOS SCROLL
 			aniview reallyslow" data-av-animation="fadeIn" 
 			
+		ADECUAR LA SECCION CON LOS CAMPOS RECICLANDO VIEJAS SECCIONES CONFIGURADAS EN MODALEDICION.JSP
+			cambiar ctrl+H los valores de campos :  footer.footerSeccion2.get(0) - footer.footerSeccion1.get(0)
+			cambiar ctrl+H los ID de campos : tituloFS2 - tituloFS1
+		EDICIONSECCIONES.JS
+			AGREGAR EL ELEMENTO JSON DENTRO DE LA FUNCION ESTRUCTURASECCION
+				"footerSeccion2Aerogem"   :{  "tituloFS2" : "text",  "subtituloFS2" : "lorem",  "domicilioFS2" : "text",  "telefonoFS2" : "text",  "correoFS2" : "text", "ubicacionFS2" : "text"},
+			AGREGAR LA FUNCION DE CARGAR MODAL / GENERAR VALORES FINALES / CARGAR iMAGEN / ENVIADATA
+				CONSIDERAR LOS ESQUEMAS PARA SECCION   Y SECCIONARRAY
+				SECCION 
+					CONSIDERAR SI CONTIENE IMAGEN, AGREGAR:
+									$('#imagenFS2').on('change', function(){ enviaImagen("imagenFS2Form") });
+													while(valoresFinales.includes("C:\\fakepath\\") ){
+									valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+								}
+				SECCIONARRAY
+					CONSIDERAR LA CANTIDAD DE COLUMNAS A DESPLEGAR
+					CONSIDERAR EL INICIO DEL ARRAY
+										valorColumnas = 3;
+										valorPosicion = 0;
+										valorIniciaObjeto = 1;
+										valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
+
+		
+		
+		
+			
 		headerSeccion1:
 			agregar los parametros DE MODULOS en la tabla kaltiadb.tc_action actionModulos
 		headerArraySeccion5:
@@ -110,7 +136,8 @@ PLANTILLAS DINAMICAS
 				CONFIGURAR EL MENU PARA SEA FIJO EN EL SCROLL DE LA PANTALLA
 			COPIAR LA PLANTILLA DE MENURESPONSIVE, UBICADO EN :
 				C:\Kaltia\GIT\KaltiaAuxiliar\test\plantilla\bronea\menuResponsive_Ver1
-			
+
+	
 			
 			
 			
