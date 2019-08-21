@@ -99,3 +99,13 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 } */
+.transparente{
+  opacity: 0.3;
+  -moz-opacity: 0.3;
+  filter: alpha(opacity=30);
+  -khtml-opacity: 0.3;
+  }
+
+h3{
+  background-color: rgb(252, 253, 250);
+}
