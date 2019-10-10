@@ -1,0 +1,54 @@
+Kaltia Servicios Informaticos:
+
+	Kaltia Sociales
+	
+	La division de KSI con propuesta a la informativa administrativa  ABC y sus relaciones Logisticas que implementan un Sistema de Recursos Empresariales.
+	Brinda soluciones en la Administracion de Recursos y Procesos de empresa, los siguientes modulos son la propuesta inicial,
+ 	ya que se pretende adaptarse a las necesidades reales de cada empresa.
+	
+	Los modulos principales :
+		-Recursos Humanos
+			-ABC Estructura de Recursos
+				-Direccion
+				-Gerencia
+				-Departamento
+			-ABC Empleado
+				-Proceso de Contratacion
+					-Generales
+					-Documentacion
+					-CV
+					-Especialidades Atributos
+				-Id Empleado codigo QR
+				-Control Viaticos
+					-Proceso Interno Facturacion
+				-Control Vacaciones
+				-Control Nomina
+				-Control Asistencias
+			-Notificaciones
+				-Calendarizacion de eventos
+				-Avisos grupales, individuales
+				-Foro de comunidad
+		
+		-Proveedores
+			-ABC Proveedores
+			-Seguimiento cuentas por pagar
+			-Proceso Interno de Facturacion
+		
+		-Conciliaciones 
+			-Comparacion de 2 o mas archivos en mismo formato
+			-Customizacion de conciliacion
+		
+		-Ordenes de Trabajo
+			-Cotizaciones
+			-ABC OT
+			-Seguimiento
+		
+		-Inventarios
+			-ABC de Articulos
+			-Tarjeta de articulo
+		
+		-Contabilidad
+			-Registro Ingresos
+			-Registro Egresos
+			-Facturacion
+			-Reglas de Negocio

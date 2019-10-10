@@ -1,0 +1,53 @@
+Kaltia Servicios Informaticos:
+
+	Kaltia Contenidos
+	
+	La division de KSI conforme a las Plantillas CMS (Sistema de Manejo de Contenido) y Modulos Funcionales, enfocado principalmente al sector de clientes tipo 'servicio',
+	quien basicamente la persona fisica o moral brindan sus profesiones u oficios:
+		-contadores
+		-doctores
+			-ojos
+			-cabeza
+			-infantiles
+			-especialidades
+		-enfermeros
+		-abogados
+		-profesores
+		-barberias
+		-tatuajes
+		-esteticas
+		-salones de belleza
+		-salones de baile
+		-nutricion
+		-ejecutivos bienes raices
+		-mecanicos
+		-electricistas
+		-SPA
+		-salones de fiesta
+		-banquetes
+		-servicios meseros
+		-mariachis
+		-payasos
+		-veterinaria
+		-pasteleria
+	
+Las funciones principales :
+	-quienes somos
+	-especialidades
+	-casos de experiencia
+	-ubicacion
+	-tarjeta por articulo
+
+Los Modulos Funcionales Base 1:
+	-Agendar citas	
+	-Cliente
+		-abc
+		-seguimiento
+		-historial
+	-Foto almacen
+		-imagenes
+		-video
+		-blog	
+	-Correo
+	-Carpetas Personalizadas para clientes de empresa
+	
