@@ -82,7 +82,27 @@ PLANTILLAS DINAMICAS
 			IDheader : algenius-header
 		AGREGAR LAS RUTAS DE LAS IMAGENES EN TABLA DE Action
 			 en la tabla kaltiadb.tc_action AMBIENTE = http://kaltia-store.xyz/kaltia/empresa/
-		
+			 
+		GENERAR LA CARPETA DE LAYOUT CON LA SIGUIENTE ESTRUCTURA:
+		C:.
+			├───layout
+			│   ├───scripts
+			│   └───styles
+			│       └───fonts
+			└───pages
+		EN LA CARPETA DE SCRIPT: los elementos propios del MODELO  + EDICIONSECCIONES.JS 
+			 Directorio de C:\Kaltia\GIT\Kaltia\WebContent\modelo\algenius\layout\scripts
+			25/06/2019  05:09 p. m.    <DIR>          .
+			25/06/2019  05:09 p. m.    <DIR>          ..
+			25/06/2019  05:09 p. m.            16,913 edicionSecciones.js
+			07/06/2019  04:47 p. m.                 0 index.html
+			07/06/2019  04:47 p. m.               610 jquery.backtotop.js
+			07/06/2019  04:47 p. m.            86,711 jquery.min.js
+			07/06/2019  04:47 p. m.             1,292 jquery.mobilemenu.js
+			
+		EN LA CARPETA DE STYLES:
+			los elementos propios del MODELO
+				
 	IR POR SECCION POR SECCION
 		CONSIDERAR CADA UNA DE LAS SECCIONES DEFINIDAS CON LAS PROPIEDADES DE STRUTS FRONT 
 		AGREGAR CADA UNO DE LOS 
@@ -91,6 +111,8 @@ PLANTILLAS DINAMICAS
 			<a  id="seccion1"></a>
 		CAMBIAR LAS URL DE IMAGEN 
 			<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1'
+		LA IMAGEN DE LOGOTIPO DEBE LLEVAR ESTOS Atributos
+			<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)'/>?v=1" alt="" style="max-width: 3.0em; max-height: 3.0em">
 		EFECTOS SCROLL
 			aniview reallyslow" data-av-animation="fadeIn" 
 		GENERAR EL MODALEDICION.JSP DENTRO DE MODELO/PAGES/
@@ -135,8 +157,6 @@ PLANTILLAS DINAMICAS
 				CONFIGURAR EL MENU PARA SEA FIJO EN EL SCROLL DE LA PANTALLA
 			COPIAR LA PLANTILLA DE MENURESPONSIVE, UBICADO EN :
 				C:\Kaltia\GIT\KaltiaAuxiliar\test\plantilla\bronea\menuResponsive_Ver1
-				CAMBIAR LA DIMENSION DE LOGOTIPO 
-					(style="max-width: 2.0em; max-height: 2.0em)
 				MODIFICAR EL MENU :	
 					CONFIGURAR EL MENU PARA SEA FIJO EN EL SCROLL DE LA PANTALLA
 
