@@ -1,27 +1,57 @@
-ISSUES KALTIA SISTEMA VERSION 1.0 - 22 MAYO 2019
 
-KALTIA
+KALTIA SOLICIONES INFORMATICA
 
-	-Editar la pagina inicial de kaltia para q muestre los puntos importantes de kaltia servicios y por q hacer  su pagina
-	-GENERAR MAS PLANTILLAS
+	SITIO WEB DE KSI
+		EMPRESA MEXICANA CON OBJETIVOS DE PROVEER SOLUCIONES INFORMATICAS AL SERVICIO ...
+		QUIENES SOMOS
+		OBJETIVOS
+		CONTACTOS
+		MODULOS	KALTIA SERVICIOS INFORMATICOS :
+			KALTIA CONTENIDOS --> 	-Editar la pagina inicial de kaltia para q muestre los puntos importantes de kaltia contenidos y por q hacer  su pagina
+			KALTIA CONTROL
+			KALTIA CONSUMO
+			KALTIA CONDOMINIOS AVI Administracion Vivienda Inmobilaria
 	
+____________________________________________________________________________________________________________________________________________________________________________
+	
+KALTIA CONTENIDOS:
+
+	-GENERAR MAS PLANTILLAS
+	-Validar las href de la plantilla ALGENIUS
 	-Validar los campos de captura !!
 		CONFIGURAR LA CAMPOS DE VALIDACION DE NUEVO KUE
 		*-falta redes sociales-FooterSeccion(es)	SOLO APARECEN LAS QUE TIENEN EDICION EN CHECKBOX TRUE
 	
 	-REVISAR LOS EFECTOS,  MENU FIXED, PARALLAX, ANIMATE, LIGHTBOX PARA CADA SECCION
+	
+	NUEVOS MODULOS
+		CHAT BOOT
+		ENVIO DE CORREO A CLIENTES POR CAMPAÑAS DE EMPRESA (FEED)
+		CARPETAS PERSONALIZADAS
+		GALERIA CATEGORIAS
+		AGREGAR  KUE PARA CURSOS O TALLERES
+		FORMULARIO PARA BLOG
+		INSERTION VIDEOS
+	
+____________________________________________________________________________________________________________________________________________________________________________
 
-KALTIACONTROL
+KALTIACONTROL <-- cambiar el dominio a Kaltia Gestor Contenidos
+	
 	HABILITAR BOTON DE TERMINO DE SESSION
 	
 	MODULOS:
+	-Terminar el modulo de clientes ***
+		Cerrar el ciclo ABC de clientes,
+		comprar dominio para correos de validacion nuevo KUE
+
+	-Terminar el modulo de citas ***	
 		*AGREGAR EN EL JSON DE ELEMENTOCITA EL CAMPO STATUS[PENDIENTE, APROBADO, RECHAZADO, AUSENTE]
 		MOSTRAR UN REPORTE DEL TOTAL DE LAS CITAS 
 		AJUSTAR CONTROL PARA LAS CITAS PENDIENTES POR APROBAR
 			+generar metodo de envia correo cita+ generar un JSON para la lectura de KE y pueda aceptar la cita. genera el correo de aceptacion de cita para KUE
 		ENVIA CORREO DE CITA APROBADA AL KUE
 		
-		*-Generar certificado SSL kaltiamx.xyz
+		
 		-Encabezado de plantilla modificar en modo fijo para que solo se vea <div class="wrapper row1">
 		-Agregar Acciones a los iconos de 'home','help','logout' y 'editar datos'
 		-Agregar Footer de KaltiaControl
@@ -44,18 +74,14 @@ KALTIACONTROL
 				-Habilitar Modal con los datos Completos de Empresa,
 				-Habilitar Modal Editar los datos Completos de Empresa,
 				-Cambiar al modo EdicionEmpresa
+____________________________________________________________________________________________________________________________________________________________________________				
 		
-NUEVOS MODULOS
-	CHAT BOOT
-	ENVIO DE CORREO A CLIENTES POR CAMPAÑAS DE EMPRESA (FEED)
-	CARPETAS PERSONALIZADAS
-	GALERIA CATEGORIAS
-	AGREGAR  KUE PARA CURSOS O TALLERES
-	FORMULARIO PARA BLOG
-	INSERTION VIDEOS
-	
-	
+KALTIA STORE
+		*-Generar certificado SSL kaltia-mx.xyz
+		- Generar varios ejemplos de dominio / correos y bandeja de archivos.
+		-
 		
+____________________________________________________________________________________________________________________________________________________________________________				
 			
 KALTIA PENDIENTES PARA PUESTA EN PRODUCCION MARZO 2019
 
@@ -65,20 +91,5 @@ KALTIA PENDIENTES PARA PUESTA EN PRODUCCION MARZO 2019
 	NUEVO SVP
 		SSL
 		CONEXION A BASE DE DATOS
-
-		55 46 31 26 69
-		5204 1652 9048 4090
-		700472664488
-		
-		aclaraciones@citybanamex.com
-		numero folio 19501697
-		viernes 
-		
-		42188374689002 num credito kia
-		cardif 01800 522 7343 -6
-		cardif 01800 801 0132 
-		5511 000310 att cetelem kia
-		
-		5510548020 -2 credito personal bbva
 		
 		
