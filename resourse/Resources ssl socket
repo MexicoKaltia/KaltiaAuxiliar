@@ -1,0 +1,15 @@
+recursos  ssl socket
+
+https://www.programcreek.com/java-api-examples/?code=evanx/vellumcore/vellumcore-master/src/vellum/httpserver/VellumHttpsServer.java
+https://www.programcreek.com/java-api-examples/?api=com.sun.net.httpserver.HttpHandler
+https://gitlab.com/bullbytes/simple_socket_based_server
+https://stackoverflow.com/questions/2308479/simple-java-https-server
+https://www.google.com/search?rlz=1C1CHBF_esMX852MX852&sxsrf=ACYBGNT5XHXDNh6qc_-LW4eAnnEkMTp9RA%3A1572385345552&ei=QbK4Xdm8IeiX1fAPkp-6-A8&q=HttpHandler+httpsserver+java&oq=HttpHandler+httpsserver+java&gs_l=psy-ab.3...2065718.2067018..2068666...0.0..0.225.1224.0j3j3......0....1..gws-wiz.......35i304i39.jno7EewnIWY&ved=0ahUKEwiZ4eLvt8LlAhXoSxUIHZKPDv8Q4dUDCAs&uact=5
+
+https://airbrake.io/blog/java-exception-handling/sslhandshakeexception
+
+https://www.programcreek.com/java-api-examples/?code=lambdalab-mirror/jdk8u-jdk/jdk8u-jdk-master/test/sun/security/ssl/sun/net/www/protocol/https/HttpsURLConnection/HttpsCreateSockTest.java
+https://www.programcreek.com/java-api-examples/?class=com.sun.net.httpserver.HttpExchange&method=sendResponseHeaders
+https://www.codota.com/code/java/methods/sun.net.www.protocol.https.Handler/%3Cinit%3E
+
+https://www.nanotutoriales.com/como-crear-un-certificado-ssl-de-firma-propia-con-openssl-y-apache-http-server
