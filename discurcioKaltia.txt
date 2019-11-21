@@ -1,0 +1,35 @@
+buenas tardes compañeros,  de manera formal les hago su conocimiento los avances que hemos tenido con esta idea de Sucursales Banistmo (java1.8)
+
+teniendo charla con TCS (tata Colombia), les intereso la idea, mas aun para poder ofertarla y promocionarla formalmente, TCS nos invita que seamos parte como Proveedores de Servicios, ya sea en proyectos y/o recursos .
+
+Por lo tanto para generar esa formalidad como MexicoCSS SA de CV , necesitamos varios recursos:
+-Legales , el tramite para consolidar la empresa (Gestor de Empresas)
+-Recursos tecnicos, para tener capacidad de atender proyectos de TI (Tecnologias de la Informacion)
+-Recursos economicos, para consolidar la empresa de Capital Variable, quien se tenga la confianza y el valor de invertir economicamente, es bienvenido , siempre y cuando los factores de contrato(s) nos permitan realizar.
+
+Como pueden observar de estos tres puntos nos debemos regularizar para poder operar de manera formal y profesional.
+Espero que este proyecto o iniciativa de emprender nuestra empresa sea visto con proyeccion a futuro como desarrollo profesional y personal.
+Cuento con ustedes para mitigar estos tres puntos y avanzar con esta propuesta.
+
+Por lo tanto, en lo q se consolida MexicoCSS SA de CV , la siguiente semana tenemos entrevista con un 'partner' (GCIT) donde buscamos alianza en capital y sostenibilidad comercial-legal, por parte de ser proveedores de TCS. En esta entrevista con GCIT, buscaremos la estrategia de que los proyectos que ganemos los podamos desarrollar en MexicoCSS SA de CV , y que los recursos humanos y capacidades financieras-legales nos de ese respaldo GCIT.
+En este punto,  Edgar me gustaria que me acompañaras a la entrevista , para temas comerciales y estructurales de esta 'alianza'.
+
+Tambien se ha conseguido una persona que nos puede apoyar en la Gestion de consolidar MexicoCSS SA de CV , esta entrevista la asegure para el lunes en calles de la colonia Roma. Para que tambien me pudieras acompañar Edgar y ver este tema directamente con el Gestor, Obviamente Gerar y Paco estan invitados a estas reuniones. Como les digo en parrafo anterior, me gustaria contar con ustedes para hacer solida esta Sociedad y avanzar en este proyecto emprendedor.
+
+Estos TRES puntos son de reflexion y bastante apoyo por los participantes e interesados. por favor con su apoyo.
+
+Ahora concluyendo del tema burocracia, ahora si a lo q nos atiende es el desarrollo de proyectos de TI. Para ello estamos organizando la maqueta piloto de un sistema basico CRUD, donde buscamos ejemplificar la arquitectura de proyecto piloto de manera expositiva y real. 
+En los siguientes correos les haré llegar los repositorios GIT para que comenzemos a aventar tecla.
+Y les facilitaré los recursos para complementar esta tarea:
+-Repositorios GIT
+-Contratos de Servicios (Definicion de los REST que se van a desarrollar)
+-link de servidor publico (VPS)
+-customizacion de VPS
+
+Si estan de acuerdo, Edgar y Paco, capa front
+Gerar y yo en back.  Tiempos no tenemos definidos pero si me gustaria q tengamos compromiso y ASAP podamos dar resultados sin que nos esten correteando  un PM.
+
+Por favor mantengamos comunicacion y cualquier tema lo podemos solventar.
+Si tienen Retro de este correo tambien es bienvenido. Hagamos buen uso del correo sin generar 35mil mails contestando trivialidades, para ello armamos una conferencia en corto.
+
+Gracias y saludos.
