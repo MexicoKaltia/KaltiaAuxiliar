@@ -1,14 +1,13 @@
 
 PRINCIPALES
-	-Modificar la limpia de Alertas, se eliminan despues de la ejecucion del modal.
-		-timesleep(3seg);
+	
 	-Modificar la alerta que se genere en la parte inferior derecha como notificacion.
 	
 	-Revisar logs
 	
-	-GENERAR EL DOMINIO DEFINITIVO DE KALTIA SOLUCIONES INFORMATICA
-	-GENERAR EL DOMINIO DE CORREOS
-	-GENERAR DOMINIOS DE PRUEBA
+	-GENERAR EL DOMINIO DEFINITIVO DE KALTIA SOLUCIONES INFORMATICA  --> -- > kaltiaservicios.site
+	-GENERAR EL DOMINIO DE CORREOS   -- > kaltiaservicios.tech
+	-GENERAR DOMINIOS DE PRUEBA  
 	
 	-GENERAR CERTIFICADOS SSL PARA DOMINIOS ANTERIORES
 	-CERTIFICADO PARA KALTIASTORE.XYZ
@@ -60,10 +59,6 @@ KALTIACONTROL <-- cambiar el dominio a Kaltia Gestor Contenidos
 	HABILITAR BOTON DE TERMINO DE SESSION
 	
 	MODULOS:
-	-Terminar el modulo de clientes ***
-		Cerrar el ciclo ABC de clientes,
-		comprar dominio para correos de validacion nuevo KUE
-
 	-Terminar el modulo de citas ***	
 		*AGREGAR EN EL JSON DE ELEMENTOCITA EL CAMPO STATUS[PENDIENTE, APROBADO, RECHAZADO, AUSENTE]
 		MOSTRAR UN REPORTE DEL TOTAL DE LAS CITAS 
