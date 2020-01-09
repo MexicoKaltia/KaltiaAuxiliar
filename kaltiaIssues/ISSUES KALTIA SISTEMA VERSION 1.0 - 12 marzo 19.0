@@ -1,13 +1,12 @@
 
 PRINCIPALES
 	
-	-Modificar la alerta que se genere en la parte inferior derecha como notificacion.
-	
 	-Revisar logs
 	
 	-GENERAR EL DOMINIO DEFINITIVO DE KALTIA SOLUCIONES INFORMATICA  --> -- > kaltiaservicios.site
 	-GENERAR EL DOMINIO DE CORREOS   -- > kaltiaservicios.tech
 	-GENERAR DOMINIOS DE PRUEBA  
+		-makalu.xyz    vence marzo 2020
 	
 	-GENERAR CERTIFICADOS SSL PARA DOMINIOS ANTERIORES
 	-CERTIFICADO PARA KALTIASTORE.XYZ
@@ -18,7 +17,7 @@ PRINCIPALES
 		
 
 KALTIA
-KALTIA SOLICIONES INFORMATICA
+KALTIA SERVICIOS INFORMATICA
 
 	SITIO WEB DE KSI
 		EMPRESA MEXICANA CON OBJETIVOS DE PROVEER SOLUCIONES INFORMATICAS AL SERVICIO ...
@@ -92,7 +91,7 @@ KALTIACONTROL <-- cambiar el dominio a Kaltia Gestor Contenidos
 ____________________________________________________________________________________________________________________________________________________________________________				
 		
 KALTIA STORE
-		*-Generar certificado SSL kaltia-mx.xyz
+		*-Generar certificado SSL kaltiastore.xyz
 		- Generar varios ejemplos de dominio / correos y bandeja de archivos.
 		-
 		
