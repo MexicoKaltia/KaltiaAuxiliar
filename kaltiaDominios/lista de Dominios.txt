@@ -1,0 +1,31 @@
+kaltiaservicios.site
+	-Principal enlace de los servicios , enlace a las categorias de soluciones:
+		-contenidos
+		-control
+		-consumo
+	
+	
+kaltia.xyz
+	-Pagina Principal para KaltiaContenidos
+	-vence 02 Diciembre 2019 / costo $240
+	
+kaltiacontrol.xyz
+	-Pagina de Administracion de KaltiaContenidos
+	-vence 02 Diciembre 2019 / costo $240
+	
+kaltia-store.xyz
+	-pagina de resguardo de imagenes, documentos de KaltiaContenidos
+	-vence 02 Diciembre 2019 / costo $240
+	
+makalu.xyz
+	-pagina de ejemplo dominio 
+	-vence 31 Enero 2020 / costo $240
+	
+kaltiaservicios.tech
+	-Ahora solo se ocupa para el correo
+
+
+HOSTING
+kaltia-store.xyz
+Expires 11/30/2022
+
