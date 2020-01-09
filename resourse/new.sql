@@ -88,18 +88,28 @@ RETURN NUMBER
 	IS
 	v_id_capitales NUMBER;
 	BEGIN
+    SELECT COUNT(*) INTO v_id_capitales  FROM LUMINA.UBS_IMP_RES_EAES_CAPITALES WHERE ID_RES_CALCULO = v_id_res_calculo ;
+    DBMS_OUTPUT.PUT_LINE('1.'||v_id_capitales);	
+    IF(v_id_capitales > 0) THEN    
+        UPDATE LUMINA.UBS_IMP_RES_EAES_CAPITALES SET MODIFICATION_TIMESTAMP = SYSTIMESTAMP, MODIFICATION_USER_ID = SYS_CONTEXT('USERENV', 'SESSION_USER'), MODIFICATION_IP_ADDRESS = SYS_CONTEXT('USERENV', 'IP_ADDRESS'), MODIFICATION_STATUS = 2
+			WHERE ID_RES_CALCULO = v_id_res_calculo;
+        INSERT INTO  LUMINA.UBS_IMP_RES_EAES_CAPITALES (ID_RES_CALCULO, EAES_MEX_GAN_FIS_ENAJ_ACC, EAES_MEX_PER_FIS_ENAJ_ACC, EAES_MEX_PER_FIS_ENAJ_ACC_ACT, EAES_MEX_IMP_SOB_REN_RET, EAES_EXT_GAN_FIS_ENAJ_ACC, EAES_EXT_PER_FIS_ENAJ_ACC, EAES_EXT_PER_FIS_ENAJ_ACC_ACT, EAES_EXT_SOB_REN_RET, CREATION_TIMESTAMP, CREATION_USER_ID, CREATION_IP_ADDRESS, CREATION_TIMESTAMP_CONST_1, CREATION_TIMESTAMP_CONST_2, MODIFICATION_TIMESTAMP, MODIFICATION_USER_ID, MODIFICATION_IP_ADDRESS, MODIFICATION_STATUS)
+        VALUES (v_id_res_calculo, v_suma_sic1, v_suma_sic2, v_suma_sic3, v_suma_sic4, v_suma_nosic1, v_suma_nosic2, v_suma_nosic3, v_suma_nosic4, SYSTIMESTAMP, SYS_CONTEXT('USERENV', 'SESSION_USER'), SYS_CONTEXT('USERENV', 'IP_ADDRESS'), '','', '','','','');      
+        SELECT LUMINA.UBS_IMP_RES_EAES_CAPITALES_SEQ.CURRVAL INTO v_id_capitales FROM DUAL;
+    DBMS_OUTPUT.PUT_LINE('2.'||v_id_capitales);	
+    ELSE
         INSERT INTO  LUMINA.UBS_IMP_RES_EAES_CAPITALES (ID_RES_CALCULO, EAES_MEX_GAN_FIS_ENAJ_ACC, EAES_MEX_PER_FIS_ENAJ_ACC, EAES_MEX_PER_FIS_ENAJ_ACC_ACT, EAES_MEX_IMP_SOB_REN_RET, EAES_EXT_GAN_FIS_ENAJ_ACC, EAES_EXT_PER_FIS_ENAJ_ACC, EAES_EXT_PER_FIS_ENAJ_ACC_ACT, EAES_EXT_SOB_REN_RET, CREATION_TIMESTAMP, CREATION_USER_ID, CREATION_IP_ADDRESS, CREATION_TIMESTAMP_CONST_1, CREATION_TIMESTAMP_CONST_2, MODIFICATION_TIMESTAMP, MODIFICATION_USER_ID, MODIFICATION_IP_ADDRESS, MODIFICATION_STATUS)
         VALUES (v_id_res_calculo, v_suma_sic1, v_suma_sic2, v_suma_sic3, v_suma_sic4, v_suma_nosic1, v_suma_nosic2, v_suma_nosic3, v_suma_nosic4, SYSTIMESTAMP, SYS_CONTEXT('USERENV', 'SESSION_USER'), SYS_CONTEXT('USERENV', 'IP_ADDRESS'), '','', '','','','');
-        SELECT LUMINA.UBS_IMP_RES_EAES_CAPITALES_SEQ.CURRVAL INTO v_id_capitales FROM DUAL;
-    DBMS_OUTPUT.PUT_LINE('OUT.'||v_id_capitales);
+             SELECT LUMINA.UBS_IMP_RES_EAES_CAPITALES_SEQ.CURRVAL INTO v_id_capitales FROM DUAL;
+              DBMS_OUTPUT.PUT_LINE('3.'||v_id_capitales);	
+    END IF;
     RETURN v_id_capitales;
-
     EXCEPTION
         WHEN no_data_found THEN
         INSERT INTO  LUMINA.UBS_IMP_RES_EAES_CAPITALES (ID_RES_CALCULO, EAES_MEX_GAN_FIS_ENAJ_ACC, EAES_MEX_PER_FIS_ENAJ_ACC, EAES_MEX_PER_FIS_ENAJ_ACC_ACT, EAES_MEX_IMP_SOB_REN_RET, EAES_EXT_GAN_FIS_ENAJ_ACC, EAES_EXT_PER_FIS_ENAJ_ACC, EAES_EXT_PER_FIS_ENAJ_ACC_ACT, EAES_EXT_SOB_REN_RET, CREATION_TIMESTAMP, CREATION_USER_ID, CREATION_IP_ADDRESS, CREATION_TIMESTAMP_CONST_1, CREATION_TIMESTAMP_CONST_2, MODIFICATION_TIMESTAMP, MODIFICATION_USER_ID, MODIFICATION_IP_ADDRESS, MODIFICATION_STATUS)
         VALUES (v_id_res_calculo, v_suma_sic1, v_suma_sic2, v_suma_sic3, v_suma_sic4, v_suma_nosic1, v_suma_nosic2, v_suma_nosic3, v_suma_nosic4, SYSTIMESTAMP, SYS_CONTEXT('USERENV', 'SESSION_USER'), SYS_CONTEXT('USERENV', 'IP_ADDRESS'), '','', '','','','');
              SELECT LUMINA.UBS_IMP_RES_EAES_CAPITALES_SEQ.CURRVAL INTO v_id_capitales FROM DUAL;
-              DBMS_OUTPUT.PUT_LINE('5.'||v_id_capitales);	
+              DBMS_OUTPUT.PUT_LINE('4.'||v_id_capitales);	
         RETURN v_id_capitales;
 END FUN_INS_CAPITALES;
 -----
@@ -197,6 +207,63 @@ BEGIN
            -- inserta en capitales
            v_id_capitales := FUN_INS_CAPITALES(v_id_res_calculo, v_suma_sic1,v_suma_sic2, v_suma_sic3, v_suma_sic4, v_suma_nosic1, v_suma_nosic2, v_suma_nosic3, v_suma_nosic4);
             DBMS_OUTPUT.PUT_LINE('FIN.'||v_id_capitales);	
+    END LOOP;
+    CLOSE    v_ref_cur;
+END;
+
+----
+
+SET SERVEROUTPUT ON
+DECLARE
+    v_ref_cur   SYS_REFCURSOR;
+    TYPE typ_rec   IS RECORD (contrato VARCHAR2(50 BYTE), REEMBOLSO_CAPITAL NUMBER(30,8), ISR_RETENIDO NUMBER(30,8), RESULTADO_FISCAL NUMBER(30,8));
+    v_rec   typ_rec;
+--
+    v_excepcion_cur   SYS_REFCURSOR;
+    TYPE typ_excepcion IS RECORD (CONTRATO VARCHAR2(50 BYTE), COTITULAR VARCHAR2(50 BYTE),FECHA_INICIO TIMESTAMP(6), PORCENTAJE NUMBER(10,2));
+    v_excepcion   typ_excepcion;
+--
+    v_porcentaje_cur   SYS_REFCURSOR;
+    TYPE typ_porcentaje   IS RECORD (PERSON_OID NUMBER(38,0), PORCENTAJE NUMBER(38,0));
+    v_porcentaje   typ_porcentaje;
+--
+    v_res_calculo_cur   SYS_REFCURSOR;
+    TYPE typ_res_calculo   IS RECORD (  idrescalculo NUMBER(38,0));
+    v_res_calculo   typ_res_calculo;
+--
+    v_anio_in      NUMBER(10,0);
+    v_id_ejercicio NUMBER(38,0);
+    v_contrato     VARCHAR2(32 BYTE);
+    v_id_res_calculo   NUMBER(30,0);
+    v_id_fibras  NUMBER(30,0);
+    
+BEGIN
+    v_anio_in := 2018;
+    v_id_ejercicio :=  fun_get_ejercicio(v_anio_in);
+    v_ref_cur     :=  fun_get_contratos_fibras(v_anio_in);
+         --DBMS_OUTPUT.PUT_LINE( 'Contrato||     RESULTADO_FISCAL||     ISR_RETENIDO||     REEMBOLSO_CAPITAL');          
+    
+    LOOP
+        EXIT  WHEN  v_ref_cur%NOTFOUND;
+        FETCH v_ref_cur INTO  v_rec;
+            --evaluacion de excepcion
+            v_excepcion_cur := fun_get_excepcion(v_rec.contrato);
+            FETCH v_excepcion_cur INTO  v_excepcion;
+            IF(v_excepcion.contrato > 0) THEN
+                -- do something;
+                DBMS_OUTPUT.PUT_LINE( 'Contrato:'||v_excepcion.contrato);
+            END IF;
+            --calculo por pocentaje
+            v_porcentaje_cur := FUN_PORCENTAJE(v_rec.contrato);
+            LOOP
+                FETCH v_porcentaje_cur INTO  v_porcentaje;
+                EXIT  WHEN  v_porcentaje_cur%NOTFOUND;
+                 v_id_res_calculo := FUN_RES_CALCULO(v_id_ejercicio, v_rec.contrato, v_porcentaje.person_oid, v_porcentaje.porcentaje);     
+                -- inserta en capitales
+                 v_id_fibras := FUN_INS_FIBRAS(v_id_res_calculo, (v_rec.REEMBOLSO_CAPITAL * v_porcentaje.porcentaje / 100) , (v_rec.ISR_RETENIDO * v_porcentaje.porcentaje / 100), (v_rec.RESULTADO_FISCAL * v_porcentaje.porcentaje / 100)  );
+                 DBMS_OUTPUT.PUT_LINE('FIN.'||v_id_fibras);	
+             END LOOP;
+             CLOSE    v_porcentaje_cur;
     END LOOP;
     CLOSE    v_ref_cur;
 END;
