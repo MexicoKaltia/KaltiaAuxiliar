@@ -1,0 +1,54 @@
+<!--<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>-->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Uniprotect -- Mexico.  Sistema Administracion</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/complemento.css">
+
+    <style type="text/css">
+/*     html, body, div, iframe { margin:0; padding:0; height:100%; } */
+    span {color:red}
+	</style>
+    
+  </head>
+
+  <body class="text-center">
+    <form  class="form-signin" action="login.htm" method="post" >
+      <img class="mb-4 " src="images/uniprotect_logo.png" alt="" ><!--width="150px" height="150px">-->
+      <h1 class="h3 mb-3 font-weight-normal">Ingresar Sistema de Administracion Uniprotec</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" name="userUser" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" name="passUser" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" id="btnLogin" type="submit">Ingresar</button>
+      <p class="mt-5 mb-3 text-muted"><a href="http://www.kaltia.site">Kaltia Mexico&copy; 2020</a></p>
+      <hiden class="version">version 1.0.0</hiden>
+      <div class="alerta">
+		<hiden class="alerta_in"></hiden>
+	  </div>
+      
+    </form>
+    
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"> </script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/complemento.js"></script>
+  </body>
+</html>
