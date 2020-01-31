@@ -1,0 +1,71 @@
+h2.modulo h3.modulo{
+	font-family: Helvetica;
+}
+
+.colorLabel {
+  color: white;
+}
+
+.center {
+  padding: 70px 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.report{
+  padding: 5%;
+/*   margin-left: 2%; */
+/*   margin-right: 2%; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: stretch;
+/*   border: 1px solid; */
+}
+.report-head{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: flex-start;
+ }
+.report-title{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-content: stretch;
+  align-items: flex-start;
+}
+report-footer{
+	display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: flex-start;
+}
+.table-fixed{
+  display: block;
+   border-collapse: collapse;
+   overflow-y: auto;
+}
+
+.transparente{
+  opacity: 0.9;
+  -moz-opacity: 0.9;
+  filter: alpha(opacity=90);
+  -khtml-opacity: 0.9;
+  }
+
+h3{
+  background-color: rgb(252, 253, 250);
+}
+.marco{
+/* 	border: 0px solid; */
+/* 	width:50%; */
+}
