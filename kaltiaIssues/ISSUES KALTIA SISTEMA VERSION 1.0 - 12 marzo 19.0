@@ -3,10 +3,11 @@ PRINCIPALES
 	
 	-Revisar logs
 	
-	-GENERAR EL DOMINIO DEFINITIVO DE KALTIA SOLUCIONES INFORMATICA  --> -- > kaltiaservicios.site
-	-GENERAR EL DOMINIO DE CORREOS   -- > kaltiaservicios.tech
+	**-GENERAR EL DOMINIO DEFINITIVO DE KALTIA SOLUCIONES INFORMATICA  --> -- > kaltia.site
+	**-GENERAR EL DOMINIO DE CORREOS   -- > kaltiaservicios.tech
 	-GENERAR DOMINIOS DE PRUEBA  
-		-makalu.xyz    vence marzo 2020
+		-kaltiacero.xyz
+		-kaltiacero.site
 	
 	-GENERAR CERTIFICADOS SSL PARA DOMINIOS ANTERIORES
 	-CERTIFICADO PARA KALTIASTORE.XYZ

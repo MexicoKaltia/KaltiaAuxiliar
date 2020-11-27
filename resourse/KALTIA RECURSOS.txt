@@ -1,0 +1,280 @@
+RECURSOS BOOTSTRAP
+	https://bootsnipp.com/?page=19
+
+TABLES BOOTSTRAP
+	https://datatables.net/
+	https://bootstrap-table.com/
+	https://examples.bootstrap-table.com/#welcomes/from-html.html
+	
+
+PLANTILLAS
+	https://bootstrapmade.com/demo/themes/TheEvent/
+	https://www.free-css.com/free-css-templates
+	https://templated.co/
+	https://www.w3schools.com/w3css/w3css_templates.asp
+	https://templatemo.com/
+	https://www.tooplate.com/free-templates
+	https://html5up.net/
+
+CALENDARIO BOOTSTRAP Y JS
+	https://fullcalendar.io/
+	https://amsul.ca/pickadate.js/date/
+	https://bootsnipp.com/snippets/M3jmA
+	
+	
+
+EFECTOS
+	https://blog.interactius.com/12-efectos-css-en-una-imagen-con-el-evento-hover-5026b5cf1983
+	https://www.creativosonline.org/blog/33-efectos-imagen-css-realmente-estimulantes.html
+	https://www.enriquejros.com/efectos-imagenes-css/
+	
+100+ Dynamic JavaScript UI 
+	https://www.grapecity.com/wijmo/
+	https://speckyboy.com/summer-code-snippets/
+
+GIFS PROCESS 
+https://acegif.com/es/gifs-cargando/
+https://icons8.com/preloaders/en/cryptocurrency_and_money
+
+
+MULTISELECT
+	http://loudev.com/
+
+GENERAR SECCIONES BOOTSTRAP
+	https://www.layoutit.com/build
+	
+HOJAS DE ESTILO BOOTSTRAP
+	https://bootswatch.com/simplex/
+	
+GRAFICAS
+	https://www.chartjs.org/samples/latest/
+	https://threejs.org/examples/#webgl_effects_parallaxbarrier
+	https://p5js.org/examples/
+	https://coolinfographics.com/javascript
+	https://developers.google.com/chart
+	https://observablehq.com/@d3/gallery
+	
+	
+INFOGRAFIAS
+	https://es.venngage.com/?vap=ad_esp&utm_source=es-adw6&campaignid=876043391&adgroupid=41633537422&adid=249173286929&gclid=EAIaIQobChMIzduV6P_K6gIVD9bACh2HegdNEAAYASAAEgJwZPD_BwE
+	https://jscharting.com/examples/chart-features/infographic/
+	https://speckyboy.com/css-javascript-snippets-infographics/
+	https://www.creativebloq.com/infographic/tools-2131971
+	https://www.visme.co/make-infographics/
+	
+	
+	
+FIGURAS GEOMETRICAS
+	http://www.redusers.com/noticias/trucos/html5-crea-figuras-geometricas-svg/
+	https://parzibyte.me/blog/2019/07/16/dibujar-figuras-geometricas-canvas-javascript/
+	https://ingenieriadesoftware.es/10-librerias-javascript-dibujar-diagramas/
+	https://damiandeluca.com.ar/animacion-con-html5-canvas-y-javascript
+	https://gojs.net/latest/index.html?gclid=EAIaIQobChMI5fGRlLbL6gIViYbACh2wiwS7EAMYASAAEgL8V_D_BwE
+	https://codepen.io/dasagi/pen/GqpKeK
+	
+
+DIAGRAMAS ON LINE
+	https://app.diagrams.net/#G1rur5LTFnCFSe0za5mEwo6itW9ykbxpIt
+
+PLUGIN FILE INPUT BOOTSTRAP
+	https://plugins.krajee.com/file-input/demo
+
+CARGAR IMAGENES
+	https://mkyong.com/jquery/jquery-ajax-submit-a-multipart-form/
+	
+REMOVER EL FONDO DE IMAGENES
+	https://www.remove.bg/
+
+INVERTIR COLORES DE IMAGENES
+	http://invert.imageonline.co/
+	
+IMAGENES DE FONDO
+	https://www.toptal.com/designers/subtlepatterns/page/20/
+	https://blog.hubspot.es/marketing/fondos-para-paginas-web
+
+CHARTS
+
+Videos Background HTML
+	pixabay.com/
+	video.net/
+	pexels.com/
+	canva.com/
+	freepick.com/
+
+Imagenes Background HTML
+	pixabay.com/
+	stocksnap.io/
+	pexels.com/
+	canva.com/
+	freepick.com/
+	unsplash.com/
+	morguefile.com/
+
+	
+	
+TEMAS DE TIENDA EN LINEA
+	http://www.energothemes.com/demo/vivashop/
+	
+	
+10 Best CSS Frameworks for Front-End Developers 
+	https://geekflare.com/best-css-frameworks/
+	
+HERRAMIENTA SCRUM ON LINE
+	https://www.meuscrum.com/login?returnUrl=%2Fprojects
+	
+_______________________________________________________________________________________________________________________________________
+
+errores en eclipse-tomcat
+https://stackoverflow.com/questions/12340128/failed-to-start-component-standardenginecatalina-standardhostlocalhost-stan
+
+test ssl
+https://www.ssllabs.com/ssltest/analyze.html?d=kaltia.xyz
+
+Recargar o Redirigir paginas WEB
+https://desarrolloweb.com/articulos/recargar-redirigir-html-meta.html
+
+
+WebMail : SquirrelMail
+https://www.server-world.info/en/note?os=Ubuntu_14.04&p=httpd&f=18
+
+revisar los puertos de mysql
+sudo netstat -plutn | grep -i sql
+
+reset servicios apache / mysql ubuntu
+https://www.cyberciti.biz/faq/star-stop-restart-apache2-webserver/
+https://www.cyberciti.biz/faq/ubuntu-linux-start-restart-stop-apache-web-server/
+http://mixeduperic.com/ubuntu/how-to-start-stop-and-restart-apache-and-mysql-on-ubuntu.html
+
+conectar remotamente Mysql
+https://stackoverflow.com/questions/14779104/how-to-allow-remote-connection-to-mysql
+https://stackoverflow.com/questions/1559955/host-xxx-xx-xxx-xxx-is-not-allowed-to-connect-to-this-mysql-server
+
+deshabilitar apache2-webserver/
+https://www.howtoinstall.co/es/ubuntu/xenial/apache2?action=remove
+https://askubuntu.com/questions/170640/how-to-disable-apache2-server-from-auto-starting-on-boot
+
+habilitar firewall y acceso a los puertos
+https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04
+netstat -putona
+netstat -tuple
+lsof -P -i -n 
+sudo ufw status verbose
+
+
+
+
+
+agregar pérmisos de sudo
+gpasswd -a USER sudo
+
+private key
+/etc/ssh/sshd_config
+sudo systemctl reload sshd
+
+importar y exportar datos, mala configuracion del mysqldump version incompatibles workbench 8 y server 5.7
+https://www.linuxtotal.com.mx/index.php?cont=info_admon_021
+
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlIciRqTX5LUc83X/KENRMSyE0v0aKZP8L7nftBK6xoF32B6euRk+uHLkPATXQS2dlgNiy8k9SaCV45hcydrfT5Z0i1kbi3kptfqUHTG6uFBwllhZ4GI/5lQ5KpZV4u/KQZcIcF1TplnxmLQlqCBvXOboxxc0CNOPdpeZLujqbyh3VvlSHta/4WJu7ZiaU/0jkprR7+DobKiS2O72I1n83G8u1NJZOz62IwddgdrOm4KkQ/JYQlO2qm508WqMdivTvfUjJA0LT6omnFjiaMYZA9rh0WbwmXQIJCeEWZGS9e1cOh/6z8iqXFzL32NzxbWhPgk1O7HtOHPsNOi8kOrgRQ== rsa-key-20171218
+
+
+
+necesito para el 15 de octubre
+1-nuevo dominio .com para KALTIA SERVICIOS INFORMATICOS
+2-certificado para 1
+3-certificado para kaltia-store
+4-mas dominios con certificados certbot para pruebas
+
+
+
+]Record Audio
+https://www.educaciontrespuntocero.com/recursos/herramientas-grabar-audio/
+https://voicemeeter.softonic.com/
+
+
+EFECTOS:
+https://www.codeply.com/
+https://soulwire.github.io/sketch.js/
+https://www.csslab.cl/etiqueta/efectos/
+https://webirix.com/18-librerias-css-para-crear-animaciones-y-efectos-coquetos/
+https://programacion.net/articulo/15_librerias_de_javascript_para_hacer_efectos_de_scroll_impresionantes_1308
+https://mdbootstrap.com/docs/jquery/tables/sort/
+https://bootsnipp.com/buttons
+https://bootsnipp.com/forms
+https://animejs.com/
+https://codepen.io/jackrugile/full/Apfyn
+https://codepen.io/jackrugile/full/IjKLt
+https://soulwire.github.io/sketch.js/
+https://github.com/juliangarnier/anime
+https://timeline.knightlab.com/#preview-embed
+https://dimsemenov.com/plugins/magnific-popup/
+https://www.codeply.com/tagged/steps
+
+JS
+https://www.cleancss.com/javascript-obfuscate/index.php
+https://css-tricks.com/sticky-smooth-active-nav/
+
+
+PLANTILLAS
+https://mobirise.com/bootstrap-template/
+https://colorlib.com/wp/themes/
+https://templatemo.com/live/templatemo_534_parallo
+https://templatemo.com/live/templatemo_536_dream_pulse
+https://templatemo.com/tm-515-eatery
+file:///C:/Users/hugo/Documents/KALTIA/Plantillas/nekmit/index.html#
+https://bootstrapmade.com/demo/themes/TheEvent/
+https://templatemag.com/demo/templates/Impact/index.html#
+https://templatemo.com/live/templatemo_395_urbanic
+https://themewagon.com/themes/spicy-free-bootstrap-html5-restaurant-template/
+https://www.toocss.com/free-responsive-html-css-templates/
+https://bootswatch.com/
+
+
+
+TABLAS - REPORTES
+https://examples.bootstrap-table.com/#welcomes/from-html.html
+https://mdbootstrap.com/docs/jquery/tables/sort/
+https://getbootstrap.com/docs/4.3/content/tables/
+https://bootstrap-table.com/
+https://datatables.net/
+
+EMAIL plantillas
+https://my.stripo.email   <--- usuario kaltiaservicios@gmail.com
+
+JAVA - SPRING
+https://www.baeldung.com/java-pdf-creation
+https://howtodoinjava.com/
+https://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html#iteration
+https://www.udemy.com/course/mastering-thymeleaf-with-spring/?gclid=CjwKCAjwvOHzBRBoEiwA48i6AkvGG2DMEtSdHGEFsdZfqYVVqWTled5n667tsLXOJEIvbiQ57E33YxoCQZ4QAvD_BwE&matchtype=e&utm_campaign=LongTail_la.EN_cc.ROW&utm_content=deal4584&utm_medium=udemyads&utm_source=adwords&utm_term=_._ag_80675508362_._ad_388109930123_._kw_thymeleaf+tutorial_._de_c_._dm__._pl__._ti_kwd-824720727525_._li_9073967_._pd__._
+https://docs.spring.io/spring-boot/docs/2.0.4.RELEASE/reference/html/common-application-properties.html
+
+Dashboard
+https://colorlib.com/wp/free-admin-templates/
+https://athemes.com/collections/free-bootstrap-admin-templates/
+https://slidemaya.com/   <-- infografias
+
+Calendar
+https://ourcodeworld.com/articles/read/55/top-5-best-jquery-scheduler-and-events-calendar-for-web-applications
+https://fullcalendar.io/docs/initialize-globals
+https://bootsnipp.com/snippets/PEZZ7
+https://bootsnipp.com/snippets/PEZZ7
+
+login
+https://codepen.io/ainalem/pen/EQXjOR
+https://codepen.io/andrewmillen/pen/MoKLob
+https://codepen.io/juliangarnier/pen/BzQoXg
+https://webgenio.com/blog/40-bonitos-formularios-css-registros-login-web/
+
+MEDIOS DE PAGO
+https://www.google.com/search?client=firefox-b-d&q=medios+de+pago
+https://www.google.com/search?client=firefox-b-d&q=api+rest+publicas
+https://slidemaya.com/   <-- infografias
+
+Efectos de Imagen  quitar el fondo
+https://www.remove.bg/upload
+
+PUTTY
+https://unix.stackexchange.com/questions/20193/how-to-make-putty-to-not-break-my-session-after-some-time
+

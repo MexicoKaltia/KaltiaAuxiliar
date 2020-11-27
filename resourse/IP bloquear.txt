@@ -1,10 +1,16 @@
+40.118.97.71 
+
 monitoreo dstat -cdngy 
+
+route add -host 40.118.97.71 reject 
+https://www.servidoresadmin.com/bloquear-ip-servidor-linux/
 
 sudo ufw deny from 192.168.1.5 to any
 
+
 ufw deny proto tcp from 162.249.111.0 to 162.249.111.255 port 80
 
-ufw deny proto tcp from 191.97.47.0 to 191.97.47.255 port 80
+ufw deny proto tcp from 40.118.97.71 to 40.118.97.71 port 80
 ufw deny proto tcp from 178.156.82.0 to 178.156.82.255 port 80
 ufw deny proto tcp from 43.229.74.0 to 43.229.74.255 port 80
 ufw deny proto tcp from 45.221.74.0 to 45.221.74.255 port 80

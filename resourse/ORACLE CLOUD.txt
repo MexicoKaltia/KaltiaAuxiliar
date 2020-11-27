@@ -1,0 +1,45 @@
+ORACLE CLOUD
+
+	user name : 
+		kaltiaservicios@gmail.com
+	password :
+		H00W6odR3004
+			
+	
+	clave publica
+		C:\Users\hugo\Documents\KALTIA\KaltiaDominios\oracle cloud\claveSSH-A.key
+		ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAmRzP3uD8jY4u5n3BSmFbZD7rHZHh69B69maF/DmiJtMcxGqd75TazQ7Q0Oz1UgyuBMlQ6zB6HvMPiIDRuLotntZrpb+gcqBK7XQEYRCgGhk/IVHEiz0KqyI0aFhWFsuHY9MXS4c8ItBsLYdmZGGwhmoVKNGM1SuqsVGXXE0BnU+vRpzWw2/LI0imM5AndsP//lMqYgSPD1ZNd7sBAQkaRnZkjd4JuiSadGwDp+kGNkJFzp4vlUQDxI7hr34KKHkUMU0nod2bDvUQEtJD6UZtvjAH6FZMQ3A4YekH+BGqrHTXUTXdpiq/1I2FrP7s3ftu+N1w1ZJr6tn4+S7mYYuzuQ== rsa-key-20201026
+		
+		Instancia Edicion:
+			158.101.6.33
+			instance-20201027-1815
+			
+			
+		Instancia FileUpload
+			instance-20201106-0106
+			129.146.252.2	
+			
+-------------------------------------------------------------------------------------------------			
+	Instalar nuevas Instancias
+		crear instancia Oracle linux-x64
+			Oracle-Linux-7.9-2020.10.26-0
+		configurar  firewall para habilitar los puertos
+			sudo firewall-cmd --zone=public --permanent --add-port=8011/tcp
+			sudo firewall-cmd --reload
+		instalar FTP
+			sudo yum install vsftpd* -y
+
+					
+-------------------------------------------------------------------------------------------------			
+			
+	
+	
+		
+	instalar java
+		copiar el archivo por ftp      sftp://129.146.252.2 	--user opc@129.146.252.2    pto:22 ó 21
+			jdk-8u271-linux-x64.rpm
+		ejecutar comando
+			sudo yum localinstall jdk-8u271-linux-x64.rpm
+		verificar java
+			java -version
+		

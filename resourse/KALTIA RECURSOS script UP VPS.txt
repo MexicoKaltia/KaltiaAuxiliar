@@ -1,0 +1,60 @@
+COMANDOS PARA NUEVO SERVIDOR
+	
+	Configurar el Post-Installation Wizard
+
+	USUARIOS
+		adduser sammy
+		usermod -aG sudo sammy
+		
+	UFW
+		sudo ufw enable
+		
+		Si esto genera el error de comando no encontrado, instala UFW con el siguiente comando.
+		sudo apt-get install ufw
+		
+		Luego, tenemos que verificar el estado de UFW.
+		sudo ufw status
+		
+		Agregar puertos
+		ufw allow ssh
+		ufw allow http
+		ufw allow ftp
+		ufw allow mysql
+		ufw allow 8015
+		ufw allow 8016
+		
+		ufw status verbose
+		To                         Action      From
+		--                         ------      ----
+		80/tcp                     ALLOW IN    Anywhere
+		22/tcp                     ALLOW IN    Anywhere
+		21/tcp                     ALLOW IN    Anywhere
+		36                         ALLOW IN    Anywhere
+		3306                       ALLOW IN    Anywhere
+		8016                       ALLOW IN    Anywhere
+		8015                       ALLOW IN    Anywhere
+		10000                      ALLOW IN    Anywhere
+		80/tcp (v6)                ALLOW IN    Anywhere (v6)
+		22/tcp (v6)                ALLOW IN    Anywhere (v6)
+		21/tcp (v6)                ALLOW IN    Anywhere (v6)
+		36 (v6)                    ALLOW IN    Anywhere (v6)
+		3306 (v6)                  ALLOW IN    Anywhere (v6)
+		8016 (v6)                  ALLOW IN    Anywhere (v6)
+		8015 (v6)                  ALLOW IN    Anywhere (v6)
+		10000 (v6)                 ALLOW IN    Anywhere (v6)
+		
+	JAVA
+		apt-get update
+		 apt-get upgrade  --mejor ese no.
+		apt-get apt install openjdk-8-jdk
+		
+	MySQL
+		https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
+		y despues : modificar  /etc/mysql/my.cnf
+		comentar la linea bind 127.0.0.1  con #
+
+		
+		
+	SSH
+	llave publica y primaria
+	

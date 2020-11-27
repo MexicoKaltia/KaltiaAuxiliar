@@ -1,8 +1,35 @@
 -- Certificados locales, 
 ----------------------------------------------------------------------------
-instalar cerboot
-	sudo wget https://dl.eff.org/certbot-auto
-	chmod a+x certbot-auto
+instalar cerboot   https://www.digitalocean.com/community/tutorials/como-proteger-apache-con-let-s-encrypt-en-ubuntu-18-04-es
+&HOME/
+./certbot-auto cert-only
+opcion 1
+nombre de los dominios
+opcion 2 2: Renew & replace the cert (may be subject to CA rate limits)
+ 
+ y ya listo !!  ahora actualizar el $tomcat/conf/server.xml con la ruta y nombre de los archivos
+ IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/control-uniprotec.com/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/control-uniprotec.com/privkey.pem
+   Your cert will expire on 2021-01-13. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot-auto
+   again. To non-interactively renew *all* of your certificates, run
+   "certbot-auto renew"
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+
+
+REVISAR LOS PUERTOS 443
+UFW STATUS
+UFW ALLOW 443
+
+
+	sudo Y
+	chmod a+x /usr/local/sbin/certbot-auto
 	./certbot-auto
 Ahora nos avisa de que no ha podido configurarse automáticamente, pero que podemos obtener el certificado y configurarlo manualmente mediante el comando:
 	./certbot-auto certonly
@@ -14,6 +41,12 @@ ubicarse en $home/CertificadosSSL/NUEVOSVERTIFICADOS/KaltiaCertificados
 Copiar los nuevos reemplazos y actualizar el $TOMCAT/conf/server.xml
 	en la etiqueta de Connection 443
 	
+	
+	----------------------------------------------------------------------------------------------------------------------------
+	opcion 2, recomendada por hostinger.
+	https://comodosslstore.com/blog/step-by-step-procedure-to-generate-a-csr-and-install-an-ssl-certificate-on-a-tomcat-web-server.html
+	https://www.hostinger.mx/cart/
+	
 https://medium.com/@raupach/how-to-install-lets-encrypt-with-tomcat-3db8a469e3d2
 https://luisperis.com/instalar-lets-encrypt-ubuntu/
 https://www.jorgebastida.es/instala-un-certificado-lets-encrypt-en-tomcat/
@@ -22,19 +55,6 @@ https://www.youtube.com/watch?v=d-f-2pMOgOA
 	 keytool -import -trustcacerts -alias root -file chain1.pem -keystore keystore.jks
 	 /home/hgrc/CertificadosSSL/keystore.jks
 
-IMPORTANT NOTES:
- - Congratulations! Your certificate and chain have been saved at:
-   /etc/letsencrypt/live/www.kaltia.xyz/fullchain.pem
-   Your key file has been saved at:
-   /etc/letsencrypt/live/www.kaltia.xyz/privkey.pem
-   Your cert will expire on 2019-09-15. To obtain a new or tweaked
-   version of this certificate in the future, simply run certbot-auto
-   again. To non-interactively renew *all* of your certificates, run
-   "certbot-auto renew"
- - If you like Certbot, please consider supporting our work by:
-
-   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
-   Donating to EFF:                    https://eff.org/donate-le
 
 How To Secure Apache with Let's Encrypt on Ubuntu 14.04 
 https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04

@@ -13,3 +13,17 @@ netstat -putona
 netstat -tuple
 lsof -P -i -n 
 sudo ufw status verbose
+
+
+
+_________________________________________________________________________________________
+INSTANCIA ORACLE IP 158.101.6.33
+
+sudo firewall-cmd --zone=public --permanent --add-port=8011/tcp
+								
+
+sudo firewall-cmd --reload
+
+sudo iptables -A INPUT -p tcp --dport 80 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+    
+sudo iptables -A OUTPUT -p tcp --sport 80 -m conntrack --ctstate ESTABLISHED -j ACCEPT

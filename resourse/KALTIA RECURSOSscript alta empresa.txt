@@ -1,0 +1,297 @@
+Script Nuevo MODELO
+	ejemplo. copiar carpeta de MODELO en:
+	Kaltia/WebContent\modelo\MODELO
+	
+	dividir el 
+	Kaltia/WebContent\modelo\MODELO/index.html en las secciones HEADER , BODY y FOOTER
+	eliminar index.html y crear los archivos carpeta (borrar todo lo q este dentro de pages, ):
+		pages/MODELOHeader.jsp  
+		pages/MODELOBody.jsp  
+		pages/MODELOFooter.jsp  
+		
+	customizar Header   (sirve como base BRONEA)
+		seccionar <!-- ################################################################################################ -->
+		cambiar el fondo de header:
+			<div class="bgded overlay parallax" style="background-image:url('<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1');">
+		agregar el nombre de seccion en el div
+			<div class="fl_left headerSeccion1 aniview reallyslow" data-av-animation="slideInLeft">
+			
+		headerSeccion1:
+			son los modulos comprados por el cliente (  UBICACION1 INGRESA CLIENTE CITA NUEVO CLIENTE )
+		headerSeccion2
+			telefono y correo
+		headerSeccion5
+			simplemente copiar de Bronea y pegar toda la seccion de header
+				<header id="header" class="hoc clear">
+		headerSeccion4
+			pageIntro
+			
+			
+	customizar BODY
+		agregar:
+			<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+			<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+			<%@ taglib prefix="s" uri="/struts-tags"%>
+		para seccionArray
+			tomar como muestra broneaSeccionArray1 , los inicializadores
+			por regla objeto Array:
+				las referencias : <s:property value='#bodySeccionArray1.objetoVO.get(0)' />
+				los Iconos : <s:property value='#bodySeccionArray1.objetoVO.get(1)' />
+				titulos : <s:property value='#bodySeccionArray1.objetoVO.get(2)' />
+				parrafos : <s:property value='#bodySeccionArray1.objetoVO.get(3)' />
+				extras imagenes, botones o fechas : <s:property value='#bodySeccionArray1.objetoVO.get(4 en adelante)' />
+		
+		cuidado con las animaciones
+			
+	Agregar los registros en BD	
+		tc_action : MODELO
+		tc_header : MODELO-header
+		tc_footer : MODELO-footer
+		tc_body : MODELO-body
+		
+	Agregar en Struts.xml	
+		<result name="MODELO" type="tiles">MODELO</result>
+		
+	Agregar en Tiles.xml	
+		<definition name="besloor" template="/WEB-INF/inicio/inicio.jsp">
+			<put-attribute name="header" value="/modelo/besloor/pages/besloorHeader.jsp" />
+			<put-attribute name="left" value="/WEB-INF/inicio/left.jsp" />
+			<put-attribute name="body" value="/modelo/besloor/pages/besloorBody.jsp" />
+			<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+			<put-attribute name="footer" value="/modelo/besloor/pages/besloorFooter.jsp" />
+			<put-attribute name="head" value="/WEB-INF/inicio/head.jsp" />
+			<put-attribute name="foot" value="/WEB-INF/inicio/foot.jsp" />
+			<put-attribute name="modalEdicion" value="/modelo/bronea/pages/modalEdicion.jsp" />
+			<put-attribute name="modalIngresa" value="/WEB-INF/inicio/modalIngresa.jsp" />
+			<put-attribute name="modalRegistro" value="/WEB-INF/inicio/modalRegistro.jsp" />
+			<put-attribute name="modalCita" value="/WEB-INF/inicio/modalCita.jsp" />
+			<put-attribute name="modalUbicacion" value="/WEB-INF/inicio/modalUbicacion.jsp" />
+			<put-attribute name="modalIconoObjeto" value="/WEB-INF/inicio/modalIconoObjeto.jsp" />
+		</definition>
+	
+Parte 2 Definir los campos de Edicion en edicionModulos
+	WebContent\modelo\MODELO\layout\scripts\edicionSecciones.js
+	
+	Definir las secciones por campos
+		function estructuraSeccion(seccion){ ... json ...}
+		
+	Definir las secciones en edicionSecciones
+		Cada una de las secciones  adecuarlas a los campos
+	
+	En algunos casos hay q generar el esqueleto del campo : IMPORTANTE
+		bodySeccionArray1 : &&Titulo&&Boton Modulo++&&fa-chain-broken&&Titulo Objeto 1&&Descripcion Objeto 1&&undefined++&&fa-backward&&Titulo Objeto 2&&Descripcion Objeto 2&&undefined++&&fa-at&&Titulo Objeto3&&Descripcion Objeto 3&&undefined++&&fa-at&&Titulo Objeto4&&Descripcion Objeto 4&&undefined
+	Ordenar los campos deben de corresponder a la secuencia de seccion, modalSeccion y camposModelo
+		
+		tituloSeccion&& &&boton seccion++
+			Imagen Objeto&&undefined&&titulo objeto 1 &&Descripcion++Imagen Objeto&&undefined&&titulo objeto 1 &&Descripcion++Imagen Objeto&&undefined&&titulo objeto 1 &&Descripcion
+			
+		
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Script ALTA EMPRESA
+	-Definir Empresa en TC_EMPRESA
+		-Atributos : Estilo / Recursos Tiles
+	-Definir Action en TC_ACTION
+	-Definir action en struts.xml
+	-Definir tiles en tiles.xml
+
+script crear nueva empresa
+1.-Definir plantilla
+
+2.-En caso de no existir plantilla en repositorio, /WEB-INF/ . Copiar Carpeta 
+		C:./nombrePlantilla/
+├───images
+│   └───demo
+│       ├───backgrounds
+│       └───gallery
+├───layout
+│   ├───scripts
+│   └───styles
+│       └───fonts
+└───pages
+
+2.1.-Definir el TIles de plantilla
+
+	<definition name="viral" template="/WEB-INF/inicio/inicio.jsp">
+		<put-attribute name="header" value="/viral/pages/viralHeader.jsp" />
+		<put-attribute name="left" value="/viral/pages/viralLeft.jsp" />
+		<put-attribute name="body" value="/viral/pages/viralBody.jsp" />
+		<put-attribute name="right" value="/WEB-INF/inicio/right.jsp" />
+		<put-attribute name="footer" value="/viral/pages/viralFooter.jsp" />
+		<put-attribute name="css" expression="/css/inicio.css" cascade="true" />
+	</definition>
+
+2.2.-Colocar el header general de la plantilla dentro del Tiles Definition
+		<put-attribute name="head" value="/viral/pages/viralHead.jsp" />
+		Incluir los META, SCRIPT y LAYOUTS
+
+2.3.-Crear los JSP   
+	nombrePlantillaHeader.jsp
+	etc
+
+3.-Crear el definition extend de empresa en Tiles
+	<definition name="actionA" extends="nombrePlantilla">
+		<put-attribute name="title" value="actionA" cascade="true" />
+	</definition>
+
+4.-Ingresar Result-Type en Struts en:
+	    <package name="default" namespace="/" extends="tiles-default">
+			<action name="*" class="com.kaltia.action.InitAction">
+				<result name="actionA" type="tiles">actionA</result>     <-- !!!
+			</action>
+		</package>
+
+5.-Definir Paquuete de Action en Struts.xml
+	    <package name="menuA" namespace="/menuA" extends="default, struts-default, tiles-default">
+			<result-types>
+				<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+			</result-types>
+			<action name="*" class="com.kaltia.action.ActionEmpresa" method="elemento">
+				<result name="contacto" type="tiles">contacto</result>
+				<result name="nosotros" type="tiles">nosotros</result>
+				<result name="ingresar" type="tiles">ingresar</result>
+				<result name="registrar" type="tiles">registrar</result>
+				<result name="error">/WEB-INF/inicio/error.jsp</result>
+			</action>
+		</package>
+		
+6.-Dar de alta los valores en Tablas de BD
+	tc_empresa
+		st_altaEmpresa
+			tw_statusEmpresa              ---> KALTIA CONTROL
+			tc_userKaltiaControl
+			tc_action
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+PLANTILLAS DINAMICAS
+	ELEMENTOS DE EDICION:
+	
+		AGREGAR LA CARPETA EN KALTIAMICROSERVICIOS y GENERAR LA CARPETA EN HOSTING
+			/kaltia/shell/empresa/MODELO
+		MODIFICAR LOS TILES EN BASE DE DATOS TW_header  TW_BODY TW_FOOTER
+			IDheader : algenius-header
+		AGREGAR LAS RUTAS DE LAS IMAGENES EN TABLA DE Action
+			 en la tabla kaltiadb.tc_action AMBIENTE = http://kaltia-store.xyz/kaltia/empresa/
+			 
+		GENERAR LA CARPETA DE LAYOUT CON LA SIGUIENTE ESTRUCTURA:
+		C:.
+			├───layout
+			│   ├───scripts
+			│   └───styles
+			│       └───fonts
+			└───pages
+		EN LA CARPETA DE SCRIPT: los elementos propios del MODELO  + EDICIONSECCIONES.JS 
+			 Directorio de C:\Kaltia\GIT\Kaltia\WebContent\modelo\algenius\layout\scripts
+			25/06/2019  05:09 p. m.    <DIR>          .
+			25/06/2019  05:09 p. m.    <DIR>          ..
+			25/06/2019  05:09 p. m.            16,913 edicionSecciones.js
+			07/06/2019  04:47 p. m.                 0 index.html
+			07/06/2019  04:47 p. m.               610 jquery.backtotop.js
+			07/06/2019  04:47 p. m.            86,711 jquery.min.js
+			07/06/2019  04:47 p. m.             1,292 jquery.mobilemenu.js
+			
+		EN LA CARPETA DE STYLES:
+			los elementos propios del MODELO
+				
+	IR POR SECCION POR SECCION
+		CONSIDERAR CADA UNA DE LAS SECCIONES DEFINIDAS CON LAS PROPIEDADES DE STRUTS FRONT 
+		AGREGAR CADA UNO DE LOS 
+			<DIV class ="SECCION" ID = "SECCION"/>
+		AGREGAR LOS IDENTIFICADORES DE SECCION
+			<a  id="seccion1"></a>
+		CAMBIAR LAS URL DE IMAGEN 
+			<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(3)'/>?v=1'
+		LA IMAGEN DE LOGOTIPO DEBE LLEVAR ESTOS Atributos
+			<img src="<s:property value='identidadVO.ambiente'/><s:property value='identidadVO.action'/>/images/<s:property value='header.headerSeccionArray5.get(0).objetoVO.get(2)'/>?v=1" alt="" style="max-width: 3.0em; max-height: 3.0em">
+		EFECTOS SCROLL
+			aniview reallyslow" data-av-animation="fadeIn" 
+		GENERAR EL MODALEDICION.JSP DENTRO DE MODELO/PAGES/
+			con las propiedades de cada modelSeccion
+			reemplazar Bronea --> MODELO
+		GENERAR EL EDICIONSECCIONES.JS DENTRO DE MODELO/LAYOUT/SCRIPTS
+			con las propiedades de cada seccion
+			reemplazar Bronea --> MODELO
+			
+		ADECUAR LA SECCION CON LOS CAMPOS RECICLANDO VIEJAS SECCIONES CONFIGURADAS EN MODALEDICION.JSP
+			cambiar ctrl+H los valores de campos :  footer.footerSeccion2.get(0) - footer.footerSeccion1.get(0)
+			cambiar ctrl+H los ID de campos : tituloFS2 - tituloFS1
+		EDICIONSECCIONES.JS
+			AGREGAR EL ELEMENTO JSON DENTRO DE LA FUNCION ESTRUCTURASECCION
+				"footerSeccion2Aerogem"   :{  "tituloFS2" : "text",  "subtituloFS2" : "lorem",  "domicilioFS2" : "text",  "telefonoFS2" : "text",  "correoFS2" : "text", "ubicacionFS2" : "text"},
+			AGREGAR LA FUNCION DE CARGAR MODAL / GENERAR VALORES FINALES / CARGAR iMAGEN / ENVIADATA
+				CONSIDERAR LOS ESQUEMAS PARA SECCION   Y SECCIONARRAY
+				SECCION 
+					CONSIDERAR SI CONTIENE IMAGEN, AGREGAR:
+									$('#imagenFS2').on('change', function(){ enviaImagen("imagenFS2Form") });
+													while(valoresFinales.includes("C:\\fakepath\\") ){
+									valoresFinales = valoresFinales.replace("C:\\fakepath\\", "")	
+								}
+				SECCIONARRAY
+					CONSIDERAR LA CANTIDAD DE COLUMNAS A DESPLEGAR
+					CONSIDERAR EL INICIO DEL ARRAY
+										valorColumnas = 3;
+										valorPosicion = 0;
+										valorIniciaObjeto = 1;
+										valoresFinales = ordenaValoresFinales(valoresFinales , valorColumnas, valorPosicion, valorIniciaObjeto);
+
+		
+		
+		
+			
+		headerSeccion1:
+			agregar los parametros DE MODULOS en la tabla kaltiadb.tc_action actionModulos
+		headerArraySeccion5:
+			CAMBIAR LA DIMENSION DE LOGOTIPO 
+				(style="max-width: 2.0em; max-height: 2.0em)
+			MODIFICAR EL MENU :	
+				CONFIGURAR EL MENU PARA SEA FIJO EN EL SCROLL DE LA PANTALLA
+			COPIAR LA PLANTILLA DE MENURESPONSIVE, UBICADO EN :
+				C:\Kaltia\GIT\KaltiaAuxiliar\test\plantilla\bronea\menuResponsive_Ver1
+				MODIFICAR EL MENU :	
+					CONFIGURAR EL MENU PARA SEA FIJO EN EL SCROLL DE LA PANTALLA
+
+			
+			
+			
+			
+
+	
+
+	
