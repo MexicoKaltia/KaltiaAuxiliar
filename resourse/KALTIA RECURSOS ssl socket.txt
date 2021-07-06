@@ -13,3 +13,9 @@ https://www.programcreek.com/java-api-examples/?class=com.sun.net.httpserver.Htt
 https://www.codota.com/code/java/methods/sun.net.www.protocol.https.Handler/%3Cinit%3E
 
 https://www.nanotutoriales.com/como-crear-un-certificado-ssl-de-firma-propia-con-openssl-y-apache-http-server
+
+
+----------------------
+https://support.hostinger.es/es/articles/3076150-instalar-un-certificado-ssl-de-comodo-fuera-de-hostinger
+https://www.hostinger.es/tutoriales/como-instalar-tomcat-en-ubuntu#Paso-5-Crear-un-archivo-de-unidad-systemd
+https://www.thesslstore.com/knowledgebase/ssl-install/tomcat-ssl-installation/

@@ -1,3 +1,38 @@
+﻿ingresar root, en $HOME teclear
+certbot certonly
+						./certbot-auto   <-- ya no funciono la ultima vez
+aparecen las opciones de certificados , con enter se renuevan los certificados.
+AWUAS se activan los puertos 80 y 443 de apache2
+para terminarlos:
+sudo /etc/init.d/apache2 stop
+y eliminar los procesos con kill -9  num_de_proceso  : netstat - tnap |grep 80   y el 443
+resetear tomcat y listo, verificar.
+
+netstat -plunt
+certbot delete --cert-name example.com
+
+https://www.inmotionhosting.com/support/website/ssl/lets-encrypt-ssl-ubuntu-with-certbot/
+---------------------------  no lo he reusado, con la seccion anterior fue exito-------------------------------------------------
+Para generar nuevos certificados
+apagar los puertos 80
+	/etc/init.d/apache2 stop
+
+certbot certonly --standalone -d uniprotecgames.com -d www.uniprotecgames.com
+certbot certonly --standalone -d ufw status  -d www.control-uniprotec.com
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+https://www.it-swarm-es.com/es/apache/redirecciona-http-https-port-en-tomcat/1056860368/
+http://sparcki.blogspot.com/2010/11/como-configurar-https-en-tomcat.html
+
+
+
+
+
+
+
+
+
 -- Certificados locales, 
 ----------------------------------------------------------------------------
 instalar cerboot   https://www.digitalocean.com/community/tutorials/como-proteger-apache-con-let-s-encrypt-en-ubuntu-18-04-es
@@ -40,6 +75,13 @@ ubicarse en $home/CertificadosSSL/NUEVOSVERTIFICADOS/KaltiaCertificados
 
 Copiar los nuevos reemplazos y actualizar el $TOMCAT/conf/server.xml
 	en la etiqueta de Connection 443
+	
+para detener el servicio de apache
+	systemctl status apache2
+	systemctl stop apache2
+	service apache2 stop
+	or
+	/etc/init.d/apache2 stop
 	
 	
 	----------------------------------------------------------------------------------------------------------------------------
@@ -88,3 +130,10 @@ Debemos abrir un terminal y navegar hsta el directorio donde deseamos tener el k
             <Certificate certificateKeystoreFile="conf/KeyStore.jks"
                          type="RSA" />
         </SSLHostConfig>
+
+
+
+
+2a02:4780:9:435:0:283b:37c8:1
+
+control-uniprotec.com www.control-uniprotec.com

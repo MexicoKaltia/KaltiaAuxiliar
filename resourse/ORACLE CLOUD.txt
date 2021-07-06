@@ -1,4 +1,4 @@
-ORACLE CLOUD
+﻿ORACLE CLOUD
 
 	user name : 
 		kaltiaservicios@gmail.com
@@ -43,3 +43,14 @@ ORACLE CLOUD
 		verificar java
 			java -version
 		
+		
+		nohup java -XX:+UseSerialGC -Xss1024k -XX:MaxRAM=100m -jar aplicacion-1.6.jar &
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------
+transformar un jar a war
+https://www.youtube.com/watch?v=sUYz5yZJBic

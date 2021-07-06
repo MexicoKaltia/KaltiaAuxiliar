@@ -1,0 +1,21 @@
+
+<html>
+<head>
+<title>Printerrecoyrev</title>
+<meta charset="utf-8">
+<meta name="viewport"	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style type="text/css">
+/*     html, body, div, iframe { margin:0; padding:0; height:100%; } */
+iframe {  width:100%; border:none; margin:0; padding:0; height:100%;}
+</style>
+</head>
+<body>
+<iframe src="http://www.kaltia.xyz/printer" onload="autofitIframe(this);"></iframe>
+<script language="JavaScript">
+	//Ajusta el tamaño de un iframe al de su contenido interior para evitar scroll
+	function autofitIframe(id) {
+		if (!window.opera && document.all && document.getElementById){id.style.height = id.contentWindow.document.body.scrollHeight;} else if (document.getElementById) {id.style.height = id.contentDocument.body.scrollHeight + "px";}
+  }
+</script>
+</body>
+</html>

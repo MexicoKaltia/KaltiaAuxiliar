@@ -49,6 +49,7 @@ cambiar la IP en el virtual host
    your certificates, run "certbot renew"
 
  instalar java 8
+https://www.linode.com/docs/guides/install-java-on-ubuntu-16-04/
  	https://ubunlog.com/instala-java-8-9-y-10-en-ubuntu-18-04-y-derivados/
 	https://www.digitalocean.com/community/tutorials/como-instalar-java-con-apt-get-en-ubuntu-16-04-es
 	--------------------------------------------- Para las instancias de Oracle ---------------------------
@@ -84,3 +85,4 @@ importar tablas kaltiadb
 	https://httpd.apache.org/docs/current/vhosts/fd-limits.html
 	
 	CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+	GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'Uniprotec2020#' WITH GRANT OPTION;
