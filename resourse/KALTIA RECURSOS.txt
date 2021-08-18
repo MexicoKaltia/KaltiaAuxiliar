@@ -1,4 +1,4 @@
-RECURSOS BOOTSTRAP
+﻿RECURSOS BOOTSTRAP
 	https://bootsnipp.com/?page=19
 
 TABLES BOOTSTRAP
@@ -278,3 +278,11 @@ https://www.remove.bg/upload
 PUTTY
 https://unix.stackexchange.com/questions/20193/how-to-make-putty-to-not-break-my-session-after-some-time
 
+
+
+tester correo
+https://www.mail-tester.com/test-trjv1mj6y
+
+--plataformas de envio de correos
+mailchip
+zoho
