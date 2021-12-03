@@ -36,12 +36,13 @@ el cual se basa en los ramos de las siguientes capacidades:
 -Desarrollo y Programación de Proyectos Informaticos conducidos por los nuevos lenguajes modernos e inovacion.
 -Alta capacidad de analisis y diseño con propuestas de arquitectura y soluciones de vanguardia.
 -Servicios Integrables Coorporativos Empresariales. 
+	-Desarrollo Web,
 	-Proveedor de Servicio de Aplicacion,
 	-Software como Servicio SaaS, 
 	-Sistemas de Planificacion de Recursos ERP, 
 	-Gestion de Relaciones con Clientes CRM,
 	-Computacion en la nube (AWS, GCP, Azure, VPS, Hosting)
-	-Marketing Digital, consultoria PyMES.
+	-Consultoria PyMES.
 
 Contamos con experiencia en los ramos de:  salud, educativo, industrial y bancario. 
 Brindando una gama completa de servicios de desarrollo de software que incluyen la creación, el soporte, la evolución y la optimización de soluciones. 
@@ -54,7 +55,7 @@ Desarrollo Administracion Empresa
 	Sistemas de presupuestos y ordenes de trabajo
 	 y más...
 
-Sitio y Diseño Web CMS
+Sitio y Diseño Web Manejo de Contenidos
 	Sitios web, Gestores de Contenido, Tiendas en linea, FrontEnd y Backend..Facebook Apps, Google Apps
 	Catálogo web autoadministrable
 		Servicios
@@ -69,10 +70,10 @@ Sitio y Diseño Web CMS
 Por lo cual queremos ofrecerte el apoyo y calidad de nuestros servicios, Participacion en proyectos cerrados, como diseño análisis y desarrollo.
 Soluciones precisas de temas de aplicaciones y convivencia en ambientes Informaticos
    
-Te quiero invitar a que visites la pagina de las empresas que estamos conformando:
+Te quiero invitar a que visites nuestra pagina web
    
-https://www.mexicocss.com/
-https://www.kaltia.xyz/
+http://www.kaltiaserivicios.com/
+
 
 Sin mas por el momento quedo pendiente a tus comentarios y cuenta con nuestro apoyo.
 Te mando un cordial saludo.
